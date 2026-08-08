@@ -37,57 +37,36 @@ const faqSchema = {
   <UtilityBar slot="utility-bar" />
   <Header slot="header" />
 
-  <!-- Section 1: Hero with Bright Featured Technician Photo (tech-root-removal.jpg) -->
-  <section class="relative w-full bg-rx-ink text-white py-12 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-hairline">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-        <!-- Left Column: Copy & Actions -->
-        <div class="lg:col-span-7">
-          <h1 class="text-3xl-rx sm:text-4xl-rx lg:text-5xl-rx font-serif font-bold tracking-tight text-rx-blue mb-6 leading-tight drop-shadow-sm">
-            Your Trusted Plumber in Orange County, CA
-          </h1>
-          <p class="text-base-rx sm:text-lg-rx text-rx-paper/90 font-body mb-8 measure-prose">
-            Specializing in 24/7 residential and commercial sewer camera diagnostics, hydro jetting wall scouring, trenchless pipe lining, and emergency drain clearing.
-          </p>
+  <!-- Section 1: Hero matching reference screenshot -->
+  <section class="relative w-full bg-rx-ink text-white py-24 lg:py-36 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-hairline">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img
+        src="/images/real-photos/sewer-trench-excavation.jpg"
+        alt="Rooter-X Plumbing fleet and job site equipment"
+        class="w-full h-full object-cover object-center opacity-45"
+        width="1600"
+        height="900"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-rx-ink/90 via-rx-ink/75 to-rx-ink/50"></div>
+    </div>
 
-          <!-- CALL NOW Button -->
-          <div class="mb-8">
-            <a
-              href={BUSINESS.phoneHref}
-              class="inline-block bg-rx-blue hover:bg-rx-blue-deep text-white font-display font-bold text-base-rx sm:text-lg-rx px-8 py-4 rounded-[4px] shadow-xl transition-all duration-150 uppercase tracking-wide border border-white/20"
-            >
-              CALL NOW! - {BUSINESS.phoneDisplay}
-            </a>
-          </div>
+    <div class="relative z-10 max-w-7xl mx-auto">
+      <div class="max-w-3xl">
+        <!-- H1 requirement matching exact reference screenshot text and blue serif styling -->
+        <h1 class="text-4xl-rx sm:text-5xl-rx lg:text-6xl font-serif font-bold tracking-tight text-rx-blue mb-8 drop-shadow-md leading-tight">
+          Your Trusted Plumber in Orange County, CA
+        </h1>
 
-          <!-- Credential Strip -->
-          <div class="inline-flex flex-wrap items-center gap-3 pt-6 border-t border-white/15 text-xs-rx font-mono text-rx-steel">
-            <span class="text-white font-medium">CSLB LIC. #1008868</span>
-            <span>|</span>
-            <span class="text-white font-medium">BONDED + INSURED</span>
-            <span>|</span>
-            <span class="text-white font-medium">OPEN 24/7</span>
-            <span>|</span>
-            <span class="text-white font-medium">FULLERTON, CA</span>
-          </div>
-        </div>
-
-        <!-- Right Column: Bright, Visible Vertical Photo Frame -->
-        <div class="lg:col-span-5 relative">
-          <div class="relative w-full rounded-[12px] overflow-hidden border-2 border-white/20 shadow-2xl bg-rx-ink h-[440px] sm:h-[500px]">
-            <img
-              src="/images/real-photos/tech-root-removal.jpg"
-              alt="Rooter-X technician Rico displaying camera-proven sewer root clearing"
-              class="w-full h-full object-cover object-top sm:object-center brightness-105 contrast-105"
-              width="600"
-              height="800"
-              fetchpriority="high"
-            />
-            <div class="absolute bottom-0 inset-x-0 bg-rx-ink/85 backdrop-blur-sm p-4 text-white border-t border-white/15">
-              <span class="font-mono text-xs-rx uppercase text-rx-blue block font-semibold">Real Rooter-X Technician</span>
-              <span class="text-sm-rx font-medium">Main Line Cleanout Sewer Root Removal</span>
-            </div>
-          </div>
+        <!-- CALL NOW Button matching reference screenshot with brand blue -->
+        <div class="pt-2">
+          <a
+            href={BUSINESS.phoneHref}
+            class="inline-block bg-rx-blue hover:bg-rx-blue-deep text-white font-display font-bold text-lg-rx sm:text-xl-rx px-8 py-4 rounded-[4px] shadow-xl transition-all duration-150 uppercase tracking-wide border border-white/20"
+          >
+            CALL NOW! - {BUSINESS.phoneDisplay}
+          </a>
         </div>
       </div>
     </div>
