@@ -1,0 +1,65 @@
+---
+import { ShieldCheck, Shield, FileCheck, Tag, Video } from "lucide-astro";
+
+const proofs = [
+  {
+    icon: ShieldCheck,
+    title: "CSLB licensed",
+    subtitle: "State licensed contractor",
+  },
+  {
+    icon: Shield,
+    title: "Bonded and insured",
+    subtitle: "Coverage on every job",
+  },
+  {
+    icon: FileCheck,
+    title: "Written guarantee",
+    subtitle: "On workmanship, in writing",
+  },
+  {
+    icon: Tag,
+    title: "Upfront pricing",
+    subtitle: "Flat price before work starts",
+  },
+  {
+    icon: Video,
+    title: "Re-inspected on camera",
+    subtitle: "Proof the fix worked",
+  },
+];
+---
+
+<section class="w-full bg-rx-blue text-white py-12 px-4 sm:px-6 lg:px-8 border-y border-hairline">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header row -->
+    <div class="flex flex-col md:flex-row md:items-baseline justify-between gap-4 mb-10 pb-6 border-b border-white/20">
+      <h2 class="text-2xl-rx sm:text-3xl-rx font-display font-bold tracking-tight">
+        Why Rooter-X
+      </h2>
+      <span class="font-mono text-sm-rx sm:text-base-rx text-white/90 font-medium tracking-wide">
+        CAMERA-PROVEN DIAGNOSTIC PROOF.
+      </span>
+    </div>
+
+    <!-- 5 Item Icon Row -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+      {proofs.map((item) => {
+        const IconComponent = item.icon;
+        return (
+          <div class="flex flex-col items-start bg-white/10 p-5 rounded-[8px] border border-white/15">
+            <div class="mb-4 p-2.5 bg-white/10 rounded-[6px]">
+              <IconComponent class="w-7 h-7 text-white stroke-[1.5]" />
+            </div>
+            <h3 class="text-base-rx font-display font-semibold mb-1 text-white">
+              {item.title}
+            </h3>
+            <p class="text-xs-rx font-body text-white/80">
+              {item.subtitle}
+            </p>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>

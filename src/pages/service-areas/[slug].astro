@@ -1,0 +1,426 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import UtilityBar from "@/components/shell/UtilityBar.astro";
+import Header from "@/components/shell/Header.astro";
+import Footer from "@/components/shell/Footer.astro";
+import MobileActionBar from "@/components/shell/MobileActionBar.astro";
+import CredibilityBlock from "@/components/blocks/CredibilityBlock.astro";
+import ContactForm from "@/components/ui/ContactForm.astro";
+import Button from "@/components/ui/Button.astro";
+import { BUSINESS } from "@/config/business";
+import { SERVICES } from "@/data/services";
+import { CITIES, type CityData } from "@/data/cities";
+import { MapPin, ArrowRight, ShieldCheck, Clock, Award, CheckCircle2, Wrench } from "lucide-astro";
+
+export async function getStaticPaths() {
+  return CITIES.map((city) => ({
+    params: { slug: city.slug },
+    props: { city },
+  }));
+}
+
+export interface Props {
+  city: CityData;
+}
+
+const { city } = Astro.props;
+
+// Filter nearby cities
+const nearbyCities = CITIES.filter((c) => city.nearbyCitySlugs.includes(c.slug));
+
+// Local Business Schema for City
+const citySchema = {
+  "@context": "https://schema.org",
+  "@type": "Plumber",
+  "name": `${BUSINESS.name} - ${city.name}`,
+  "description": `Licensed emergency plumbing, sewer camera inspection, hydro jetting, and drain cleaning services in ${city.name}, CA.`,
+  "telephone": BUSINESS.phoneDisplay,
+  "areaServed": {
+    "@type": "City",
+    "name": city.name,
+    "containedInPlace": {
+      "@type": "State",
+      "name": "California"
+    }
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": city.faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    },
+  })),
+};
+
+const commonProblems = [
+  {
+    title: "Slab Foundations",
+    description: "Skilled in detecting and repairing foundation-related plumbing issues."
+  },
+  {
+    title: "Seismic Activity",
+    description: "Our plumbing solutions are designed to withstand local earthquake risks."
+  },
+  {
+    title: "Erosion & Soil Shifts",
+    description: "We implement safeguards to protect your system from soil instability."
+  },
+  {
+    title: "High Water Pressure",
+    description: "We diagnose and correct excessive pressure to protect your fixtures and pipes."
+  },
+  {
+    title: "Saltwater Corrosion",
+    description: "Coastal exposure requires corrosion-resistant plumbing solutions – we deliver them."
+  },
+  {
+    title: "Hard Water",
+    description: "We offer effective water conditioning to reduce scale buildup and prolong fixture life."
+  },
+  {
+    title: "Aging Pipes",
+    description: "Older homes often hide outdated plumbing — our team can upgrade them efficiently."
+  },
+  {
+    title: "Root Intrusion",
+    description: "Tree roots in sewer lines? We've got the tools to clear them out and prevent future issues."
+  },
+  {
+    title: "Seasonal Weather",
+    description: "From dry summers to stormy winters, our plumbing adapts with the seasons."
+  },
+  {
+    title: "High Water Tables",
+    description: "We address moisture-related problems due to elevated groundwater levels near the coast."
+  }
+];
+
+const whyChooseCity = [
+  {
+    title: "Exceptional Service",
+    description: `At Rooter-X Plumbing, providing outstanding service is more than a promise — it's our standard. Plumbing issues can disrupt your daily routine, so we strive to ensure every customer experiences clean and hassle-free service.`
+  },
+  {
+    title: "Experienced Professionals",
+    description: `Our team of expert plumbers in ${city.name} brings 20 years of hands-on experience and a dedication to quality workmanship. Whether it's a minor repair or a major installation, our plumbers in ${city.name}, CA are committed to delivering top-tier service.`
+  },
+  {
+    title: "Prompt Response",
+    description: `Plumbing emergencies can happen at any time, leaving you feeling overwhelmed. That's why our ${city.name} plumber team responds quickly to address issues such as burst pipes, clogged drains, and malfunctioning water heaters. You can rely on us to restore your plumbing system promptly.`
+  },
+  {
+    title: "Transparent Pricing",
+    description: `We believe in honesty and transparency. Our ${city.name} plumber team provides accurate estimates and upfront pricing so you never encounter hidden fees. With us, you always receive fair and honest pricing for plumbing in ${city.name}.`
+  },
+  {
+    title: "Quality Workmanship",
+    description: `From using top-grade materials to applying industry-best techniques, our ${city.name} plumbers team ensures that every job meets the highest standards. Whether you need repairs or installations, we guarantee durable and reliable results.`
+  }
+];
+---
+
+<BaseLayout
+  title={`Plumber in ${city.name}, CA | Rooter-X Plumbing`}
+  description={`Licensed 24/7 plumber in ${city.name}, CA. Sewer camera inspections, hydro jetting, drain cleaning, and pipe repair across ${city.neighborhoods.slice(0, 3).join(", ")}.`}
+  schemaJson={[citySchema, faqSchema]}
+>
+  <UtilityBar slot="utility-bar" />
+  <Header slot="header" />
+
+  <!-- Hero Header with Background Photo (Matching Screenshot) -->
+  <section class="relative bg-rx-ink text-white py-16 lg:py-24 border-b border-hairline overflow-hidden">
+    <!-- Background Image Overlay -->
+    <div class="absolute inset-0 z-0 opacity-25">
+      <img
+        src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=80"
+        alt={`Plumbing service background for ${city.name}, CA`}
+        class="w-full h-full object-cover"
+        width="1600"
+        height="600"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 bg-rx-ink/70"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 bg-rx-blue/20 text-rx-blue font-mono text-xs-rx font-semibold px-3 py-1 rounded-[6px] mb-4 border border-rx-blue/30">
+          <MapPin class="w-3.5 h-3.5" />
+          <span>Orange County Service Area</span>
+        </div>
+        <h1 class="text-3xl-rx sm:text-4xl-rx lg:text-5xl font-display font-bold text-white mb-4 tracking-tight">
+          {city.name}, CA Plumber
+        </h1>
+        <p class="text-lg-rx text-rx-steel font-body measure-prose mb-8 mx-auto">
+          24/7 licensed sewer diagnostics, hydro jetting, drain clearing, and pipe restoration in {city.name}.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <Button href={BUSINESS.phoneHref} variant="blue">
+            Call {BUSINESS.phoneDisplay}
+          </Button>
+          <Button href="#city-contact" variant="outline" class="text-white border-white/30 hover:bg-white/10">
+            Get a Quote for {city.name}
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Localized Detail Summary Strip -->
+  <section class="bg-white border-b border-hairline py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-body text-sm-rx">
+        <div class="p-4 bg-rx-paper rounded-[8px] border border-hairline">
+          <span class="font-mono text-xs-rx uppercase text-rx-steel block mb-1">Housing Era</span>
+          <p class="font-display font-semibold text-rx-ink">{city.housingEra}</p>
+        </div>
+
+        <div class="p-4 bg-rx-paper rounded-[8px] border border-hairline">
+          <span class="font-mono text-xs-rx uppercase text-rx-steel block mb-1">Common Pipe Materials</span>
+          <p class="font-display font-semibold text-rx-ink">{city.commonPipeMaterials}</p>
+        </div>
+
+        <div class="p-4 bg-rx-paper rounded-[8px] border border-hairline">
+          <span class="font-mono text-xs-rx uppercase text-rx-steel block mb-1">Local Sewer Challenges</span>
+          <p class="font-display font-semibold text-rx-ink">{city.localSewerIssues}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Intro Section -->
+  <section class="section bg-white border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-8">
+          <h2 class="text-2xl-rx sm:text-3xl-rx font-display text-rx-ink mb-6 scroll-reveal">
+            Local Plumbing & Sewer Services in {city.name}
+          </h2>
+
+          <div class="space-y-4 text-base-rx text-rx-ink/90 font-body measure-prose mb-8">
+            {city.introParagraphs.map((para) => (
+              <p>{para}</p>
+            ))}
+          </div>
+
+          <!-- Neighborhoods List -->
+          <div class="p-6 bg-rx-paper rounded-[8px] border border-hairline">
+            <h3 class="text-sm-rx font-mono font-semibold uppercase text-rx-steel mb-3">
+              Neighborhoods Served in {city.name}:
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              {city.neighborhoods.map((hood) => (
+                <span class="px-3 py-1 bg-white rounded-[6px] border border-hairline text-sm-rx text-rx-ink font-medium">
+                  {hood}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 bg-rx-ink text-white p-6 rounded-[8px] border border-hairline">
+          <h3 class="text-lg-rx font-display font-bold mb-4">
+            Need Immediate Service in {city.name}?
+          </h3>
+          <p class="text-sm-rx text-rx-steel mb-6">
+            Our fully equipped service trucks operate 24/7 across {city.name} with upfront flat pricing.
+          </p>
+          <div class="space-y-3 font-mono text-sm-rx mb-6">
+            <div class="flex items-center justify-between pb-2 border-b border-white/10">
+              <span class="text-rx-steel">Hours:</span>
+              <span class="text-white">Open 24/7</span>
+            </div>
+            <div class="flex items-center justify-between pb-2 border-b border-white/10">
+              <span class="text-rx-steel">License:</span>
+              <span class="text-white">CSLB #1008868</span>
+            </div>
+            <div class="flex items-center justify-between pb-2 border-b border-white/10">
+              <span class="text-rx-steel">Response:</span>
+              <span class="text-rx-blue">30–45 mins</span>
+            </div>
+          </div>
+          <Button href={BUSINESS.phoneHref} variant="blue" class="w-full">
+            Call {BUSINESS.phoneDisplay}
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW SECTION: Common Plumbing Problems in [City], CA -->
+  <section class="section bg-rx-paper border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10 max-w-4xl">
+        <h2 class="text-2xl-rx sm:text-3xl-rx font-display text-rx-ink mb-4 scroll-reveal">
+          Common Plumbing Problems in {city.name}, CA
+        </h2>
+        <p class="text-base-rx text-rx-ink/90 font-body measure-prose mb-4">
+          Living in {city.name} comes with its share of plumbing complications that demand local expertise. From the effects of coastal living to geological factors like erosion and seismic activity, homes and businesses here face unique plumbing pressures. At Rooter-X Plumbing, we're equipped with the skills and experience to handle these challenges with tailored solutions.
+        </p>
+        <p class="text-base-rx text-rx-ink/90 font-body measure-prose">
+          From aging infrastructure in historic homes to saltwater corrosion and shifting foundations, we take a proactive approach to ensure your plumbing system is built to last. Some common causes of plumbing challenges in {city.name} and nearby area include:
+        </p>
+      </div>
+
+      <!-- 10 Common Problem Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        {commonProblems.map((prob) => (
+          <div class="bg-white p-5 rounded-[8px] border border-hairline flex flex-col justify-between">
+            <div>
+              <h3 class="text-base-rx font-display font-bold text-rx-ink mb-2">
+                {prob.title}
+              </h3>
+              <p class="text-xs-rx text-rx-ink/80">
+                {prob.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="section bg-white border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <h2 class="text-2xl-rx sm:text-3xl-rx font-display text-rx-ink mb-3 scroll-reveal">
+          Plumbing Services Available in {city.name}
+        </h2>
+        <p class="text-base-rx text-rx-steel measure-prose">
+          Select any service below for full technical details, pricing, and scheduling.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {SERVICES.map((svc) => (
+          <a
+            href={`/services/${svc.slug}`}
+            class="p-5 bg-rx-paper rounded-[8px] border border-hairline hover:border-rx-blue transition-colors flex flex-col justify-between group"
+          >
+            <div>
+              <span class="font-mono text-xs-rx text-rx-blue uppercase block mb-1">
+                Service 0{svc.order}
+              </span>
+              <h3 class="text-base-rx font-display font-bold text-rx-ink group-hover:text-rx-blue transition-colors mb-2">
+                {svc.title}
+              </h3>
+              <p class="text-xs-rx text-rx-steel line-clamp-2">
+                {svc.shortDescription}
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-hairline flex items-center justify-between font-mono text-xs-rx text-rx-blue">
+              <span>View details</span>
+              <ArrowRight class="w-3.5 h-3.5" />
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW SECTION: Why Choose Rooter-X Plumbing in [City], CA -->
+  <section class="section bg-rx-paper border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10 max-w-4xl">
+        <h2 class="text-2xl-rx sm:text-3xl-rx font-display text-rx-ink mb-4 scroll-reveal">
+          Why Choose Rooter-X Plumbing in {city.name}, CA
+        </h2>
+        <p class="text-base-rx text-rx-ink/90 font-body measure-prose">
+          When it comes to selecting a trusted {city.name} plumber, here's why Rooter-X Plumbing stands out from the rest:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {whyChooseCity.map((block) => (
+          <div class="bg-white p-6 rounded-[8px] border border-hairline">
+            <h3 class="text-lg-rx font-display font-bold text-rx-ink mb-2">
+              {block.title}
+            </h3>
+            <p class="text-sm-rx text-rx-ink/80">
+              {block.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Credibility Block -->
+  <CredibilityBlock />
+
+  <!-- Local FAQs Section -->
+  <section class="section bg-white border-b border-hairline">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10 text-center">
+        <h2 class="text-2xl-rx sm:text-3xl-rx font-display text-rx-ink mb-3 scroll-reveal">
+          {city.name} Plumbing FAQs
+        </h2>
+        <p class="text-base-rx text-rx-steel">
+          Answers to common localized plumbing and sewer questions in {city.name}.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        {city.faqs.map((faq, idx) => (
+          <details class="group bg-rx-paper rounded-[8px] border border-hairline p-5 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between font-display text-base-rx font-semibold text-rx-ink cursor-pointer list-none">
+              <span>{idx + 1}. {faq.question}</span>
+              <svg class="w-5 h-5 text-rx-steel group-open:rotate-180 transition-transform duration-150" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+              </svg>
+            </summary>
+            <div class="mt-4 pt-4 border-t border-hairline text-sm-rx text-rx-ink/80 font-body measure-prose">
+              <p>{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="section bg-rx-paper border-b border-hairline" id="city-contact">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <ContactForm
+        heading={`Book a Plumber in ${city.name}`}
+        subheading={`Fill out the form below for immediate service in ${city.name} or surrounding Orange County communities.`}
+        idPrefix="city-contact-form"
+      />
+    </div>
+  </section>
+
+  <!-- Nearby Cities Grid -->
+  <section class="section bg-white border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8">
+        <h2 class="text-2xl-rx sm:text-3xl-rx font-display text-rx-ink mb-3 scroll-reveal">
+          Nearby Service Areas
+        </h2>
+        <p class="text-base-rx text-rx-steel">
+          We also provide rapid 24/7 service to communities neighboring {city.name}:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono text-sm-rx">
+        {nearbyCities.map((nCity) => (
+          <a
+            href={`/service-areas/${nCity.slug}`}
+            class="p-4 bg-rx-paper hover:bg-rx-blue hover:text-white rounded-[6px] border border-hairline transition-colors text-center font-medium"
+          >
+            Plumber in {nCity.name} →
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+  <MobileActionBar slot="mobile-action-bar" />
+</BaseLayout>

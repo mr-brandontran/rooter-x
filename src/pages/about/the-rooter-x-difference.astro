@@ -1,0 +1,155 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import UtilityBar from "@/components/shell/UtilityBar.astro";
+import Header from "@/components/shell/Header.astro";
+import Footer from "@/components/shell/Footer.astro";
+import MobileActionBar from "@/components/shell/MobileActionBar.astro";
+import CredibilityBlock from "@/components/blocks/CredibilityBlock.astro";
+import Button from "@/components/ui/Button.astro";
+import { BUSINESS } from "@/config/business";
+import { Video, ShieldCheck, Tag, FileCheck, Award, CheckCircle2 } from "lucide-astro";
+---
+
+<BaseLayout
+  title="The Rooter-X Difference | Camera Proof & Upfront Pricing"
+  description="Discover The Rooter-X Difference: quick escrow turnarounds, 20 years experience, Total-C drain treatments, PHCC membership, and camera video verification."
+>
+  <UtilityBar slot="utility-bar" />
+  <Header slot="header" />
+
+  <section class="bg-rx-ink text-white py-14 lg:py-20 border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="inline-block bg-rx-blue/20 text-rx-blue font-mono text-xs-rx font-semibold px-3 py-1 rounded-[6px] mb-4 border border-rx-blue/30">
+          Rooter-X Standards
+        </span>
+        <h1 class="text-3xl-rx sm:text-4xl-rx lg:text-5xl font-display font-bold text-white mb-4">
+          The Rooter-X Difference
+        </h1>
+        <p class="text-lg-rx text-rx-steel font-body measure-prose mb-8">
+          Empirical camera proof, 20 years of trade experience, and written guarantees on every plumbing job.
+        </p>
+        <Button href={BUSINESS.phoneHref} variant="blue">
+          Call {BUSINESS.phoneDisplay}
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white border-b border-hairline">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <!-- Core Pillar 1: No Reviews to Rent -->
+      <div class="p-8 bg-rx-paper rounded-[8px] border border-hairline">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="p-3 bg-rx-blue text-white rounded-[6px]">
+            <Video class="w-6 h-6" />
+          </div>
+          <h2 class="text-xl-rx sm:text-2xl-rx font-display font-bold text-rx-ink">
+            Camera Diagnostic Video Proof
+          </h2>
+        </div>
+        <p class="text-base-rx text-rx-ink/90 font-body measure-prose mb-4">
+          Many plumbing websites purchase generic review widgets or display unverified star ratings. As a brand-new business, Rooter-X Plumbing operates on a simple standard: we don't rent reviews. We show you real video proof.
+        </p>
+        <p class="text-base-rx text-rx-ink/90 font-body measure-prose">
+          Every sewer lateral inspection and hydro jetting service includes high-definition optical video recordings, allowing you to see the exact condition of your pipe walls in real time.
+        </p>
+      </div>
+
+      <!-- Section: Quick turnarounds during Escrow -->
+      <div class="space-y-3 font-body text-base-rx text-rx-ink/90 border-t border-hairline pt-8">
+        <h2 class="text-xl-rx font-display font-bold text-rx-ink italic">
+          Quick turnarounds during Escrow
+        </h2>
+        <p class="measure-prose">
+          We know how stressful getting an inspection done before the close of escrow can be. That's why we provide fast scheduling to get the inspection completed before the close of escrow. With our rapid camera diagnostic service, you'll get your prospective home's main sewer line inspected in record time.
+        </p>
+      </div>
+
+      <!-- Section: Locally Owned and Operated -->
+      <div class="space-y-3 font-body text-base-rx text-rx-ink/90 border-t border-hairline pt-8">
+        <h2 class="text-xl-rx font-display font-bold text-rx-ink">
+          Locally Owned and Operated
+        </h2>
+        <p class="measure-prose">
+          Rooter-X Plumbing is locally owned and operated with over 20 years of hands-on experience in home inspections, sewer camera diagnostics, and trenchless pipe restoration across Orange County, CA.
+        </p>
+      </div>
+
+      <!-- Section: Total-C Drain Treatment -->
+      <div class="space-y-3 font-body text-base-rx text-rx-ink/90 border-t border-hairline pt-8">
+        <h2 class="text-xl-rx font-display font-bold text-rx-ink">
+          Total-C® Drain Treatment
+        </h2>
+        <p class="measure-prose">
+          At Rooter-X Plumbing we use premium drain treatment solutions like Total-C, an all-natural synergetic blend of sludge eating bacteria combined with an all-natural orange based degreaser to maintain clean waste lines naturally.
+        </p>
+      </div>
+
+      <!-- Section: Proud Member of PHCC -->
+      <div class="space-y-4 border-t border-hairline pt-8">
+        <h2 class="text-xl-rx font-display font-bold text-rx-ink">
+          Proud Member of PHCC
+        </h2>
+        <p class="text-base-rx text-rx-ink/90 measure-prose mb-6">
+          We strictly adhere to the highest trade ethics and technical installation guidelines established by the Plumbing-Heating-Cooling Contractors Association (PHCC).
+        </p>
+
+        <!-- PHCC Membership Badge Box -->
+        <div class="p-6 bg-rx-paper rounded-[8px] border border-hairline max-w-md">
+          <div class="flex items-center gap-4">
+            <div class="p-4 bg-white rounded-[6px] border border-hairline font-mono font-bold text-rx-ink text-center">
+              <span class="text-xl-rx text-rx-blue block font-display">PHCC</span>
+              <span class="text-xs-rx text-rx-steel block">MEMBER</span>
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-base-rx text-rx-ink">
+                Plumbing-Heating-Cooling Contractors
+              </h3>
+              <p class="text-xs-rx text-rx-steel font-mono">
+                Association Member · Dedicated to Quality & Safety
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Core Pillar 2: Upfront Flat Pricing -->
+      <div class="p-8 bg-rx-paper rounded-[8px] border border-hairline">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="p-3 bg-rx-blue text-white rounded-[6px]">
+            <Tag class="w-6 h-6" />
+          </div>
+          <h2 class="text-xl-rx sm:text-2xl-rx font-display font-bold text-rx-ink">
+            Upfront Flat-Rate Pricing
+          </h2>
+        </div>
+        <p class="text-base-rx text-rx-ink/90 font-body measure-prose">
+          We quote complete flat prices before any work begins. You will never face surprise hourly surcharges, open-ended diagnostic fees, or pressure tactics.
+        </p>
+      </div>
+
+      <!-- Core Pillar 3: Re-inspected on Camera -->
+      <div class="p-8 bg-rx-paper rounded-[8px] border border-hairline">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="p-3 bg-rx-blue text-white rounded-[6px]">
+            <FileCheck class="w-6 h-6" />
+          </div>
+          <h2 class="text-xl-rx sm:text-2xl-rx font-display font-bold text-rx-ink">
+            Re-Inspected on Camera
+          </h2>
+        </div>
+        <p class="text-base-rx text-rx-ink/90 font-body measure-prose">
+          Following hydro jetting, drain clearing, or trenchless CIPP relining, we re-run our HD camera through the pipe to prove that 100% of internal obstructions, roots, and scale were cleared.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <CredibilityBlock />
+
+  <Footer slot="footer" />
+  <MobileActionBar slot="mobile-action-bar" />
+</BaseLayout>

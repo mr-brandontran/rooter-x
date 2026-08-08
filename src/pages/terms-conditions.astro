@@ -1,0 +1,45 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import UtilityBar from "@/components/shell/UtilityBar.astro";
+import Header from "@/components/shell/Header.astro";
+import Footer from "@/components/shell/Footer.astro";
+import MobileActionBar from "@/components/shell/MobileActionBar.astro";
+import { BUSINESS } from "@/config/business";
+---
+
+<BaseLayout
+  title="Terms & Conditions | Rooter-X Plumbing"
+  description="Terms and conditions of service for Rooter-X Plumbing (CSLB Lic. #1008868)."
+>
+  <UtilityBar slot="utility-bar" />
+  <Header slot="header" />
+
+  <section class="section max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h1 class="text-3xl-rx sm:text-4xl-rx font-display font-bold text-rx-ink mb-6">
+      Terms & Conditions
+    </h1>
+    <p class="font-mono text-xs-rx text-rx-steel mb-8">
+      Last Updated: July 2026 · {BUSINESS.name} ({BUSINESS.license})
+    </p>
+
+    <div class="space-y-6 text-base-rx text-rx-ink/90 font-body measure-prose border-t border-hairline pt-6">
+      <h2 class="text-xl-rx font-display font-bold text-rx-ink">1. Services Offered</h2>
+      <p>
+        Rooter-X Plumbing provides residential and commercial plumbing, sewer diagnostics, drain cleaning, hydro jetting, trenchless pipe repair, water heater installation, and new construction subcontracting in California under CSLB License #1008868.
+      </p>
+
+      <h2 class="text-xl-rx font-display font-bold text-rx-ink">2. Written Estimates & Workmanship</h2>
+      <p>
+        All work is performed under written estimates provided prior to project initiation. Workmanship warranties apply as detailed in individual service agreements.
+      </p>
+
+      <h2 class="text-xl-rx font-display font-bold text-rx-ink">3. CSLB Compliance</h2>
+      <p>
+        Contractors are required by law to be licensed and regulated by the Contractors State License Board. Any questions concerning a contractor may be referred to the Registrar, Contractors State License Board, P.O. Box 26000, Sacramento, CA 95826.
+      </p>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+  <MobileActionBar slot="mobile-action-bar" />
+</BaseLayout>

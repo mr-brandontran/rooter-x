@@ -1,0 +1,57 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import UtilityBar from "@/components/shell/UtilityBar.astro";
+import Header from "@/components/shell/Header.astro";
+import Footer from "@/components/shell/Footer.astro";
+import MobileActionBar from "@/components/shell/MobileActionBar.astro";
+import CredibilityBlock from "@/components/blocks/CredibilityBlock.astro";
+import ReviewsBlock from "@/components/blocks/ReviewsBlock.astro";
+import ContactForm from "@/components/ui/ContactForm.astro";
+import Button from "@/components/ui/Button.astro";
+---
+
+<BaseLayout
+  title="Shell Checkpoint Demo | Rooter-X Plumbing"
+  description="Verification preview of Rooter-X Plumbing global shell, header with dropdowns, mobile drawer, utility bar, footer, credibility block, and form."
+>
+  <UtilityBar slot="utility-bar" />
+  <Header slot="header" />
+
+  <section class="section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-12 border-b border-hairline pb-8">
+      <span class="inline-block bg-rx-blue/10 text-rx-blue font-mono text-xs-rx font-semibold px-3 py-1 rounded-[6px] mb-3">
+        Phase 2 Checkpoint Verification
+      </span>
+      <h1 class="text-3xl-rx sm:text-4xl-rx font-display text-rx-ink mb-4">
+        Global Shell & Components Preview
+      </h1>
+      <p class="text-lg-rx text-rx-steel measure-prose">
+        This is a blank page layout verifying the global shell structure prior to building out content pages.
+      </p>
+    </div>
+
+    <!-- UI Button Variants -->
+    <div class="mb-16 bg-white p-8 rounded-[8px] border border-hairline">
+      <h2 class="text-xl-rx font-display text-rx-ink mb-4">Button Variants (150ms micro-motion, 1px press offset)</h2>
+      <div class="flex flex-wrap gap-4 items-center">
+        <Button variant="blue">Solid Blue Action</Button>
+        <Button variant="ink">Solid Ink Action</Button>
+        <Button variant="outline">Outline Action</Button>
+      </div>
+    </div>
+
+    <!-- Contact Form Component -->
+    <div class="mb-16">
+      <ContactForm />
+    </div>
+  </section>
+
+  <!-- Credibility Block -->
+  <CredibilityBlock />
+
+  <!-- Reviews Block (Returns null while googlePlaceId is null) -->
+  <ReviewsBlock />
+
+  <Footer slot="footer" />
+  <MobileActionBar slot="mobile-action-bar" />
+</BaseLayout>

@@ -1,0 +1,14 @@
+# dependencies
+/node_modules
+
+# build outputs
+/dist
+/.astro
+
+# environment files
+.env
+.env.*
+.dev.vars
+
+# OS generated files
+.DS_Store

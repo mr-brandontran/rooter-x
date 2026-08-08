@@ -1,0 +1,91 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import UtilityBar from "@/components/shell/UtilityBar.astro";
+import Header from "@/components/shell/Header.astro";
+import Footer from "@/components/shell/Footer.astro";
+import MobileActionBar from "@/components/shell/MobileActionBar.astro";
+import CredibilityBlock from "@/components/blocks/CredibilityBlock.astro";
+import ContactForm from "@/components/ui/ContactForm.astro";
+import Button from "@/components/ui/Button.astro";
+import { BUSINESS } from "@/config/business";
+import { BLOG_POSTS, type BlogPost } from "@/data/blog";
+import { Calendar, User, ArrowLeft } from "lucide-astro";
+
+export async function getStaticPaths() {
+  return BLOG_POSTS.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+export interface Props {
+  post: BlogPost;
+}
+
+const { post } = Astro.props;
+---
+
+<BaseLayout
+  title={`${post.title} | Rooter-X Plumbing Blog`}
+  description={post.excerpt}
+>
+  <UtilityBar slot="utility-bar" />
+  <Header slot="header" />
+
+  <section class="bg-rx-ink text-white py-14 lg:py-20 border-b border-hairline">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <a href="/blog/" class="inline-flex items-center gap-1 font-mono text-xs-rx text-rx-blue hover:underline mb-6">
+        <ArrowLeft class="w-3.5 h-3.5" /> Back to all articles
+      </a>
+      <div class="flex items-center gap-3 text-xs-rx font-mono text-rx-steel mb-3">
+        <span>{post.date}</span>
+        <span>·</span>
+        <span class="text-rx-blue">{post.category}</span>
+        <span>·</span>
+        <span>By {post.author}</span>
+      </div>
+      <h1 class="text-3xl-rx sm:text-4xl-rx font-display font-bold text-white mb-4">
+        {post.title}
+      </h1>
+      <p class="text-lg-rx text-rx-steel measure-prose">
+        {post.excerpt}
+      </p>
+    </div>
+  </section>
+
+  <section class="section bg-white border-b border-hairline">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10 h-80 sm:h-96 w-full overflow-hidden rounded-[8px] border border-hairline">
+        <img
+          src={post.image}
+          alt={post.title}
+          class="w-full h-full object-cover"
+          width="1200"
+          height="600"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="space-y-6 text-base-rx text-rx-ink/90 font-body measure-prose">
+        {post.content.map((paragraph) => (
+          <p>{paragraph}</p>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-rx-paper border-b border-hairline">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <ContactForm
+        heading="Have Questions About Your Sewer or Plumbing System?"
+        subheading="Speak directly with our technical team for immediate diagnostic advice or camera scheduling."
+        idPrefix="blog-contact"
+      />
+    </div>
+  </section>
+
+  <CredibilityBlock />
+
+  <Footer slot="footer" />
+  <MobileActionBar slot="mobile-action-bar" />
+</BaseLayout>

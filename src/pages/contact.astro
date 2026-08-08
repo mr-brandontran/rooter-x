@@ -1,0 +1,129 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import UtilityBar from "@/components/shell/UtilityBar.astro";
+import Header from "@/components/shell/Header.astro";
+import Footer from "@/components/shell/Footer.astro";
+import MobileActionBar from "@/components/shell/MobileActionBar.astro";
+import CredibilityBlock from "@/components/blocks/CredibilityBlock.astro";
+import ContactForm from "@/components/ui/ContactForm.astro";
+import Button from "@/components/ui/Button.astro";
+import { BUSINESS } from "@/config/business";
+import { Phone, Mail, Clock, MapPin, ShieldCheck } from "lucide-astro";
+---
+
+<BaseLayout
+  title="Contact Rooter-X Plumbing | 24/7 Dispatch Orange County, CA"
+  description="Contact Rooter-X Plumbing for immediate 24/7 emergency service, camera inspection scheduling, or upfront project quotes in Orange County, CA."
+>
+  <UtilityBar slot="utility-bar" />
+  <Header slot="header" />
+
+  <section class="bg-rx-ink text-white py-14 lg:py-20 border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h1 class="text-3xl-rx sm:text-4xl-rx lg:text-5xl font-display font-bold text-white mb-4">
+          Contact Rooter-X Plumbing
+        </h1>
+        <p class="text-lg-rx text-rx-steel font-body measure-prose mb-8">
+          Available 24 hours a day, 7 days a week for emergency dispatch and scheduled camera inspection service across Orange County, CA.
+        </p>
+        <Button href={BUSINESS.phoneHref} variant="blue">
+          Call {BUSINESS.phoneDisplay}
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <!-- Contact Info Col -->
+        <div class="lg:col-span-5 space-y-8">
+          <div>
+            <h2 class="text-2xl-rx font-display font-bold text-rx-ink mb-4">
+              Get in Touch Directly
+            </h2>
+            <p class="text-base-rx text-rx-steel measure-prose">
+              Our dispatch team responds immediately to phone calls and message submissions.
+            </p>
+          </div>
+
+          <div class="space-y-4 font-mono text-sm-rx">
+            <div class="p-5 bg-rx-paper rounded-[8px] border border-hairline flex items-start gap-4">
+              <MapPin class="w-5 h-5 text-rx-blue flex-shrink-0 mt-0.5" />
+              <div>
+                <span class="text-xs-rx text-rx-steel uppercase block mb-1">Office Location</span>
+                <span class="text-base-rx text-rx-ink font-bold block">
+                  {BUSINESS.addressLines?.street} {BUSINESS.addressLines?.suite}
+                </span>
+                <span class="text-sm-rx text-rx-steel block">
+                  {BUSINESS.addressLines?.cityStateZip}
+                </span>
+              </div>
+            </div>
+
+            <div class="p-5 bg-rx-paper rounded-[8px] border border-hairline flex items-start gap-4">
+              <Phone class="w-5 h-5 text-rx-blue flex-shrink-0 mt-0.5" />
+              <div>
+                <span class="text-xs-rx text-rx-steel uppercase block mb-1">Phone Dispatch</span>
+                <a href={BUSINESS.phoneHref} class="text-lg-rx text-rx-blue font-bold hover:underline">
+                  {BUSINESS.phoneDisplay}
+                </a>
+              </div>
+            </div>
+
+            <div class="p-5 bg-rx-paper rounded-[8px] border border-hairline flex items-start gap-4">
+              <Mail class="w-5 h-5 text-rx-blue flex-shrink-0 mt-0.5" />
+              <div>
+                <span class="text-xs-rx text-rx-steel uppercase block mb-1">Email Address</span>
+                <a href={`mailto:${BUSINESS.email}`} class="text-base-rx text-rx-ink font-bold hover:underline break-all">
+                  {BUSINESS.email}
+                </a>
+              </div>
+            </div>
+
+            <div class="p-5 bg-rx-paper rounded-[8px] border border-hairline flex items-start gap-4">
+              <Clock class="w-5 h-5 text-rx-blue flex-shrink-0 mt-0.5" />
+              <div>
+                <span class="text-xs-rx text-rx-steel uppercase block mb-1">Business Hours</span>
+                <span class="text-base-rx text-rx-ink font-bold">Open 24/7 365 Days</span>
+              </div>
+            </div>
+
+            <div class="p-5 bg-rx-paper rounded-[8px] border border-hairline flex items-start gap-4">
+              <ShieldCheck class="w-5 h-5 text-rx-blue flex-shrink-0 mt-0.5" />
+              <div>
+                <span class="text-xs-rx text-rx-steel uppercase block mb-1">Contractor License</span>
+                <span class="text-base-rx text-rx-ink font-bold">{BUSINESS.license}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Google Maps Embed for Orange County, CA -->
+          <div class="rounded-[8px] overflow-hidden border border-hairline h-64 bg-rx-paper">
+            <iframe
+              title="Rooter-X Plumbing Service Area Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d424143.8344605658!2d-117.95471675!3d33.68456735!2m3!1f0!2f0!3f0!2m3!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc925c54d5f7cf%3A0x6b4382d547f20224!2sOrange%20County%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Contact Form Col -->
+        <div class="lg:col-span-7">
+          <ContactForm idPrefix="contact-page-form" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CredibilityBlock />
+
+  <Footer slot="footer" />
+  <MobileActionBar slot="mobile-action-bar" />
+</BaseLayout>

@@ -1,0 +1,71 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import UtilityBar from "@/components/shell/UtilityBar.astro";
+import Header from "@/components/shell/Header.astro";
+import Footer from "@/components/shell/Footer.astro";
+import MobileActionBar from "@/components/shell/MobileActionBar.astro";
+import CredibilityBlock from "@/components/blocks/CredibilityBlock.astro";
+import Button from "@/components/ui/Button.astro";
+import { BUSINESS } from "@/config/business";
+import { CITIES } from "@/data/cities";
+import { MapPin, ArrowRight } from "lucide-astro";
+---
+
+<BaseLayout
+  title="Service Areas in Orange County, CA | Rooter-X Plumbing"
+  description="Rooter-X Plumbing serves all 24 cities in Orange County, CA with 24/7 emergency plumbing, sewer camera inspection, hydro jetting, and drain cleaning."
+>
+  <UtilityBar slot="utility-bar" />
+  <Header slot="header" />
+
+  <section class="bg-rx-ink text-white py-14 lg:py-20 border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h1 class="text-3xl-rx sm:text-4xl-rx lg:text-5xl font-display font-bold text-white mb-4">
+          Orange County Service Areas
+        </h1>
+        <p class="text-lg-rx text-rx-steel font-body measure-prose mb-8">
+          24/7 licensed plumbing, sewer diagnostics, and drain restoration across all 24 cities in Orange County, CA.
+        </p>
+        <Button href={BUSINESS.phoneHref} variant="blue">
+          Call {BUSINESS.phoneDisplay}
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {CITIES.map((city) => (
+          <a
+            href={`/service-areas/${city.slug}`}
+            class="p-6 bg-rx-paper rounded-[8px] border border-hairline hover:border-rx-blue transition-colors flex flex-col justify-between group"
+          >
+            <div>
+              <div class="flex items-center gap-2 text-rx-blue font-mono text-xs-rx font-semibold mb-2">
+                <MapPin class="w-3.5 h-3.5" />
+                <span>{city.isTop10 ? "Primary City" : "Orange County"}</span>
+              </div>
+              <h2 class="text-xl-rx font-display font-bold text-rx-ink group-hover:text-rx-blue transition-colors mb-2">
+                {city.name}
+              </h2>
+              <p class="text-xs-rx text-rx-steel mb-4 line-clamp-2">
+                {city.housingEra}
+              </p>
+            </div>
+            <div class="pt-3 border-t border-hairline flex items-center justify-between font-mono text-xs-rx font-semibold text-rx-blue">
+              <span>View {city.name} Services</span>
+              <ArrowRight class="w-4 h-4" />
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CredibilityBlock />
+
+  <Footer slot="footer" />
+  <MobileActionBar slot="mobile-action-bar" />
+</BaseLayout>

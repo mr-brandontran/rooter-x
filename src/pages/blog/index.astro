@@ -1,0 +1,84 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import UtilityBar from "@/components/shell/UtilityBar.astro";
+import Header from "@/components/shell/Header.astro";
+import Footer from "@/components/shell/Footer.astro";
+import MobileActionBar from "@/components/shell/MobileActionBar.astro";
+import CredibilityBlock from "@/components/blocks/CredibilityBlock.astro";
+import Button from "@/components/ui/Button.astro";
+import { BUSINESS } from "@/config/business";
+import { BLOG_POSTS } from "@/data/blog";
+import { ArrowRight, Calendar, User, Tag } from "lucide-astro";
+---
+
+<BaseLayout
+  title="Plumbing Blog & Technical Insights | Rooter-X Plumbing"
+  description="Technical plumbing articles, sewer diagnostic advice, and water heater guides for Orange County homeowners and property managers."
+>
+  <UtilityBar slot="utility-bar" />
+  <Header slot="header" />
+
+  <section class="bg-rx-ink text-white py-14 lg:py-20 border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h1 class="text-3xl-rx sm:text-4xl-rx lg:text-5xl font-display font-bold text-white mb-4">
+          Plumbing & Sewer Insights
+        </h1>
+        <p class="text-lg-rx text-rx-steel font-body measure-prose mb-8">
+          Direct technical advice on sewer line diagnostics, pipe materials, leak location, and water heating solutions in Orange County.
+        </p>
+        <Button href={BUSINESS.phoneHref} variant="blue">
+          Call {BUSINESS.phoneDisplay}
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {BLOG_POSTS.map((post) => (
+          <a
+            href={`/blog/${post.slug}`}
+            class="group flex flex-col justify-between bg-rx-paper rounded-[8px] border border-hairline overflow-hidden hover:border-rx-blue transition-colors"
+          >
+            <div>
+              <div class="h-48 w-full overflow-hidden bg-rx-ink">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-220"
+                  width="600"
+                  height="350"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-3 text-xs-rx font-mono text-rx-steel mb-2">
+                  <span>{post.date}</span>
+                  <span>·</span>
+                  <span class="text-rx-blue">{post.category}</span>
+                </div>
+                <h2 class="text-lg-rx font-display font-bold text-rx-ink group-hover:text-rx-blue transition-colors mb-3">
+                  {post.title}
+                </h2>
+                <p class="text-sm-rx text-rx-ink/80 mb-4 line-clamp-3">
+                  {post.excerpt}
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0 flex items-center justify-between font-mono text-xs-rx font-semibold text-rx-blue">
+              <span>Read article</span>
+              <ArrowRight class="w-4 h-4" />
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CredibilityBlock />
+
+  <Footer slot="footer" />
+  <MobileActionBar slot="mobile-action-bar" />
+</BaseLayout>

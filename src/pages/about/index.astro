@@ -1,0 +1,392 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import UtilityBar from "@/components/shell/UtilityBar.astro";
+import Header from "@/components/shell/Header.astro";
+import Footer from "@/components/shell/Footer.astro";
+import MobileActionBar from "@/components/shell/MobileActionBar.astro";
+import CredibilityBlock from "@/components/blocks/CredibilityBlock.astro";
+import ReviewsBlock from "@/components/blocks/ReviewsBlock.astro";
+import Button from "@/components/ui/Button.astro";
+import { BUSINESS } from "@/config/business";
+import { SERVICES } from "@/data/services";
+import { CITIES } from "@/data/cities";
+import { ShieldCheck, Award, FileCheck, CheckCircle2, Phone, Mail, MapPin, Clock, Users, Wrench } from "lucide-astro";
+
+const philosophyItems = [
+  {
+    title: "Upfront Pricing",
+    description: "Transparent costs, no hidden fees."
+  },
+  {
+    title: "24/7 Reliability",
+    description: "Fast response, often within the hour."
+  },
+  {
+    title: "Respect & Courtesy",
+    description: "From your first call to the final cleanup, we treat every home as if it were our own."
+  },
+  {
+    title: "Integrity First",
+    description: "We share the truth about your plumbing, whether we find issues or not, so you can make informed decisions with confidence."
+  }
+];
+
+const teamMembers = [
+  {
+    role: "Founder & Lead Plumbing Expert",
+    description: "With more than 20 years of hands-on experience across Orange County, our founder has built a reputation for tackling even the toughest plumbing problems with precision and care. Customers know our lead team not only for technical expertise but also for honesty, professionalism, and the ability to explain complex sewer issues in plain language."
+  },
+  {
+    role: "Customer Care & Scheduling Team",
+    description: "The heart of our customer support. From the first call to scheduling your appointment, our office team ensures that every customer feels heard, understood, and taken care of with patience and clear communication."
+  },
+  {
+    role: "Senior Field Plumbing Experts",
+    description: "Bringing decades of combined field experience in hydro jetting, camera inspection, slab leak detection, and trenchless pipe bursting. Their attention to detail and respect for each property make them trusted partners for homeowners and commercial clients."
+  }
+];
+---
+
+<BaseLayout
+  title="About Us | Rooter-X Plumbing"
+  description="Learn about Rooter-X Plumbing: Orange County's licensed and insured plumbing contractor serving Fullerton and all 24 OC cities with 20 years experience."
+>
+  <UtilityBar slot="utility-bar" />
+  <Header slot="header" />
+
+  <!-- Hero Banner -->
+  <section class="bg-rx-ink text-white py-14 lg:py-20 border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="inline-block bg-rx-blue/20 text-rx-blue font-mono text-xs-rx font-semibold px-3 py-1 rounded-[6px] mb-4 border border-rx-blue/30">
+          Licensed CSLB #1008868 · 20 Years Experience
+        </span>
+        <h1 class="text-3xl-rx sm:text-4xl-rx lg:text-5xl font-display font-bold text-white mb-4">
+          Who We Are
+        </h1>
+        <p class="text-lg-rx text-rx-steel font-body measure-prose mb-8">
+          Welcome to Rooter-X Plumbing — your trusted, fully licensed and insured plumbing partner serving Orange County, California.
+        </p>
+        <Button href={BUSINESS.phoneHref} variant="blue">
+          Call {BUSINESS.phoneDisplay}
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Who We Are -->
+  <section class="section bg-white border-b border-hairline">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 text-base-rx text-rx-ink/90 font-body measure-prose">
+      <h2 class="text-2xl-rx sm:text-3xl-rx font-display font-bold text-rx-ink mb-4 scroll-reveal">
+        Who We Are
+      </h2>
+      <p>
+        Welcome to <strong>Rooter-X Plumbing</strong> — your trusted, fully licensed and insured plumbing partner serving Orange County, California. Located at <strong>1440 N Harbor Blvd, Suite 840, Fullerton, CA</strong>, we are proud to deliver expert plumbing solutions around the clock, every day of the year.
+      </p>
+      <p>
+        Founded on a mission to combine technical excellence with honest, customer-first service, Rooter-X Plumbing brings over 20 years of hands-on plumbing and restoration experience to every job. Our team provides plumbing solutions that are dependable, affordable, and long-lasting.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 2: Our Philosophy -->
+  <section class="section bg-rx-paper border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10 max-w-3xl">
+        <h2 class="text-2xl-rx sm:text-3xl-rx font-display font-bold text-rx-ink mb-3 scroll-reveal">
+          Our Philosophy
+        </h2>
+        <p class="text-base-rx text-rx-steel measure-prose">
+          At Rooter-X Plumbing, we believe that plumbing solutions should be clear, honest, and stress-free.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {philosophyItems.map((item) => (
+          <div class="bg-white p-6 rounded-[8px] border border-hairline">
+            <h3 class="text-xl-rx font-display font-bold text-rx-ink mb-2">
+              {item.title}
+            </h3>
+            <p class="text-sm-rx sm:text-base-rx text-rx-ink/80">
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Real Field Work & Proof in Orange County -->
+  <section class="section bg-white border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10 text-center">
+        <h2 class="text-2xl-rx sm:text-3xl-rx font-display font-bold text-rx-ink mb-3 scroll-reveal">
+          Real Field Work & Proof in Orange County
+        </h2>
+        <p class="text-base-rx text-rx-steel max-w-2xl mx-auto">
+          Our licensed technicians in uniform on active excavation, trenchless lining, and repiping job sites.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div class="group relative h-72 rounded-[8px] overflow-hidden border border-hairline bg-rx-ink">
+          <img
+            src="/images/real-photos/tech-root-removal.jpg"
+            alt="Rooter-X technician pulling tree roots from main sewer line"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-220"
+            width="400"
+            height="500"
+            loading="lazy"
+          />
+          <div class="absolute bottom-0 inset-x-0 bg-rx-ink/80 p-3 text-white">
+            <span class="font-mono text-xs-rx uppercase text-rx-blue block font-semibold">Sewer Cleanout</span>
+            <span class="text-xs-rx font-medium block">Root Intrusion Removal</span>
+          </div>
+        </div>
+
+        <div class="group relative h-72 rounded-[8px] overflow-hidden border border-hairline bg-rx-ink">
+          <img
+            src="/images/real-photos/sewer-trench-excavation.jpg"
+            alt="Rooter-X technician in deep sewer trench excavation pit"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-220"
+            width="400"
+            height="500"
+            loading="lazy"
+          />
+          <div class="absolute bottom-0 inset-x-0 bg-rx-ink/80 p-3 text-white">
+            <span class="font-mono text-xs-rx uppercase text-rx-blue block font-semibold">Trench Excavation</span>
+            <span class="text-xs-rx font-medium block">Main Line Replacement</span>
+          </div>
+        </div>
+
+        <div class="group relative h-72 rounded-[8px] overflow-hidden border border-hairline bg-rx-ink">
+          <img
+            src="/images/real-photos/shower-repipe-installation.jpg"
+            alt="Rooter-X technician installing copper shower valve repipe"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-220"
+            width="400"
+            height="500"
+            loading="lazy"
+          />
+          <div class="absolute bottom-0 inset-x-0 bg-rx-ink/80 p-3 text-white">
+            <span class="font-mono text-xs-rx uppercase text-rx-blue block font-semibold">Custom Repipe</span>
+            <span class="text-xs-rx font-medium block">Copper Valve Installation</span>
+          </div>
+        </div>
+
+        <div class="group relative h-72 rounded-[8px] overflow-hidden border border-hairline bg-rx-ink">
+          <img
+            src="/images/real-photos/water-heater-service.png"
+            alt="Rooter-X technician servicing dual water heaters and gas lines"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-220"
+            width="400"
+            height="500"
+            loading="lazy"
+          />
+          <div class="absolute bottom-0 inset-x-0 bg-rx-ink/80 p-3 text-white">
+            <span class="font-mono text-xs-rx uppercase text-rx-blue block font-semibold">Water Heaters</span>
+            <span class="text-xs-rx font-medium block">System Replacement & Valves</span>
+          </div>
+        </div>
+
+        <div class="group relative h-72 rounded-[8px] overflow-hidden border border-hairline bg-rx-ink">
+          <img
+            src="/images/real-photos/epoxy-liner-prep.jpg"
+            alt="Structural epoxy pipe liner laid out in corridor prior to CIPP inversion"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-220"
+            width="400"
+            height="500"
+            loading="lazy"
+          />
+          <div class="absolute bottom-0 inset-x-0 bg-rx-ink/80 p-3 text-white">
+            <span class="font-mono text-xs-rx uppercase text-rx-blue block font-semibold">Trenchless CIPP</span>
+            <span class="text-xs-rx font-medium block">Epoxy Liner Preparation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Meet Our Team -->
+  <section class="section bg-white border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10 max-w-3xl">
+        <h2 class="text-2xl-rx sm:text-3xl-rx font-display font-bold text-rx-ink mb-3 scroll-reveal">
+          Meet Our Team
+        </h2>
+        <p class="text-base-rx text-rx-steel measure-prose">
+          Our strength lies in our people. Every member of the Rooter-X Plumbing team is dedicated to providing professional service with a personal touch.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {teamMembers.map((m) => (
+          <div class="bg-rx-paper p-8 rounded-[8px] border border-hairline flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-[6px] bg-rx-blue text-white flex items-center justify-center mb-4">
+                <Users class="w-6 h-6" />
+              </div>
+              <h3 class="text-xl-rx font-display font-bold text-rx-ink mb-3">
+                {m.role}
+              </h3>
+              <p class="text-sm-rx text-rx-ink/80 font-body">
+                {m.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Our Services Overview -->
+  <section class="section bg-rx-paper border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8 flex flex-col sm:flex-row items-start sm:items-baseline justify-between gap-4">
+        <div>
+          <h2 class="text-2xl-rx sm:text-3xl-rx font-display font-bold text-rx-ink mb-2">
+            Our Services
+          </h2>
+          <p class="text-base-rx text-rx-steel">
+            We provide a complete range of residential and commercial plumbing services, including:
+          </p>
+        </div>
+        <Button href="/services/" variant="outline">
+          View All Services →
+        </Button>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 font-mono text-sm-rx">
+        {SERVICES.map((svc) => (
+          <a
+            href={`/services/${svc.slug}`}
+            class="p-4 bg-white rounded-[6px] border border-hairline hover:border-rx-blue transition-colors text-center font-medium text-rx-ink hover:text-rx-blue"
+          >
+            {svc.title}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Service Areas Overview -->
+  <section class="section bg-white border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8">
+        <h2 class="text-2xl-rx sm:text-3xl-rx font-display font-bold text-rx-ink mb-2">
+          Service Areas
+        </h2>
+        <p class="text-base-rx text-rx-steel">
+          Rooter-X Plumbing provides 24/7 service across all 24 Orange County cities:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3 font-mono text-sm-rx">
+        {CITIES.map((city) => (
+          <a
+            href={`/service-areas/${city.slug}`}
+            class="p-3 bg-rx-paper hover:bg-rx-blue hover:text-white rounded-[6px] border border-hairline transition-colors text-center font-medium truncate"
+          >
+            {city.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Credibility Block (§7) -->
+  <CredibilityBlock />
+
+  <!-- ReviewsBlock component (Returns null while googlePlaceId is null - zero fake reviews per §7) -->
+  <ReviewsBlock />
+
+  <!-- Subsections Links -->
+  <section class="section bg-rx-paper border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <a
+          href="/about/the-rooter-x-difference"
+          class="p-8 bg-white rounded-[8px] border border-hairline hover:border-rx-blue transition-colors group"
+        >
+          <h3 class="text-2xl-rx font-display font-bold text-rx-ink group-hover:text-rx-blue transition-colors mb-3">
+            The Rooter-X Difference →
+          </h3>
+          <p class="text-base-rx text-rx-steel">
+            Discover why our non-invasive camera diagnostics, upfront flat pricing, and refusal to use rented reviews make us Orange County's premier sewer contractor.
+          </p>
+        </a>
+
+        <a
+          href="/about/our-promise-and-core-values"
+          class="p-8 bg-white rounded-[8px] border border-hairline hover:border-rx-blue transition-colors group"
+        >
+          <h3 class="text-2xl-rx font-display font-bold text-rx-ink group-hover:text-rx-blue transition-colors mb-3">
+            Our Promise & Core Values →
+          </h3>
+          <p class="text-base-rx text-rx-steel">
+            Read our core values commitment to technical literacy, clean job sites, written guarantees, and 24/7 customer dedication.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Contact Us Box -->
+  <section class="section bg-white border-b border-hairline">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-rx-ink text-white p-8 sm:p-10 rounded-[8px] border border-hairline">
+        <h2 class="text-2xl-rx sm:text-3xl-rx font-display font-bold mb-4 text-white">
+          Contact Us
+        </h2>
+        <p class="text-base-rx text-rx-steel measure-prose mb-8">
+          Have a question, need a quote, or facing a plumbing emergency? We are available 24/7, always ready to help when you need us most.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 font-mono text-sm-rx mb-8">
+          <div class="flex items-start gap-3">
+            <Phone class="w-5 h-5 text-rx-blue flex-shrink-0 mt-1" />
+            <div>
+              <span class="text-xs-rx text-rx-steel block">Call Us Anytime</span>
+              <a href={BUSINESS.phoneHref} class="text-lg-rx text-white font-bold hover:text-rx-blue">
+                {BUSINESS.phoneDisplay}
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <Mail class="w-5 h-5 text-rx-blue flex-shrink-0 mt-1" />
+            <div>
+              <span class="text-xs-rx text-rx-steel block">Email Us</span>
+              <a href={`mailto:${BUSINESS.email}`} class="text-base-rx text-rx-blue font-bold hover:underline break-all">
+                {BUSINESS.email}
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <MapPin class="w-5 h-5 text-rx-blue flex-shrink-0 mt-1" />
+            <div>
+              <span class="text-xs-rx text-rx-steel block">Location</span>
+              <span class="text-sm-rx text-white font-medium">{BUSINESS.address}</span>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <Clock class="w-5 h-5 text-rx-blue flex-shrink-0 mt-1" />
+            <div>
+              <span class="text-xs-rx text-rx-steel block">Availability</span>
+              <span class="text-sm-rx text-white font-medium">Open 24/7 365 Days</span>
+            </div>
+          </div>
+        </div>
+
+        <Button href={BUSINESS.phoneHref} variant="blue" class="w-full sm:w-auto px-8">
+          Call {BUSINESS.phoneDisplay} Now
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+  <MobileActionBar slot="mobile-action-bar" />
+</BaseLayout>

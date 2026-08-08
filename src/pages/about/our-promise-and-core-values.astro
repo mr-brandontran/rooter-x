@@ -1,0 +1,124 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import UtilityBar from "@/components/shell/UtilityBar.astro";
+import Header from "@/components/shell/Header.astro";
+import Footer from "@/components/shell/Footer.astro";
+import MobileActionBar from "@/components/shell/MobileActionBar.astro";
+import CredibilityBlock from "@/components/blocks/CredibilityBlock.astro";
+import Button from "@/components/ui/Button.astro";
+import { BUSINESS } from "@/config/business";
+import { ShieldCheck, HeartHandshake, CheckCircle2, Clock, Eye, AlertCircle } from "lucide-astro";
+
+const valueBullets = [
+  "Health first",
+  "Educate and inform",
+  "Act with urgency",
+  "Be thorough / leave no stone unturned",
+];
+
+const detailedValues = [
+  {
+    title: "Health First —",
+    description: "The health and wellbeing of your family comes first. Every inspection we do focuses on making sure your family stays safe."
+  },
+  {
+    title: "Educate and Inform —",
+    description: "We believe in empowerment. That's why we take the time to educate and inform you on every aspect of your home. We give you the information you need to make the best decision for you and your family."
+  },
+  {
+    title: "Act With Urgency —",
+    description: "We believe in giving you the fastest service possible. Whether you're in the middle of the home buying process, or simply having a routine inspection, we'll give you the information you need as quickly as possible."
+  },
+  {
+    title: "Leave No Stone Unturned —",
+    description: "You deserve to know the exact condition of your home. We'll inspect every single part of your sewer and drain system down to the smallest detail — leaving no stone unturned."
+  }
+];
+---
+
+<BaseLayout
+  title="The Rooter-X Plumbing Promise & Core Values"
+  description="Read The Rooter-X Plumbing Promise & Core Values: Health First, Educate and Inform, Act With Urgency, and Leave No Stone Unturned."
+>
+  <UtilityBar slot="utility-bar" />
+  <Header slot="header" />
+
+  <section class="bg-rx-ink text-white py-14 lg:py-20 border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="inline-block bg-rx-blue/20 text-rx-blue font-mono text-xs-rx font-semibold px-3 py-1 rounded-[6px] mb-4 border border-rx-blue/30">
+          Our Foundational Values
+        </span>
+        <h1 class="text-3xl-rx sm:text-4xl-rx lg:text-5xl font-display font-bold text-white mb-4">
+          The Rooter-X Plumbing Promise / Core Values
+        </h1>
+        <p class="text-lg-rx text-rx-steel font-body measure-prose mb-8">
+          The core principles guiding our technicians, customer education, diagnostic thoroughness, and commitment to family health.
+        </p>
+        <Button href={BUSINESS.phoneHref} variant="blue">
+          Call {BUSINESS.phoneDisplay}
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white border-b border-hairline">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      
+      <!-- Vision Section -->
+      <div class="space-y-3 font-body text-base-rx text-rx-ink/90">
+        <h2 class="text-xl-rx font-display font-bold text-rx-ink">
+          Vision:
+        </h2>
+        <p class="measure-prose text-rx-ink/80">
+          To become the leader in Orange County plumbing, sewer diagnostics, and drain restoration by helping homeowners make informed decisions knowing they are keeping their families safe, healthy, and happy for generations to come.
+        </p>
+      </div>
+
+      <!-- Mission Section -->
+      <div class="space-y-3 font-body text-base-rx text-rx-ink/90 border-t border-hairline pt-8">
+        <h2 class="text-xl-rx font-display font-bold text-rx-ink">
+          Mission:
+        </h2>
+        <p class="measure-prose text-rx-ink/80">
+          The mission of Rooter-X Plumbing is to help homeowners make informed decisions that keep their family's health and livelihood safe. We do this by providing education, high-definition sewer camera inspections, and hydro jet drain cleanings.
+        </p>
+      </div>
+
+      <!-- Values List Bullet Summary -->
+      <div class="space-y-4 border-t border-hairline pt-8">
+        <h2 class="text-xl-rx font-display font-bold text-rx-ink mb-4">
+          Values:
+        </h2>
+        <ul class="space-y-3 font-display font-bold text-base-rx text-rx-ink pl-2">
+          {valueBullets.map((bullet) => (
+            <li class="flex items-center gap-3">
+              <span class="w-2 h-2 rounded-full bg-rx-blue inline-block"></span>
+              <span>{bullet}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Detailed Values Sections -->
+      <div class="space-y-8 border-t border-hairline pt-8">
+        {detailedValues.map((v) => (
+          <div class="p-6 bg-rx-paper rounded-[8px] border border-hairline">
+            <h3 class="text-lg-rx sm:text-xl-rx font-display font-bold text-rx-ink mb-3">
+              {v.title}
+            </h3>
+            <p class="text-base-rx text-rx-ink/90 font-body measure-prose">
+              {v.description}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <CredibilityBlock />
+
+  <Footer slot="footer" />
+  <MobileActionBar slot="mobile-action-bar" />
+</BaseLayout>

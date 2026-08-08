@@ -1,0 +1,42 @@
+---
+export interface Props {
+  variant?: "blue" | "ink" | "outline";
+  href?: string;
+  type?: "button" | "submit" | "reset";
+  class?: string;
+  id?: string;
+  [key: string]: any;
+}
+
+const {
+  variant = "blue",
+  href,
+  type = "button",
+  class: className = "",
+  id,
+  ...rest
+} = Astro.props;
+
+const baseStyles =
+  "inline-flex items-center justify-center font-display font-semibold text-sm-rx tracking-tight rounded-[6px] px-5 py-3 transition-colors duration-150 active:translate-y-[1px] cursor-pointer min-h-[44px] select-none text-center";
+
+const variantStyles = {
+  blue: "bg-rx-blue text-white hover:bg-rx-blue-deep focus-visible:outline-2 focus-visible:outline-rx-blue focus-visible:outline-offset-2",
+  ink: "bg-rx-ink text-white hover:bg-rx-blue-deep focus-visible:outline-2 focus-visible:outline-rx-blue focus-visible:outline-offset-2",
+  outline: "border border-hairline bg-transparent text-rx-ink hover:bg-rx-paper focus-visible:outline-2 focus-visible:outline-rx-blue focus-visible:outline-offset-2",
+};
+
+const combinedClasses = `${baseStyles} ${variantStyles[variant]} ${className}`;
+---
+
+{
+  href ? (
+    <a href={href} class={combinedClasses} id={id} {...rest}>
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class={combinedClasses} id={id} {...rest}>
+      <slot />
+    </button>
+  )
+}

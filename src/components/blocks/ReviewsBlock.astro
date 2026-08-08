@@ -1,0 +1,14 @@
+---
+import { BUSINESS } from "@/config/business";
+
+// Returns null while business.googlePlaceId is null. Never renders fake reviews or lorem ipsum.
+---
+
+{BUSINESS.googlePlaceId ? (
+  <section class="section bg-white border-y border-hairline" id="google-reviews">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl-rx font-display mb-6">Customer Reviews</h2>
+      <p class="text-base-rx text-rx-steel">Google Place ID configured: {BUSINESS.googlePlaceId}</p>
+    </div>
+  </section>
+) : null}

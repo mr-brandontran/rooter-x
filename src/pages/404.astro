@@ -1,0 +1,41 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import UtilityBar from "@/components/shell/UtilityBar.astro";
+import Header from "@/components/shell/Header.astro";
+import Footer from "@/components/shell/Footer.astro";
+import MobileActionBar from "@/components/shell/MobileActionBar.astro";
+import Button from "@/components/ui/Button.astro";
+import { BUSINESS } from "@/config/business";
+---
+
+<BaseLayout
+  title="404 Page Not Found | Rooter-X Plumbing"
+  description="The page you are looking for could not be found."
+>
+  <UtilityBar slot="utility-bar" />
+  <Header slot="header" />
+
+  <section class="section max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center my-12">
+    <div class="p-12 bg-white rounded-[8px] border border-hairline shadow-sm">
+      <span class="font-mono text-4xl-rx font-bold text-rx-blue block mb-2">404</span>
+      <h1 class="text-3xl-rx font-display font-bold text-rx-ink mb-4">
+        Page Not Found
+      </h1>
+      <p class="text-lg-rx text-rx-steel measure-prose mx-auto mb-8">
+        The plumbing page or service route you requested could not be located.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <Button href="/" variant="blue">
+          Return to Home Page
+        </Button>
+        <Button href={BUSINESS.phoneHref} variant="ink">
+          Call Dispatch ({BUSINESS.phoneDisplay})
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+  <MobileActionBar slot="mobile-action-bar" />
+</BaseLayout>

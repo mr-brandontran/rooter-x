@@ -1,0 +1,129 @@
+---
+import { BUSINESS } from "@/config/business";
+
+const services = [
+  { name: "Camera inspection", slug: "camera-inspection" },
+  { name: "Drain cleaning", slug: "drain-cleaning" },
+  { name: "Hydro jetting", slug: "hydro-jetting" },
+  { name: "Sewage pipe burst", slug: "sewage-pipe-burst" },
+  { name: "Sewer line spot repairs", slug: "sewer-line-spot-repairs" },
+  { name: "Epoxy pipe liner (CIPP)", slug: "epoxy-pipe-lining" },
+  { name: "Boring", slug: "boring" },
+  { name: "Repipe", slug: "repipe" },
+  { name: "Water heaters installation", slug: "water-heater-installation" },
+  { name: "Tankless installation", slug: "tankless-installation" },
+  { name: "Leak detection", slug: "leak-detection" },
+  { name: "New construction", slug: "new-construction" },
+];
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-rx-ink text-white border-t border-hairline pt-16 pb-24 md:pb-16 z-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-hairline">
+      <!-- Col 1: Logo, Tagline, Copyright, License -->
+      <div class="flex flex-col gap-4">
+        <a href="/" class="inline-block focus-visible:outline-rx-blue">
+          <img src="/logo.png" alt="Rooter-X Plumbing" class="h-12 w-auto object-contain brightness-0 invert" width="200" height="48" loading="lazy" />
+        </a>
+        <p class="text-sm-rx font-display font-medium text-rx-steel">
+          {BUSINESS.tagline}
+        </p>
+        <div class="mt-2 inline-flex items-center gap-2 bg-white/5 border border-hairline px-3 py-1.5 rounded-[6px] w-fit">
+          <span class="text-xs-rx font-mono text-rx-steel">{BUSINESS.license}</span>
+        </div>
+        <p class="text-xs-rx font-mono text-rx-steel mt-2">
+          © {currentYear} {BUSINESS.name}. All rights reserved.
+        </p>
+      </div>
+
+      <!-- Col 2: Navigation -->
+      <div>
+        <h3 class="text-sm-rx font-mono font-semibold uppercase tracking-wider text-rx-steel mb-4">
+          Navigation
+        </h3>
+        <ul class="space-y-2.5 text-sm-rx">
+          <li><a href="/" class="hover:text-rx-blue transition-colors">Home</a></li>
+          <li><a href="/about/" class="hover:text-rx-blue transition-colors">About Rooter-X</a></li>
+          <li><a href="/services/" class="hover:text-rx-blue transition-colors">Services</a></li>
+          <li><a href="/service-areas/" class="hover:text-rx-blue transition-colors">Service Areas</a></li>
+          <li><a href="/blog/" class="hover:text-rx-blue transition-colors">Blog</a></li>
+          <li><a href="/contact/" class="hover:text-rx-blue transition-colors">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Our Services (all 12) -->
+      <div>
+        <h3 class="text-sm-rx font-mono font-semibold uppercase tracking-wider text-rx-steel mb-4">
+          Our Services
+        </h3>
+        <ul class="space-y-2 text-sm-rx">
+          {services.map((svc) => (
+            <li>
+              <a href={`/services/${svc.slug}`} class="hover:text-rx-blue transition-colors text-rx-steel hover:text-white">
+                {svc.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Col 4: Contact Info (values in mono) -->
+      <div>
+        <h3 class="text-sm-rx font-mono font-semibold uppercase tracking-wider text-rx-steel mb-4">
+          Contact Info
+        </h3>
+        <ul class="space-y-3 text-sm-rx">
+          <li class="flex flex-col">
+            <span class="text-xs-rx text-rx-steel">Address</span>
+            <span class="font-mono text-rx-steel">{BUSINESS.address}</span>
+          </li>
+          <li class="flex flex-col">
+            <span class="text-xs-rx text-rx-steel">Email</span>
+            <a href={`mailto:${BUSINESS.email}`} class="font-mono text-rx-blue hover:underline break-all">
+              {BUSINESS.email}
+            </a>
+          </li>
+          <li class="flex flex-col">
+            <span class="text-xs-rx text-rx-steel">Phone</span>
+            <a href={BUSINESS.phoneHref} class="font-mono text-white hover:text-rx-blue font-semibold">
+              {BUSINESS.phoneDisplay}
+            </a>
+          </li>
+          <li class="flex flex-col">
+            <span class="text-xs-rx text-rx-steel">Service Area</span>
+            <span class="font-mono text-rx-steel">{BUSINESS.serviceArea}</span>
+          </li>
+          <li class="flex flex-col">
+            <span class="text-xs-rx text-rx-steel">Business Hours</span>
+            <span class="font-mono text-white font-medium">{BUSINESS.hours}</span>
+          </li>
+          <li class="flex flex-col">
+            <span class="text-xs-rx text-rx-steel">License</span>
+            <span class="font-mono text-rx-steel">{BUSINESS.license}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom strip: Follow Us & Legal Links -->
+    <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-xs-rx font-mono text-rx-steel">
+      <div class="flex items-center gap-4">
+        <span>Follow Us:</span>
+        <a href={BUSINESS.social.facebook} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Facebook</a>
+        <span>·</span>
+        <a href={BUSINESS.social.instagram} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Instagram</a>
+        <span>·</span>
+        <a href={BUSINESS.social.yelp} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Yelp</a>
+        <span>·</span>
+        <a href={BUSINESS.social.google} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Google</a>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <a href="/terms-conditions/" class="hover:text-white transition-colors">Terms & Conditions</a>
+        <a href="/privacy-policy/" class="hover:text-white transition-colors">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,45 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import UtilityBar from "@/components/shell/UtilityBar.astro";
+import Header from "@/components/shell/Header.astro";
+import Footer from "@/components/shell/Footer.astro";
+import MobileActionBar from "@/components/shell/MobileActionBar.astro";
+import { BUSINESS } from "@/config/business";
+---
+
+<BaseLayout
+  title="Privacy Policy | Rooter-X Plumbing"
+  description="Privacy policy for Rooter-X Plumbing site visitors and service clients."
+>
+  <UtilityBar slot="utility-bar" />
+  <Header slot="header" />
+
+  <section class="section max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h1 class="text-3xl-rx sm:text-4xl-rx font-display font-bold text-rx-ink mb-6">
+      Privacy Policy
+    </h1>
+    <p class="font-mono text-xs-rx text-rx-steel mb-8">
+      Last Updated: July 2026 · {BUSINESS.name}
+    </p>
+
+    <div class="space-y-6 text-base-rx text-rx-ink/90 font-body measure-prose border-t border-hairline pt-6">
+      <h2 class="text-xl-rx font-display font-bold text-rx-ink">1. Information Collection</h2>
+      <p>
+        We collect contact information submitted via our service booking forms (name, phone number, email address, service location) strictly for the purpose of dispatching plumbing service and communicating project details.
+      </p>
+
+      <h2 class="text-xl-rx font-display font-bold text-rx-ink">2. Data Sharing</h2>
+      <p>
+        Rooter-X Plumbing does not sell, rent, or lease customer phone numbers, email addresses, or personal data to third-party marketing companies.
+      </p>
+
+      <h2 class="text-xl-rx font-display font-bold text-rx-ink">3. Lead Notifications & SMS</h2>
+      <p>
+        By providing your phone number on our contact form, you consent to receive direct SMS notifications from Rooter-X Plumbing regarding your service dispatch. You may opt out at any time.
+      </p>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+  <MobileActionBar slot="mobile-action-bar" />
+</BaseLayout>

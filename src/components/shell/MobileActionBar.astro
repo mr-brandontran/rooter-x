@@ -1,0 +1,44 @@
+---
+import { BUSINESS } from "@/config/business";
+---
+
+<div class="fixed bottom-0 left-0 right-0 h-[56px] bg-rx-ink text-white border-t border-hairline z-40 lg:hidden flex items-center justify-around px-2 font-display">
+  <!-- Target 1: Call -->
+  <a
+    href={BUSINESS.phoneHref}
+    class="flex-1 flex flex-col items-center justify-center h-full text-center hover:bg-white/5 transition-colors focus-visible:outline-rx-blue"
+    aria-label="Call Rooter-X Plumbing"
+  >
+    <svg class="w-4 h-4 text-rx-blue mb-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
+    <span class="text-xs-rx font-medium">Call</span>
+  </a>
+
+  <!-- Divider -->
+  <div class="w-[1px] h-6 bg-rx-steel/30"></div>
+
+  <!-- Target 2: Text -->
+  <a
+    href={`sms:+17143233153`}
+    class="flex-1 flex flex-col items-center justify-center h-full text-center hover:bg-white/5 transition-colors focus-visible:outline-rx-blue"
+    aria-label="Text Rooter-X Plumbing"
+  >
+    <svg class="w-4 h-4 text-rx-blue mb-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+    <span class="text-xs-rx font-medium">Text</span>
+  </a>
+
+  <!-- Divider -->
+  <div class="w-[1px] h-6 bg-rx-steel/30"></div>
+
+  <!-- Target 3: Get a Quote -->
+  <a
+    href="/contact/"
+    class="flex-1 flex flex-col items-center justify-center h-full text-center bg-rx-blue text-white font-semibold hover:bg-rx-blue-deep transition-colors focus-visible:outline-rx-blue"
+    aria-label="Get a quote"
+  >
+    <span class="text-xs-rx font-semibold">Get a Quote</span>
+  </a>
+</div>

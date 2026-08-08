@@ -1,0 +1,303 @@
+---
+import Button from "@/components/ui/Button.astro";
+
+const services = [
+  { name: "Camera inspection", slug: "camera-inspection" },
+  { name: "Drain cleaning", slug: "drain-cleaning" },
+  { name: "Hydro jetting", slug: "hydro-jetting" },
+  { name: "Sewage pipe burst", slug: "sewage-pipe-burst" },
+  { name: "Sewer line spot repairs", slug: "sewer-line-spot-repairs" },
+  { name: "Epoxy pipe liner (CIPP)", slug: "epoxy-pipe-lining" },
+  { name: "Boring", slug: "boring" },
+  { name: "Repipe", slug: "repipe" },
+  { name: "Water heaters installation", slug: "water-heater-installation" },
+  { name: "Tankless installation", slug: "tankless-installation" },
+  { name: "Leak detection", slug: "leak-detection" },
+  { name: "New construction", slug: "new-construction" },
+];
+
+const topCities = [
+  { name: "Laguna Beach", slug: "laguna-beach" },
+  { name: "Huntington Beach", slug: "huntington-beach" },
+  { name: "Garden Grove", slug: "garden-grove" },
+  { name: "Newport Beach", slug: "newport-beach" },
+  { name: "Fountain Valley", slug: "fountain-valley" },
+  { name: "Dana Point", slug: "dana-point" },
+  { name: "Seal Beach", slug: "seal-beach" },
+  { name: "San Clemente", slug: "san-clemente" },
+  { name: "La Habra", slug: "la-habra" },
+  { name: "Buena Park", slug: "buena-park" },
+];
+---
+
+<header
+  id="main-header"
+  class="sticky top-0 z-30 bg-rx-ink text-white border-b border-hairline transition-all duration-200"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div id="header-inner" class="flex items-center justify-between h-20 transition-all duration-200">
+      <!-- Logo -->
+      <a href="/" class="flex-shrink-0 focus-visible:outline-rx-blue" aria-label="Rooter-X Plumbing Home">
+        <img
+          src="/logo.png"
+          alt="Rooter-X Plumbing"
+          class="h-12 w-auto object-contain transition-all duration-200"
+          id="header-logo"
+          width="200"
+          height="48"
+          fetchpriority="high"
+        />
+      </a>
+
+      <!-- Desktop Navigation matching reference screenshot -->
+      <nav class="hidden lg:flex items-center gap-8 font-serif text-base-rx" aria-label="Main navigation">
+        <a href="/" class="text-rx-blue font-medium py-2">
+          Home
+        </a>
+
+        <!-- About Dropdown -->
+        <div class="relative group">
+          <a
+            href="/about/"
+            class="inline-flex items-center gap-1 text-white hover:text-rx-blue transition-colors py-2"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            About Us
+            <svg class="w-3.5 h-3.5 fill-current text-white/70 group-hover:text-rx-blue transition-transform group-hover:rotate-180 duration-150" viewBox="0 0 20 20">
+              <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+            </svg>
+          </a>
+          <div class="absolute left-0 top-full hidden group-hover:block w-72 bg-rx-ink border border-hairline rounded-[6px] shadow-lg py-2 z-50 font-body">
+            <a href="/about/the-rooter-x-difference" class="block px-4 py-2.5 text-sm-rx text-white hover:bg-white/10 hover:text-rx-blue transition-colors">
+              The Rooter-X Difference
+            </a>
+            <a href="/about/our-promise-and-core-values" class="block px-4 py-2.5 text-sm-rx text-white hover:bg-white/10 hover:text-rx-blue transition-colors">
+              Our Promise & Core Values
+            </a>
+          </div>
+        </div>
+
+        <!-- Services Dropdown -->
+        <div class="relative group">
+          <a
+            href="/services/"
+            class="inline-flex items-center gap-1 text-white hover:text-rx-blue transition-colors py-2"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            Our Services
+            <svg class="w-3.5 h-3.5 fill-current text-white/70 group-hover:text-rx-blue transition-transform group-hover:rotate-180 duration-150" viewBox="0 0 20 20">
+              <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+            </svg>
+          </a>
+          <div class="absolute left-0 top-full hidden group-hover:block w-80 bg-rx-ink border border-hairline rounded-[6px] shadow-lg py-2 z-50 max-h-[80vh] overflow-y-auto font-body">
+            {services.map((item) => (
+              <a
+                href={`/services/${item.slug}`}
+                class="block px-4 py-2 text-sm-rx text-white hover:bg-white/10 hover:text-rx-blue transition-colors border-b border-hairline last:border-0"
+              >
+                {item.name}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <!-- Service Areas Dropdown -->
+        <div class="relative group">
+          <a
+            href="/service-areas/"
+            class="inline-flex items-center gap-1 text-white hover:text-rx-blue transition-colors py-2"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            Service Areas
+            <svg class="w-3.5 h-3.5 fill-current text-white/70 group-hover:text-rx-blue transition-transform group-hover:rotate-180 duration-150" viewBox="0 0 20 20">
+              <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+            </svg>
+          </a>
+          <div class="absolute left-0 top-full hidden group-hover:block w-64 bg-rx-ink border border-hairline rounded-[6px] shadow-lg py-2 z-50 font-body">
+            {topCities.map((city) => (
+              <a
+                href={`/service-areas/${city.slug}`}
+                class="block px-4 py-2 text-sm-rx text-white hover:bg-white/10 hover:text-rx-blue transition-colors border-b border-hairline last:border-0"
+              >
+                {city.name}
+              </a>
+            ))}
+            <a
+              href="/service-areas/"
+              class="block px-4 py-2.5 text-xs-rx font-mono font-medium text-rx-blue hover:bg-white/10 transition-colors bg-white/5"
+            >
+              View all 24 cities →
+            </a>
+          </div>
+        </div>
+
+        <a href="/blog/" class="text-white hover:text-rx-blue transition-colors py-2">
+          Blogs
+        </a>
+
+        <a href="/contact/" class="text-white hover:text-rx-blue transition-colors py-2">
+          Contact Us
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button
+        type="button"
+        id="mobile-menu-btn"
+        class="lg:hidden p-2.5 rounded-[6px] text-white hover:bg-white/10 border border-white/20 focus-visible:outline-rx-orange"
+        aria-label="Open main menu"
+        aria-expanded="false"
+        aria-controls="mobile-drawer"
+      >
+        <svg id="icon-hamburger" class="w-6 h-6 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+          <line x1="4" y1="6" x2="20" y2="6" />
+          <line x1="4" y1="12" x2="20" y2="12" />
+          <line x1="4" y1="18" x2="20" y2="18" />
+        </svg>
+        <svg id="icon-close" class="hidden w-6 h-6 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Full-Screen Drawer -->
+  <div
+    id="mobile-drawer"
+    class="fixed inset-0 top-[calc(36px+64px)] z-40 bg-white hidden flex-col overflow-y-auto px-6 py-6 border-t border-hairline lg:hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Mobile Navigation"
+  >
+    <nav class="flex flex-col gap-4 font-display" aria-label="Mobile main navigation">
+      <a href="/" class="text-lg-rx font-semibold text-rx-ink hover:text-rx-blue border-b border-hairline pb-3">
+        Home
+      </a>
+
+      <!-- Mobile About Section -->
+      <div class="border-b border-hairline pb-3">
+        <div class="text-xs-rx font-mono uppercase text-rx-steel mb-2">About</div>
+        <div class="flex flex-col gap-2 pl-3">
+          <a href="/about/" class="text-base-rx text-rx-ink hover:text-rx-blue">Overview</a>
+          <a href="/about/the-rooter-x-difference" class="text-base-rx text-rx-ink hover:text-rx-blue">The Rooter-X Difference</a>
+          <a href="/about/our-promise-and-core-values" class="text-base-rx text-rx-ink hover:text-rx-blue">Our Promise & Core Values</a>
+        </div>
+      </div>
+
+      <!-- Mobile Services Accordion -->
+      <details class="border-b border-hairline pb-3 group">
+        <summary class="text-lg-rx font-semibold text-rx-ink flex items-center justify-between cursor-pointer list-none">
+          Services ({services.length})
+          <svg class="w-5 h-5 text-rx-steel group-open:rotate-180 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+          </svg>
+        </summary>
+        <div class="flex flex-col gap-2 pt-3 pl-3">
+          {services.map((item) => (
+            <a href={`/services/${item.slug}`} class="text-sm-rx text-rx-ink hover:text-rx-blue py-1">
+              {item.name}
+            </a>
+          ))}
+        </div>
+      </details>
+
+      <!-- Mobile Service Areas Accordion -->
+      <details class="border-b border-hairline pb-3 group">
+        <summary class="text-lg-rx font-semibold text-rx-ink flex items-center justify-between cursor-pointer list-none">
+          Service Areas (24 Cities)
+          <svg class="w-5 h-5 text-rx-steel group-open:rotate-180 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+          </svg>
+        </summary>
+        <div class="flex flex-col gap-2 pt-3 pl-3">
+          {topCities.map((city) => (
+            <a href={`/service-areas/${city.slug}`} class="text-sm-rx text-rx-ink hover:text-rx-blue py-1">
+              {city.name}
+            </a>
+          ))}
+          <a href="/service-areas/" class="text-sm-rx font-mono text-rx-blue pt-2 font-medium">
+            View all 24 cities →
+          </a>
+        </div>
+      </details>
+
+      <a href="/blog/" class="text-lg-rx font-semibold text-rx-ink hover:text-rx-blue border-b border-hairline pb-3">
+        Blog
+      </a>
+
+      <a href="/contact/" class="text-lg-rx font-semibold text-rx-ink hover:text-rx-blue border-b border-hairline pb-3">
+        Contact
+      </a>
+    </nav>
+
+    <div class="mt-8">
+      <Button href="/contact/" variant="blue" class="w-full text-center">
+        Get a quote
+      </Button>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile drawer logic & Scroll shrink header logic
+  const headerInner = document.getElementById("header-inner");
+  const logo = document.getElementById("header-logo");
+  const mobileBtn = document.getElementById("mobile-menu-btn");
+  const mobileDrawer = document.getElementById("mobile-drawer");
+  const iconHamburger = document.getElementById("icon-hamburger");
+  const iconClose = document.getElementById("icon-close");
+
+  // Scroll shrink header once on first scroll (200ms)
+  let shrunk = false;
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 20 && !shrunk) {
+      shrunk = true;
+      headerInner?.classList.remove("h-20");
+      headerInner?.classList.add("h-16");
+      logo?.classList.remove("h-12");
+      logo?.classList.add("h-9");
+    } else if (window.scrollY <= 20 && shrunk) {
+      shrunk = false;
+      headerInner?.classList.remove("h-16");
+      headerInner?.classList.add("h-20");
+      logo?.classList.remove("h-9");
+      logo?.classList.add("h-12");
+    }
+  }, { passive: true });
+
+  // Drawer Toggle Function
+  const toggleDrawer = (show?: boolean) => {
+    const isHidden = mobileDrawer?.classList.contains("hidden");
+    const shouldShow = show !== undefined ? show : isHidden;
+
+    if (shouldShow) {
+      mobileDrawer?.classList.remove("hidden");
+      mobileDrawer?.classList.add("flex");
+      iconHamburger?.classList.add("hidden");
+      iconClose?.classList.remove("hidden");
+      mobileBtn?.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+    } else {
+      mobileDrawer?.classList.add("hidden");
+      mobileDrawer?.classList.remove("flex");
+      iconHamburger?.classList.remove("hidden");
+      iconClose?.classList.add("hidden");
+      mobileBtn?.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+  };
+
+  mobileBtn?.addEventListener("click", () => toggleDrawer());
+
+  // Close menu on Escape key
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !mobileDrawer?.classList.contains("hidden")) {
+      toggleDrawer(false);
+      mobileBtn?.focus();
+    }
+  });
+</script>

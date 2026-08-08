@@ -1,0 +1,414 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import UtilityBar from "@/components/shell/UtilityBar.astro";
+import Header from "@/components/shell/Header.astro";
+import Footer from "@/components/shell/Footer.astro";
+import MobileActionBar from "@/components/shell/MobileActionBar.astro";
+import CredibilityBlock from "@/components/blocks/CredibilityBlock.astro";
+import ContactForm from "@/components/ui/ContactForm.astro";
+import Button from "@/components/ui/Button.astro";
+import { BUSINESS } from "@/config/business";
+import { SERVICES, type ServiceData } from "@/data/services";
+import { CITIES } from "@/data/cities";
+import { ArrowRight, Search, Wrench, Cpu, Award, Clock, CheckCircle2 } from "lucide-astro";
+
+export async function getStaticPaths() {
+  return SERVICES.map((service) => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}
+
+export interface Props {
+  service: ServiceData;
+}
+
+const { service } = Astro.props;
+
+// Service & FAQPage JSON-LD Schemas
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": `${service.title} in Orange County, CA`,
+  "provider": {
+    "@type": "Plumber",
+    "name": BUSINESS.name,
+    "telephone": BUSINESS.phoneDisplay,
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": BUSINESS.serviceArea,
+  },
+  "description": service.shortDescription,
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": service.faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    },
+  })),
+};
+
+const badges = [
+  { label: "Accurate Diagnosis", icon: Search },
+  { label: "Preventative Maintenance", icon: Wrench },
+  { label: "Advanced Technology", icon: Cpu },
+  { label: "Certified Technicians", icon: Award },
+  { label: "24/7 Emergency Service", icon: Clock },
+];
+---
+
+<BaseLayout
+  title={`${service.h1} | ${BUSINESS.name}`}
+  description={service.shortDescription}
+  schemaJson={[serviceSchema, faqSchema]}
+>
+  <UtilityBar slot="utility-bar" />
+  <Header slot="header" />
+
+  <!-- Section 1: Hero Banner with Background Photo (Matching Screenshot) -->
+  <section class="relative bg-rx-ink text-white py-16 lg:py-24 border-b border-hairline overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0 opacity-30">
+      <img
+        src={service.image}
+        alt={service.title}
+        class="w-full h-full object-cover"
+        width="1600"
+        height="600"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 bg-rx-ink/75"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="max-w-4xl mx-auto">
+        <span class="inline-block bg-rx-blue/20 text-rx-blue font-mono text-xs-rx font-semibold px-3 py-1 rounded-[6px] mb-4 border border-rx-blue/30">
+          Service 0{service.order} of 12 · Orange County, CA
+        </span>
+        <h1 class="text-2xl-rx sm:text-4xl-rx lg:text-5xl font-display font-bold text-white mb-4 tracking-tight uppercase leading-tight">
+          Reliable {service.title} in Orange County
+        </h1>
+        <p class="text-lg-rx text-rx-steel font-body measure-prose mb-8 mx-auto">
+          {service.shortDescription}
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <Button href={BUSINESS.phoneHref} variant="blue">
+            Call {BUSINESS.phoneDisplay}
+          </Button>
+          <Button href="#form-sidebar" variant="outline" class="text-white border-white/30 hover:bg-white/10">
+            Request Service
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Badge Row (Matching Screenshot: Icon Top, Centered Text Below) -->
+  <section class="bg-white border-b border-hairline py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
+        {badges.map((b) => {
+          const IconComp = b.icon;
+          return (
+            <div class="flex flex-col items-center justify-center p-4 bg-rx-paper rounded-[8px] border border-hairline">
+              <div class="mb-3 p-3 rounded-full bg-rx-blue/10 text-rx-blue">
+                <IconComp class="w-7 h-7 stroke-[1.75]" />
+              </div>
+              <span class="font-display font-bold text-sm-rx sm:text-base-rx text-rx-ink leading-tight">
+                {b.label}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Overview & Sidebar Form (Matching Screenshot Layout) -->
+  <section class="section bg-white border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        
+        <!-- Left Column: H2 + 3 Photos + Paragraphs -->
+        <div class="lg:col-span-7">
+          <h2 class="text-2xl-rx sm:text-3xl-rx font-display text-rx-ink mb-6 scroll-reveal">
+            {service.overviewH2}
+          </h2>
+
+          <!-- 3 Photos Row (Clickable to Lightbox) -->
+          <div class="grid grid-cols-3 gap-3 mb-8">
+            {service.galleryImages.map((imgUrl, i) => (
+              <button
+                type="button"
+                class="group relative h-36 sm:h-48 overflow-hidden rounded-[8px] border border-hairline focus-visible:outline-rx-blue cursor-pointer text-left w-full"
+                data-lightbox-trigger={imgUrl}
+                aria-label={`View enlarged photo ${i + 1} for ${service.title}`}
+              >
+                <img
+                  src={imgUrl}
+                  alt={`${service.title} job photo ${i + 1}`}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-220"
+                  width="400"
+                  height="300"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-rx-ink/0 group-hover:bg-rx-ink/30 transition-colors flex items-center justify-center">
+                  <span class="opacity-0 group-hover:opacity-100 transition-opacity bg-rx-ink text-white font-mono text-xs-rx px-2 py-1 rounded-[4px]">
+                    Enlarge
+                  </span>
+                </div>
+              </button>
+            ))}
+          </div>
+
+          <!-- Paragraphs & Read More Expander -->
+          <div class="space-y-4 text-base-rx text-rx-ink/90 font-body measure-prose">
+            {service.paragraphs.map((para) => (
+              <p>{para}</p>
+            ))}
+
+            {service.expanderParagraphs && service.expanderParagraphs.length > 0 && (
+              <details class="group pt-2">
+                <summary class="inline-flex items-center gap-2 font-display text-sm-rx font-semibold text-rx-blue cursor-pointer list-none hover:underline py-2">
+                  <span class="group-open:hidden">Read full technical specifications</span>
+                  <span class="hidden group-open:inline">Show less</span>
+                  <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                  </svg>
+                </summary>
+                <div class="space-y-4 pt-4 border-t border-hairline mt-2">
+                  {service.expanderParagraphs.map((expPara) => (
+                    <p>{expPara}</p>
+                  ))}
+                </div>
+              </details>
+            )}
+          </div>
+        </div>
+
+        <!-- Right Column: Sidebar Contact Form (Matching Screenshot) -->
+        <div class="lg:col-span-5 lg:sticky lg:top-24" id="form-sidebar">
+          <ContactForm
+            heading="Request Service"
+            subheading="Fill out the form for upfront pricing & immediate scheduling."
+            idPrefix="service-sidebar-form"
+            selectedService={service.slug}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Common Signs You Need [Service] -->
+  <section class="section bg-rx-paper border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10 max-w-3xl">
+        <h2 class="text-2xl-rx sm:text-3xl-rx font-display text-rx-ink mb-3 scroll-reveal">
+          {service.signsHeading}
+        </h2>
+        <p class="text-base-rx text-rx-steel">
+          {service.signsIntro}
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {service.signs.map((sign, idx) => (
+          <div class="bg-white p-6 rounded-[8px] border border-hairline flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs-rx font-semibold text-rx-blue uppercase block mb-1">
+                Sign 0{idx + 1}
+              </span>
+              <h3 class="text-lg-rx font-display font-bold text-rx-ink mb-2">
+                {sign.label}
+              </h3>
+              <p class="text-sm-rx text-rx-ink/80 mb-4">
+                {sign.description}
+              </p>
+            </div>
+            {sign.relatedServiceSlug && (
+              <a
+                href={`/services/${sign.relatedServiceSlug}`}
+                class="inline-flex items-center gap-1 font-mono text-xs-rx font-semibold text-rx-blue hover:underline pt-2 border-t border-hairline"
+              >
+                Related service <ArrowRight class="w-3 h-3" />
+              </a>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Benefits of [Service] -->
+  <section class="section bg-white border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10 max-w-3xl">
+        <h2 class="text-2xl-rx sm:text-3xl-rx font-display text-rx-ink mb-3 scroll-reveal">
+          {service.benefitsHeading}
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {service.benefits.map((benefit, idx) => (
+          <div class="bg-rx-paper p-6 rounded-[8px] border border-hairline">
+            <div class="w-8 h-8 rounded-[6px] bg-rx-blue/10 text-rx-blue flex items-center justify-center font-mono text-sm-rx font-bold mb-3">
+              {idx + 1}
+            </div>
+            <h3 class="text-lg-rx font-display font-bold text-rx-ink mb-2">
+              {benefit.label}
+            </h3>
+            <p class="text-sm-rx text-rx-ink/80">
+              {benefit.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Credibility Block (per §7) -->
+  <CredibilityBlock />
+
+  <!-- Section 7: CTA Band -->
+  <section class="w-full bg-rx-ink text-white py-14 px-4 sm:px-6 lg:px-8 border-b border-hairline">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <h2 class="text-2xl-rx sm:text-3xl-rx font-display font-bold text-white mb-2">
+          {service.ctaHeadline}
+        </h2>
+        <p class="text-base-rx text-rx-steel measure-prose">
+          Available 24/7 for emergency dispatch across all Orange County cities.
+        </p>
+      </div>
+      <Button href={BUSINESS.phoneHref} variant="blue" class="py-4 px-8 text-base-rx">
+        Call {BUSINESS.phoneDisplay}
+      </Button>
+    </div>
+  </section>
+
+  <!-- Section 8: FAQs (Numbered Accordion, 10 items) -->
+  <section class="section bg-white border-b border-hairline" id="faqs">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10 text-center">
+        <h2 class="text-2xl-rx sm:text-3xl-rx font-display text-rx-ink mb-3 scroll-reveal">
+          Frequently asked questions (FAQs)
+        </h2>
+        <p class="text-base-rx text-rx-steel">
+          Detailed technical answers specific to {service.title.toLowerCase()} in Orange County.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        {service.faqs.map((faq, index) => (
+          <details class="group bg-rx-paper rounded-[8px] border border-hairline p-5 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between font-display text-base-rx font-semibold text-rx-ink cursor-pointer list-none">
+              <span>{index + 1}. {faq.question}</span>
+              <svg class="w-5 h-5 text-rx-steel group-open:rotate-180 transition-transform duration-150" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+              </svg>
+            </summary>
+            <div class="mt-4 pt-4 border-t border-hairline text-sm-rx text-rx-ink/80 font-body measure-prose">
+              <p>{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 9: Second Contact Form -->
+  <section class="section bg-rx-paper border-b border-hairline">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <ContactForm
+        heading="Need a quick fix? We're a message away."
+        subheading="Or speak directly with our team at (714) 323-3153."
+        idPrefix="service-second-form"
+        selectedService={service.slug}
+      />
+    </div>
+  </section>
+
+  <!-- Section 10: Areas We Serve -->
+  <section class="section bg-white border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8">
+        <h2 class="text-2xl-rx sm:text-3xl-rx font-display text-rx-ink mb-3 scroll-reveal">
+          Areas we serve
+        </h2>
+        <p class="text-base-rx text-rx-steel measure-prose">
+          Rooter-X Plumbing provides {service.title.toLowerCase()} across all 24 Orange County cities.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 font-mono text-sm-rx">
+        {CITIES.map((city) => (
+          <a
+            href={`/service-areas/${city.slug}`}
+            class="p-3 bg-rx-paper hover:bg-rx-blue hover:text-white rounded-[6px] border border-hairline transition-colors text-center font-medium truncate"
+          >
+            {city.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 11: Footer -->
+  <Footer slot="footer" />
+  <MobileActionBar slot="mobile-action-bar" />
+
+  <!-- Lightbox Modal Container -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 bg-rx-ink/90 hidden items-center justify-center p-4">
+    <div class="relative max-w-4xl w-full bg-rx-ink p-2 rounded-[8px] border border-hairline">
+      <button
+        id="lightbox-close"
+        type="button"
+        class="absolute -top-10 right-0 text-white font-mono text-sm-rx hover:text-rx-blue p-2"
+      >
+        X Close (Esc)
+      </button>
+      <img id="lightbox-img" src="" alt="Enlarged photo preview" class="w-full h-auto max-h-[80vh] object-contain rounded-[6px]" />
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById("lightbox-modal");
+    const modalImg = document.getElementById("lightbox-img") as HTMLImageElement;
+    const closeBtn = document.getElementById("lightbox-close");
+
+    document.querySelectorAll("[data-lightbox-trigger]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const src = btn.getAttribute("data-lightbox-trigger");
+        if (src && modalImg && modal) {
+          modalImg.src = src;
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+          document.body.style.overflow = "hidden";
+        }
+      });
+    });
+
+    const closeModal = () => {
+      if (modal) {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+        document.body.style.overflow = "";
+      }
+    };
+
+    closeBtn?.addEventListener("click", closeModal);
+    modal?.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeModal();
+    });
+  </script>
+</BaseLayout>

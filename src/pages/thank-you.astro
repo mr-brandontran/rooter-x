@@ -1,0 +1,52 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import UtilityBar from "@/components/shell/UtilityBar.astro";
+import Header from "@/components/shell/Header.astro";
+import Footer from "@/components/shell/Footer.astro";
+import MobileActionBar from "@/components/shell/MobileActionBar.astro";
+import Button from "@/components/ui/Button.astro";
+import { BUSINESS } from "@/config/business";
+import { CheckCircle2 } from "lucide-astro";
+---
+
+<BaseLayout
+  title="Thank You | Rooter-X Plumbing"
+  description="Your message has been received by Rooter-X Plumbing."
+>
+  <Fragment slot="head">
+    <meta name="robots" content="noindex, nofollow" />
+  </Fragment>
+
+  <UtilityBar slot="utility-bar" />
+  <Header slot="header" />
+
+  <section class="section max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center my-12">
+    <div class="p-10 bg-white rounded-[8px] border border-hairline shadow-sm">
+      <div class="w-16 h-16 bg-rx-blue/10 text-rx-blue rounded-full flex items-center justify-center mx-auto mb-6">
+        <CheckCircle2 class="w-10 h-10 stroke-[2]" />
+      </div>
+
+      <h1 class="text-3xl-rx sm:text-4xl-rx font-display font-bold text-rx-ink mb-4">
+        Thank You for Reaching Out
+      </h1>
+
+      <p class="text-lg-rx text-rx-steel measure-prose mx-auto mb-8">
+        Your service request has been transmitted directly to our dispatch system. A technician will contact you shortly to confirm appointment details.
+      </p>
+
+      <div class="p-6 bg-rx-paper rounded-[6px] border border-hairline max-w-md mx-auto mb-8 font-mono text-sm-rx">
+        <p class="text-rx-ink font-semibold mb-2">Need Immediate Emergency Assistance?</p>
+        <a href={BUSINESS.phoneHref} class="text-xl-rx text-rx-blue font-bold hover:underline block">
+          Call {BUSINESS.phoneDisplay}
+        </a>
+      </div>
+
+      <Button href="/" variant="ink">
+        Return to Home Page
+      </Button>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+  <MobileActionBar slot="mobile-action-bar" />
+</BaseLayout>

@@ -1,0 +1,80 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import UtilityBar from "@/components/shell/UtilityBar.astro";
+import Header from "@/components/shell/Header.astro";
+import Footer from "@/components/shell/Footer.astro";
+import MobileActionBar from "@/components/shell/MobileActionBar.astro";
+import CredibilityBlock from "@/components/blocks/CredibilityBlock.astro";
+import Button from "@/components/ui/Button.astro";
+import { BUSINESS } from "@/config/business";
+import { SERVICES } from "@/data/services";
+import { ArrowRight } from "lucide-astro";
+---
+
+<BaseLayout
+  title="Plumbing Services in Orange County, CA | Rooter-X Plumbing"
+  description="Explore all 12 licensed plumbing services from Rooter-X Plumbing: camera inspection, hydro jetting, drain clearing, trenchless pipe bursting, epoxy lining, water heaters, and new construction."
+>
+  <UtilityBar slot="utility-bar" />
+  <Header slot="header" />
+
+  <section class="bg-rx-ink text-white py-14 lg:py-20 border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h1 class="text-3xl-rx sm:text-4xl-rx lg:text-5xl font-display font-bold text-white mb-4">
+          Our Plumbing Services
+        </h1>
+        <p class="text-lg-rx text-rx-steel font-body measure-prose mb-8">
+          Complete residential and commercial sewer, drain, water supply, and new construction subcontracting in Orange County, CA.
+        </p>
+        <Button href={BUSINESS.phoneHref} variant="blue">
+          Call {BUSINESS.phoneDisplay}
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {SERVICES.map((svc) => (
+          <a
+            href={`/services/${svc.slug}`}
+            class="group flex flex-col justify-between bg-rx-paper rounded-[8px] border border-hairline p-6 hover:border-rx-blue transition-colors"
+          >
+            <div>
+              <div class="h-48 w-full overflow-hidden rounded-[6px] mb-5 bg-rx-ink">
+                <img
+                  src={svc.image}
+                  alt={svc.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-220"
+                  width="600"
+                  height="350"
+                  loading="lazy"
+                />
+              </div>
+              <span class="font-mono text-xs-rx font-semibold text-rx-blue uppercase block mb-1">
+                Service 0{svc.order}
+              </span>
+              <h2 class="text-xl-rx font-display font-bold text-rx-ink mb-2 group-hover:text-rx-blue transition-colors">
+                {svc.title}
+              </h2>
+              <p class="text-sm-rx text-rx-ink/80 mb-4">
+                {svc.shortDescription}
+              </p>
+            </div>
+            <div class="pt-4 border-t border-hairline flex items-center justify-between font-mono text-xs-rx font-semibold text-rx-blue">
+              <span>Explore {svc.title}</span>
+              <ArrowRight class="w-4 h-4" />
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CredibilityBlock />
+
+  <Footer slot="footer" />
+  <MobileActionBar slot="mobile-action-bar" />
+</BaseLayout>
