@@ -382,7 +382,7 @@ export const CITIES: CityData[] = [
       },
       {
         question: "Is 24/7 emergency plumbing service available in Buena Park?",
-        answer: "Yes, Rooter-X Plumbing is available 24/7/365 at (714) 323-3153."
+        answer: "Yes, Rooter-X Plumbing is available 24/7/365 at (714) 887-6918."
       }
     ],
     nearbyCitySlugs: ["fullerton", "la-habra", "anaheim", "cypress"]
@@ -530,7 +530,7 @@ export const CITIES: CityData[] = [
       },
       {
         question: "Is 24/7 emergency plumbing service available in Brea?",
-        answer: "Yes, Rooter-X is available 24/7/365 at (714) 323-3153."
+        answer: "Yes, Rooter-X is available 24/7/365 at (714) 887-6918."
       }
     ],
     nearbyCitySlugs: ["la-habra", "fullerton", "yorba-linda", "placentia"]
@@ -604,7 +604,7 @@ export const CITIES: CityData[] = [
       },
       {
         question: "Is emergency 24/7 plumbing service available in Cypress?",
-        answer: "Yes, Rooter-X is available 24/7/365 at (714) 323-3153."
+        answer: "Yes, Rooter-X is available 24/7/365 at (714) 887-6918."
       }
     ],
     nearbyCitySlugs: ["buena-park", "la-palma", "seal-beach", "los-alamitos"]
@@ -641,7 +641,7 @@ export const CITIES: CityData[] = [
       },
       {
         question: "Is emergency plumbing available 24/7 in Fullerton?",
-        answer: "Yes, Rooter-X Plumbing is available 24/7/365 at (714) 323-3153."
+        answer: "Yes, Rooter-X Plumbing is available 24/7/365 at (714) 887-6918."
       }
     ],
     nearbyCitySlugs: ["brea", "la-habra", "anaheim", "placentia"]
@@ -715,7 +715,7 @@ export const CITIES: CityData[] = [
       },
       {
         question: "Is 24/7 emergency plumbing service available in La Palma?",
-        answer: "Yes, Rooter-X Plumbing is available 24/7/365 at (714) 323-3153."
+        answer: "Yes, Rooter-X Plumbing is available 24/7/365 at (714) 887-6918."
       }
     ],
     nearbyCitySlugs: ["cypress", "buena-park", "cerritos", "anaheim"]
@@ -752,7 +752,7 @@ export const CITIES: CityData[] = [
       },
       {
         question: "Is emergency plumbing available 24/7 in Orange?",
-        answer: "Yes, Rooter-X Plumbing is available 24/7/365 at (714) 323-3153."
+        answer: "Yes, Rooter-X Plumbing is available 24/7/365 at (714) 887-6918."
       }
     ],
     nearbyCitySlugs: ["anaheim", "tustin", "garden-grove", "anaheim-hills"]
@@ -789,7 +789,7 @@ export const CITIES: CityData[] = [
       },
       {
         question: "Is 24/7 emergency plumbing service available in Santa Ana?",
-        answer: "Yes, Rooter-X Plumbing is available 24/7/365 at (714) 323-3153."
+        answer: "Yes, Rooter-X Plumbing is available 24/7/365 at (714) 887-6918."
       }
     ],
     nearbyCitySlugs: ["tustin", "orange", "garden-grove", "costa-mesa"]
@@ -863,7 +863,7 @@ export const CITIES: CityData[] = [
       },
       {
         question: "Is emergency 24/7 plumbing service available in Westminster?",
-        answer: "Yes, Rooter-X Plumbing is available 24/7/365 at (714) 323-3153."
+        answer: "Yes, Rooter-X Plumbing is available 24/7/365 at (714) 887-6918."
       }
     ],
     nearbyCitySlugs: ["garden-grove", "fountain-valley", "huntington-beach", "seal-beach"]

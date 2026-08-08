@@ -116,6 +116,6 @@ export const HOMEPAGE_FAQS: HomepageFAQ[] = [
   },
   {
     question: "How do I book a service appointment or camera inspection?",
-    answer: "You can book directly online using our contact form, or call us 24/7 at (714) 323-3153 for immediate scheduling."
+    answer: "You can book directly online using our contact form, or call us 24/7 at (714) 887-6918 for immediate scheduling."
   }
 ];

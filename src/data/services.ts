@@ -415,7 +415,7 @@ export const SERVICES: ServiceData[] = [
       },
       {
         question: "How do I schedule hydro jetting service in Orange County?",
-        answer: "Call Rooter-X Plumbing at (714) 323-3153 for 24/7 immediate scheduling or emergency service."
+        answer: "Call Rooter-X Plumbing at (714) 887-6918 for 24/7 immediate scheduling or emergency service."
       }
     ]
   },
@@ -546,7 +546,7 @@ export const SERVICES: ServiceData[] = [
       },
       {
         question: "How do I get a quote for pipe bursting replacement?",
-        answer: "Contact Rooter-X Plumbing at (714) 323-3153 for a camera inspection and upfront trenchless replacement proposal."
+        answer: "Contact Rooter-X Plumbing at (714) 887-6918 for a camera inspection and upfront trenchless replacement proposal."
       }
     ]
   },
@@ -677,7 +677,7 @@ export const SERVICES: ServiceData[] = [
       },
       {
         question: "How do I schedule a spot repair evaluation?",
-        answer: "Call Rooter-X Plumbing at (714) 323-3153 for camera diagnostic pinpointing and flat-rate repair pricing."
+        answer: "Call Rooter-X Plumbing at (714) 887-6918 for camera diagnostic pinpointing and flat-rate repair pricing."
       }
     ]
   },
@@ -808,7 +808,7 @@ export const SERVICES: ServiceData[] = [
       },
       {
         question: "How do I determine if my sewer line can be lined?",
-        answer: "Contact Rooter-X Plumbing at (714) 323-3153 for an HD camera inspection sweep to verify lining eligibility."
+        answer: "Contact Rooter-X Plumbing at (714) 887-6918 for an HD camera inspection sweep to verify lining eligibility."
       }
     ]
   },
@@ -939,7 +939,7 @@ export const SERVICES: ServiceData[] = [
       },
       {
         question: "How do I request a site evaluation for boring?",
-        answer: "Call Rooter-X Plumbing at (714) 323-3153 to speak with our directional boring specialists."
+        answer: "Call Rooter-X Plumbing at (714) 887-6918 to speak with our directional boring specialists."
       }
     ]
   },
@@ -1070,7 +1070,7 @@ export const SERVICES: ServiceData[] = [
       },
       {
         question: "How do I request an in-home repipe estimate?",
-        answer: "Call Rooter-X Plumbing at (714) 323-3153 for an expert on-site evaluation and detailed proposal."
+        answer: "Call Rooter-X Plumbing at (714) 887-6918 for an expert on-site evaluation and detailed proposal."
       }
     ]
   },
@@ -1201,7 +1201,7 @@ export const SERVICES: ServiceData[] = [
       },
       {
         question: "How do I schedule water heater replacement?",
-        answer: "Call Rooter-X Plumbing at (714) 323-3153 for emergency replacement or upfront installation quotes."
+        answer: "Call Rooter-X Plumbing at (714) 887-6918 for emergency replacement or upfront installation quotes."
       }
     ]
   },
@@ -1332,7 +1332,7 @@ export const SERVICES: ServiceData[] = [
       },
       {
         question: "How do I get an estimate for tankless installation?",
-        answer: "Call Rooter-X Plumbing at (714) 323-3153 for an expert on-site sizing evaluation and upfront quote."
+        answer: "Call Rooter-X Plumbing at (714) 887-6918 for an expert on-site sizing evaluation and upfront quote."
       }
     ]
   },
@@ -1463,7 +1463,7 @@ export const SERVICES: ServiceData[] = [
       },
       {
         question: "How do I book emergency leak detection in Orange County?",
-        answer: "Call Rooter-X Plumbing 24/7 at (714) 323-3153 for immediate technician dispatch."
+        answer: "Call Rooter-X Plumbing 24/7 at (714) 887-6918 for immediate technician dispatch."
       }
     ]
   },
@@ -1594,7 +1594,7 @@ export const SERVICES: ServiceData[] = [
       },
       {
         question: "How do general contractors submit plans for bidding?",
-        answer: "Email your construction PDF plans directly to Rooterxplumbing@gmail.com or call (714) 323-3153."
+        answer: "Email your construction PDF plans directly to Rooterxplumbing@gmail.com or call (714) 887-6918."
       }
     ]
   }
