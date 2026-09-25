@@ -39,18 +39,23 @@ const faqSchema = {
 
   <!-- Section 1: Hero matching reference screenshot -->
   <section class="relative w-full bg-rx-ink text-white py-24 lg:py-36 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-hairline">
-    <!-- Background Image with Overlay -->
+    <!-- Background Image with Overlay (Mobile Portrait vs Desktop Widescreen) -->
     <div class="absolute inset-0 z-0">
-      <img
-        src="/images/real-photos/trench-wide-topdown.jpg"
-        alt="Rooter-X Plumbing technician executing main sewer trench excavation"
-        class="w-full h-full object-cover object-[18%_center] opacity-85 brightness-105"
-        style="object-position: 18% 50% !important;"
-        width="1600"
-        height="900"
-        fetchpriority="high"
-      />
-      <div class="absolute inset-0 bg-gradient-to-r from-rx-ink/90 via-rx-ink/65 to-transparent"></div>
+      <picture class="w-full h-full block">
+        <source
+          media="(min-width: 640px)"
+          srcset="/images/real-photos/trench-hero-desktop-310.jpg"
+        />
+        <img
+          src="/images/real-photos/trench-wide-topdown-310.jpg"
+          alt="Rooter-X Plumbing technician executing main sewer trench excavation"
+          class="w-full h-full object-cover object-[center_25%] sm:object-[center_35%] opacity-85 brightness-105"
+          width="1600"
+          height="900"
+          fetchpriority="high"
+        />
+      </picture>
+      <div class="absolute inset-0 bg-gradient-to-r from-rx-ink/95 via-rx-ink/75 sm:via-rx-ink/60 to-rx-ink/25"></div>
     </div>
 
     <div class="relative z-10 max-w-7xl mx-auto">
@@ -109,26 +114,26 @@ const faqSchema = {
           </div>
         </div>
 
-        <!-- Right Column: Overlapping Dual Photos Matching Screenshot -->
-        <div class="lg:col-span-5 relative py-8 sm:py-12">
-          <!-- Background Top Right Image -->
-          <div class="w-4/5 ml-auto rounded-[8px] overflow-hidden border border-hairline shadow-lg bg-rx-ink h-64 sm:h-72">
+        <!-- Right Column: Overlapping Dual Photos with Full Background Image Visibility -->
+        <div class="lg:col-span-5 relative py-6 sm:py-10 min-h-[480px] sm:min-h-[560px]">
+          <!-- Background Top Right Image (Tall & Clear) -->
+          <div class="w-[88%] ml-auto rounded-[12px] overflow-hidden border border-hairline shadow-xl bg-rx-ink h-[320px] sm:h-[380px]">
             <img
-              src="/images/real-photos/sewer-trench-excavation.jpg"
+              src="/images/real-photos/sewer-trench-excavation-310.jpg"
               alt="Rooter-X technician on main sewer line excavation job site"
-              class="w-full h-full object-cover"
-              width="500"
-              height="400"
+              class="w-full h-full object-cover object-[center_35%]"
+              width="600"
+              height="450"
               loading="lazy"
             />
           </div>
 
           <!-- Foreground Overlapping Bottom Left Image -->
-          <div class="absolute bottom-0 left-0 w-3/4 rounded-[8px] overflow-hidden border-2 border-white shadow-2xl bg-rx-ink h-60 sm:h-64">
+          <div class="absolute bottom-0 left-0 w-[64%] sm:w-[60%] rounded-[12px] overflow-hidden border-4 border-white shadow-2xl bg-rx-ink h-[270px] sm:h-[320px] z-10">
             <img
               src="/images/real-photos/tech-root-removal.jpg"
               alt="Rooter-X technician displaying camera-proven sewer root removal"
-              class="w-full h-full object-cover"
+              class="w-full h-full object-cover object-top sm:object-center"
               width="450"
               height="350"
               loading="lazy"
@@ -172,7 +177,7 @@ const faqSchema = {
 
         <div class="relative h-64 rounded-[8px] overflow-hidden border border-hairline bg-rx-ink group">
           <img
-            src="/images/real-photos/sewer-trench-excavation.jpg"
+            src="/images/real-photos/sewer-trench-excavation-310.jpg"
             alt="Rooter-X technician in deep sewer trench excavation pit"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-220"
             width="400"
@@ -187,7 +192,7 @@ const faqSchema = {
 
         <div class="relative h-64 rounded-[8px] overflow-hidden border border-hairline bg-rx-ink group">
           <img
-            src="/images/real-photos/shower-repipe-installation.jpg"
+            src="/images/real-photos/shower-repipe-installation-310.jpg"
             alt="Rooter-X technician installing custom copper shower valve repipe"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-220"
             width="400"
@@ -441,64 +446,7 @@ const faqSchema = {
     </div>
   </section>
 
-  <!-- Section 2: Plumber in Orange County, CA (Matching Screenshot) -->
-  <section class="section bg-white border-b border-hairline overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mb-10 text-center md:text-left">
-        <h2 class="text-2xl-rx sm:text-3xl-rx lg:text-4xl-rx font-display font-bold text-rx-ink tracking-tight scroll-reveal">
-          Plumber in Orange County, CA | Licensed Orange County Plumbers
-        </h2>
-      </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <!-- Left Column: Copy -->
-        <div class="lg:col-span-7 space-y-5 text-base-rx text-rx-ink/90 font-body measure-prose">
-          <p>
-            <strong>Rooter-X Plumbing</strong> is equipped with a team of Fullerton plumbers, providing expert <strong>plumbing solutions throughout Orange County, CA</strong>. Whether you're dealing with a clogged drain, a leaky pipe, or need a complete plumbing upgrade, our skilled team is ready to handle it — 24 hours a day, 7 days a week.
-          </p>
-          <p>
-            From routine maintenance to emergency plumbing repairs, we offer a <a href="/services/" class="text-rx-blue font-semibold hover:underline">full range of services</a> designed to keep your home or business running smoothly. Our goal is simple: deliver fast, reliable, and long-lasting plumbing solutions backed by excellent customer care.
-          </p>
-          <p class="font-display font-bold text-rx-ink text-lg-rx pt-2">
-            Got a plumbing problem? Call Rooter-X Plumbing now at <a href={BUSINESS.phoneHref} class="text-rx-blue hover:underline">{BUSINESS.phoneDisplay}</a> — and get fast, reliable service done right the first time!
-          </p>
-          <div class="pt-2">
-            <a href="/about/" class="inline-flex items-center gap-2 text-rx-blue font-display font-bold text-base-rx hover:underline">
-              <span>Read More</span>
-              <ArrowRight class="w-4 h-4" />
-            </a>
-          </div>
-        </div>
-
-        <!-- Right Column: Overlapping Dual Photos Matching Screenshot -->
-        <div class="lg:col-span-5 relative py-8 sm:py-12">
-          <!-- Background Top Right Image -->
-          <div class="w-4/5 ml-auto rounded-[8px] overflow-hidden border border-hairline shadow-lg bg-rx-ink h-64 sm:h-72">
-            <img
-              src="/images/real-photos/sewer-trench-excavation.jpg"
-              alt="Rooter-X technician on sewer trench excavation job site"
-              class="w-full h-full object-cover"
-              width="500"
-              height="400"
-              loading="lazy"
-            />
-          </div>
-
-          <!-- Foreground Overlapping Bottom Left Image -->
-          <div class="absolute bottom-0 left-0 w-3/4 rounded-[8px] overflow-hidden border-2 border-white shadow-2xl bg-rx-ink h-60 sm:h-64">
-            <img
-              src="/images/real-photos/tech-root-removal.jpg"
-              alt="Rooter-X technician displaying camera-proven sewer root removal"
-              class="w-full h-full object-cover"
-              width="450"
-              height="350"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Section 5: Signs You Need a Plumber -->
   <section class="section bg-white border-b border-hairline">
@@ -522,7 +470,7 @@ const faqSchema = {
               <img
                 src={card.image}
                 alt={card.title}
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-220"
+                class={`w-full h-full ${card.imageClass || 'object-cover object-center'} group-hover:scale-105 transition-transform duration-220`}
                 width="400"
                 height="240"
                 loading="lazy"

@@ -35,8 +35,8 @@ export interface BusinessConfig {
 export const BUSINESS: BusinessConfig = {
   name: "Rooter-X Plumbing",
   tagline: "Residential · Commercial",
-  phoneDisplay: "(714) 887-6918",
-  phoneHref: "tel:+17148876918",
+  phoneDisplay: "(310) 363-9881",
+  phoneHref: "tel:+13103639881",
   email: "Rooterxplumbing@gmail.com",
   license: "CSLB Lic. #1008868",
   serviceArea: "Orange County, CA",

@@ -3,6 +3,7 @@ export interface SymptomCard {
   description: string;
   serviceSlug: string;
   image: string;
+  imageClass?: string;
 }
 
 export interface WhyChooseBlock {
@@ -20,37 +21,38 @@ export const SYMPTOMS: SymptomCard[] = [
     title: "Slow drains",
     description: "Water pooling in shower basins or taking minutes to drain from kitchen sinks indicates accumulating grease or branch line blockages. Cable clearing restores full gravity flow.",
     serviceSlug: "drain-cleaning",
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80"
+    image: "/images/real-photos/sign-slow-drains.jpg"
   },
   {
     title: "Low water pressure",
     description: "Sudden or gradual drops in water pressure across faucets stem from internal mineral rust scale in vintage galvanized pipes or failing pressure regulators. Repiping solves flow restrictions.",
     serviceSlug: "repipe",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80"
+    image: "/images/real-photos/sign-water-pressure.jpg",
+    imageClass: "object-cover object-[center_90%]"
   },
   {
     title: "Water stains",
     description: "Discolored damp patches on drywall, ceilings, or baseboards signal active supply line pinholes or waste stack leaks. Non-invasive acoustic location pinpoints the leak origin.",
     serviceSlug: "leak-detection",
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=600&q=80"
+    image: "/images/real-photos/sign-water-stains.jpg"
   },
   {
     title: "Rising water bills",
     description: "Unexplained surges in monthly utility water bills point to hidden subterranean supply line leaks running continuously beneath concrete foundation slabs.",
     serviceSlug: "leak-detection",
-    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80"
+    image: "/images/real-photos/sign-bill-spikes.jpg"
   },
   {
     title: "Sewer odors",
     description: "Foul sewer gas smells venting into bathrooms or yards signal cracked waste pipes, dry traps, or offset main sewer line joints. Camera inspection locates structural breaches.",
     serviceSlug: "camera-inspection",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80"
+    image: "/images/real-photos/sign-foul-odors.jpg"
   },
   {
     title: "Gurgling drains",
     description: "Bubbling toilet water or glug-glug noises from sink drains occur when trapped air forces past main sewer line root blockages. High-pressure hydro jetting clears mainlines completely.",
     serviceSlug: "hydro-jetting",
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80"
+    image: "/images/real-photos/sign-gurgling-drains.jpg"
   }
 ];
 
@@ -116,6 +118,6 @@ export const HOMEPAGE_FAQS: HomepageFAQ[] = [
   },
   {
     question: "How do I book a service appointment or camera inspection?",
-    answer: "You can book directly online using our contact form, or call us 24/7 at (714) 887-6918 for immediate scheduling."
+    answer: "You can book directly online using our contact form, or call us 24/7 at (310) 363-9881 for immediate scheduling."
   }
 ];

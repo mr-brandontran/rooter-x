@@ -23,6 +23,7 @@ export interface ServiceData {
   faqs: ServiceFAQ[];
   image: string;
   galleryImages: string[];
+  galleryImageClasses?: string[];
 }
 
 export const SERVICES: ServiceData[] = [
@@ -108,11 +109,16 @@ export const SERVICES: ServiceData[] = [
       }
     ],
     ctaHeadline: "Schedule an HD camera inspection today",
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80",
+    image: "/images/real-photos/camera-setup-lawn.jpg",
     galleryImages: [
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"
+      "/images/real-photos/camera-setup-lawn.jpg",
+      "/images/real-photos/camera-setup-street.jpg",
+      "/images/real-photos/camera-tech-operation.jpg"
+    ],
+    galleryImageClasses: [
+      "object-cover object-center",
+      "object-cover object-[center_65%]",
+      "object-cover object-[center_60%]"
     ],
     faqs: [
       {
@@ -369,12 +375,16 @@ export const SERVICES: ServiceData[] = [
         description: "Extends time between drain maintenance calls compared to mechanical cabling."
       }
     ],
-    ctaHeadline: "Restore sewer lines with hydro jetting",
-    image: "/images/real-photos/epoxy-liner-prep.jpg",
+    image: "/images/real-photos/hydrojetting-truck-driveway-310.jpg",
     galleryImages: [
-      "/images/real-photos/epoxy-liner-prep.jpg",
-      "/images/real-photos/tech-root-removal.jpg",
-      "/images/real-photos/sewer-trench-excavation.jpg"
+      "/images/real-photos/hydrojetting-truck-driveway-310.jpg",
+      "/images/real-photos/hydrojetting-truck-street-310.jpg",
+      "/images/real-photos/hydrojetting-cleanout-operation-310.jpg"
+    ],
+    galleryImageClasses: [
+      "object-cover object-[center_60%]",
+      "object-cover object-[center_65%]",
+      "object-cover object-center"
     ],
     faqs: [
       {
@@ -415,7 +425,7 @@ export const SERVICES: ServiceData[] = [
       },
       {
         question: "How do I schedule hydro jetting service in Orange County?",
-        answer: "Call Rooter-X Plumbing at (714) 887-6918 for 24/7 immediate scheduling or emergency service."
+        answer: "Call Rooter-X Plumbing at (310) 363-9881 for 24/7 immediate scheduling or emergency service."
       }
     ]
   },
@@ -500,12 +510,16 @@ export const SERVICES: ServiceData[] = [
         description: "Avoids costly concrete demo, repaving, and landscape re-planting expenses."
       }
     ],
-    ctaHeadline: "Replace sewer pipes without trenching",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+    image: "/images/real-photos/pipebursting-hdpe-layout-310.jpg",
     galleryImages: [
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80"
+      "/images/real-photos/pipebursting-hdpe-layout-310.jpg",
+      "/images/real-photos/pipebursting-fusion-machine-310.jpg",
+      "/images/real-photos/pipebursting-fused-seam-310.jpg"
+    ],
+    galleryImageClasses: [
+      "object-cover object-[center_65%]",
+      "object-cover object-center",
+      "object-cover object-center"
     ],
     faqs: [
       {
@@ -546,7 +560,7 @@ export const SERVICES: ServiceData[] = [
       },
       {
         question: "How do I get a quote for pipe bursting replacement?",
-        answer: "Contact Rooter-X Plumbing at (714) 887-6918 for a camera inspection and upfront trenchless replacement proposal."
+        answer: "Contact Rooter-X Plumbing at (310) 363-9881 for a camera inspection and upfront trenchless replacement proposal."
       }
     ]
   },
@@ -677,7 +691,7 @@ export const SERVICES: ServiceData[] = [
       },
       {
         question: "How do I schedule a spot repair evaluation?",
-        answer: "Call Rooter-X Plumbing at (714) 887-6918 for camera diagnostic pinpointing and flat-rate repair pricing."
+        answer: "Call Rooter-X Plumbing at (310) 363-9881 for camera diagnostic pinpointing and flat-rate repair pricing."
       }
     ]
   },
@@ -763,11 +777,16 @@ export const SERVICES: ServiceData[] = [
       }
     ],
     ctaHeadline: "Restore pipes with trenchless CIPP epoxy lining",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+    image: "/images/real-photos/epoxy-wetout-rollout.jpg",
     galleryImages: [
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80"
+      "/images/real-photos/epoxy-wetout-rollout.jpg",
+      "/images/real-photos/epoxy-robotic-cutter.jpg",
+      "/images/real-photos/epoxy-inversion-pit.jpg"
+    ],
+    galleryImageClasses: [
+      "object-cover object-[center_30%]",
+      "object-cover object-center",
+      "object-cover object-[center_40%]"
     ],
     faqs: [
       {
@@ -808,7 +827,7 @@ export const SERVICES: ServiceData[] = [
       },
       {
         question: "How do I determine if my sewer line can be lined?",
-        answer: "Contact Rooter-X Plumbing at (714) 887-6918 for an HD camera inspection sweep to verify lining eligibility."
+        answer: "Contact Rooter-X Plumbing at (310) 363-9881 for an HD camera inspection sweep to verify lining eligibility."
       }
     ]
   },
@@ -894,11 +913,11 @@ export const SERVICES: ServiceData[] = [
       }
     ],
     ctaHeadline: "Schedule directional boring service",
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80",
+    image: "/images/real-photos/boring-pipe-pull.jpg",
     galleryImages: [
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"
+      "/images/real-photos/boring-pipe-pull.jpg",
+      "/images/real-photos/boring-entry-pit.jpg",
+      "/images/real-photos/boring-pipe-tie-in.jpg"
     ],
     faqs: [
       {
@@ -939,7 +958,7 @@ export const SERVICES: ServiceData[] = [
       },
       {
         question: "How do I request a site evaluation for boring?",
-        answer: "Call Rooter-X Plumbing at (714) 887-6918 to speak with our directional boring specialists."
+        answer: "Call Rooter-X Plumbing at (310) 363-9881 to speak with our directional boring specialists."
       }
     ]
   },
@@ -1025,11 +1044,16 @@ export const SERVICES: ServiceData[] = [
       }
     ],
     ctaHeadline: "Upgrade home water pipes with a professional repipe",
-    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80",
+    image: "/images/real-photos/repipe-pex-pull.png",
     galleryImages: [
-      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"
+      "/images/real-photos/repipe-pex-pull.png",
+      "/images/real-photos/repipe-containment-living.png",
+      "/images/real-photos/repipe-containment-garage.png"
+    ],
+    galleryImageClasses: [
+      "object-cover object-[center_75%]",
+      "object-cover object-[center_80%]",
+      "object-cover object-[center_75%]"
     ],
     faqs: [
       {
@@ -1070,7 +1094,7 @@ export const SERVICES: ServiceData[] = [
       },
       {
         question: "How do I request an in-home repipe estimate?",
-        answer: "Call Rooter-X Plumbing at (714) 887-6918 for an expert on-site evaluation and detailed proposal."
+        answer: "Call Rooter-X Plumbing at (310) 363-9881 for an expert on-site evaluation and detailed proposal."
       }
     ]
   },
@@ -1201,7 +1225,7 @@ export const SERVICES: ServiceData[] = [
       },
       {
         question: "How do I schedule water heater replacement?",
-        answer: "Call Rooter-X Plumbing at (714) 887-6918 for emergency replacement or upfront installation quotes."
+        answer: "Call Rooter-X Plumbing at (310) 363-9881 for emergency replacement or upfront installation quotes."
       }
     ]
   },
@@ -1332,7 +1356,7 @@ export const SERVICES: ServiceData[] = [
       },
       {
         question: "How do I get an estimate for tankless installation?",
-        answer: "Call Rooter-X Plumbing at (714) 887-6918 for an expert on-site sizing evaluation and upfront quote."
+        answer: "Call Rooter-X Plumbing at (310) 363-9881 for an expert on-site sizing evaluation and upfront quote."
       }
     ]
   },
@@ -1463,7 +1487,7 @@ export const SERVICES: ServiceData[] = [
       },
       {
         question: "How do I book emergency leak detection in Orange County?",
-        answer: "Call Rooter-X Plumbing 24/7 at (714) 887-6918 for immediate technician dispatch."
+        answer: "Call Rooter-X Plumbing 24/7 at (310) 363-9881 for immediate technician dispatch."
       }
     ]
   },
@@ -1548,12 +1572,16 @@ export const SERVICES: ServiceData[] = [
         description: "Stands behind all installed groundworks, rough-in framing, and trim fixtures in writing."
       }
     ],
-    ctaHeadline: "Request a proposal for your new build",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+    image: "/images/real-photos/newconstruction-framing-joists-310.jpg",
     galleryImages: [
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80"
+      "/images/real-photos/newconstruction-framing-joists-310.jpg",
+      "/images/real-photos/newconstruction-foundation-pipe-sleeves-310.jpg",
+      "/images/real-photos/newconstruction-tech-joist-trench-310.jpg"
+    ],
+    galleryImageClasses: [
+      "object-cover object-[center_60%]",
+      "object-cover object-[center_65%]",
+      "object-cover object-[center_30%]"
     ],
     faqs: [
       {
@@ -1594,7 +1622,7 @@ export const SERVICES: ServiceData[] = [
       },
       {
         question: "How do general contractors submit plans for bidding?",
-        answer: "Email your construction PDF plans directly to Rooterxplumbing@gmail.com or call (714) 887-6918."
+        answer: "Email your construction PDF plans directly to Rooterxplumbing@gmail.com or call (310) 363-9881."
       }
     ]
   }

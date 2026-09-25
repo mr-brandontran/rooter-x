@@ -154,7 +154,7 @@ const badges = [
                 <img
                   src={imgUrl}
                   alt={`${service.title} job photo ${i + 1}`}
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-220"
+                  class={`w-full h-full ${service.galleryImageClasses?.[i] || 'object-cover object-center'} group-hover:scale-105 transition-transform duration-220`}
                   width="400"
                   height="300"
                   loading="lazy"
@@ -328,7 +328,7 @@ const badges = [
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <ContactForm
         heading="Need a quick fix? We're a message away."
-        subheading="Or speak directly with our team at (714) 887-6918."
+        subheading={`Or speak directly with our team at ${BUSINESS.phoneDisplay}.`}
         idPrefix="service-second-form"
         selectedService={service.slug}
       />
