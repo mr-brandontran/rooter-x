@@ -152,7 +152,7 @@ export const CITIES: CityData[] = [
       },
       {
         question: "Do you install high-capacity tankless water heaters for large Newport estates?",
-        answer: "Yes, we install multi-unit Navien and Rinnai commercial-grade tankless arrays with smart recirculation for high-demand luxury homes."
+        answer: "Yes, we install multi-unit commercial-grade tankless arrays with smart recirculation for high-demand luxury homes."
       },
       {
         question: "How quickly can you respond to a flooded basement or garage in CDM?",
@@ -526,7 +526,7 @@ export const CITIES: CityData[] = [
       },
       {
         question: "Do you install tankless water heaters in Brea homes?",
-        answer: "Yes, we install Navien and Rinnai high-efficiency tankless water heaters with full gas line sizing."
+        answer: "Yes, we install premium high-efficiency tankless water heaters with full gas line sizing."
       },
       {
         question: "Is 24/7 emergency plumbing service available in Brea?",
@@ -600,7 +600,7 @@ export const CITIES: CityData[] = [
       },
       {
         question: "Do you offer tankless water heater installation in Cypress?",
-        answer: "Yes, we install high-efficiency Navien and Rinnai tankless systems complete with gas line upgrades."
+        answer: "Yes, we install high-efficiency tankless systems complete with gas line upgrades."
       },
       {
         question: "Is emergency 24/7 plumbing service available in Cypress?",
@@ -711,7 +711,7 @@ export const CITIES: CityData[] = [
       },
       {
         question: "Do you install tankless water heaters in La Palma?",
-        answer: "Yes, we install high-efficiency Navien and Rinnai tankless systems complete with gas line sizing."
+        answer: "Yes, we install high-efficiency tankless systems complete with gas line sizing."
       },
       {
         question: "Is 24/7 emergency plumbing service available in La Palma?",
@@ -892,7 +892,7 @@ export const CITIES: CityData[] = [
       },
       {
         question: "Can high-capacity tankless water heaters supply large Yorba Linda residences?",
-        answer: "Yes, we install commercial-grade Navien and Rinnai tankless systems with smart recirculation pumps for large homes."
+        answer: "Yes, we install commercial-grade tankless systems with smart recirculation pumps for large homes."
       },
       {
         question: "How fast can Rooter-X respond to a plumbing emergency in Yorba Linda?",

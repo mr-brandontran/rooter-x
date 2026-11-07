@@ -1236,7 +1236,7 @@ export const SERVICES: ServiceData[] = [
     icon: "Zap",
     shortDescription: "Endless on-demand hot water solutions, gas line sizing, condensate drains, and high-efficiency tankless units.",
     h1: "Tankless Water Heater Installation in Orange County, CA",
-    overviewH2: "Continuous On-Demand High-Efficiency Tankless Systems",
+    overviewH2: "Tankless Water Heater Installation & Replacement",
     badgeRow: [
       "Accurate diagnosis",
       "Preventative maintenance",
@@ -1245,15 +1245,10 @@ export const SERVICES: ServiceData[] = [
       "24/7 emergency service"
     ],
     paragraphs: [
-      "Upgrade to endless on-demand hot water with a high-efficiency tankless water heater installation. Tankless units heat water instantly as it flows through ultra-durable dual stainless steel heat exchangers.",
-      "By eliminating standby storage heating, tankless systems reduce gas energy consumption by up to 40% while freeing up valuable garage or utility closet square footage.",
-      "We install top-rated Rinnai and Navien condensing tankless systems featuring concentric venting, built-in hot water recirculation pumps, and smart digital temperature control.",
-      "Our factory-trained technicians calculate exact BTU gas demand, upgrade gas lines to 3/4-inch as needed, route category IV stainless steel or PVC venting, and install isolation valve flush kits."
+      "Enjoy reliable hot water, improved energy efficiency, and a space-saving design with a professionally installed tankless water heater from Rooter-X Plumbing.",
+      "Unlike traditional tank-style water heaters that continuously store and heat a limited amount of water, tankless systems heat water on demand. This can provide a continuous supply of hot water while eliminating the need for a large storage tank."
     ],
-    expanderParagraphs: [
-      "Built-in recirculating pump options deliver instant hot water to distant bathroom sinks and showers, eliminating wasted water down the drain.",
-      "Tankless water heaters feature modular replaceable components, providing an operational lifespan exceeding 20 years."
-    ],
+    expanderParagraphs: [],
     signsHeading: "Why homeowners upgrade to tankless hot water",
     signsIntro: "Switching to tankless eliminates hot water shortages while significantly lowering monthly utility costs.",
     signs: [
@@ -1283,31 +1278,31 @@ export const SERVICES: ServiceData[] = [
         relatedServiceSlug: "camera-inspection"
       }
     ],
-    benefitsHeading: "Benefits of tankless water heater installation",
+    benefitsHeading: "Why Choose a Tankless Water Heater?",
     benefits: [
       {
-        label: "Endless continuous hot water supply",
-        description: "Never run out of hot water, regardless of how many showers run consecutively."
+        label: "On-demand hot water",
+        description: "Hot water is produced when you need it."
       },
       {
-        label: "Up to 40% gas energy savings",
-        description: "High UEF efficiency ratings cut energy consumption by eliminating standby storage loss."
+        label: "Energy efficiency",
+        description: "The system doesn’t continuously heat a stored tank of water."
       },
       {
-        label: "20+ year expected operational lifespan",
-        description: "Modular design allows component servicing, doubling standard tank service life."
+        label: "Space-saving design",
+        description: "Compact units can free up valuable garage or utility-room space."
       },
       {
-        label: "Saves valuable indoor floor space",
-        description: "Compact wall-mounted chassis mounts inside garages, utility rooms, or exterior walls."
+        label: "Continuous hot water",
+        description: "Properly sized systems can supply hot water for extended periods."
       },
       {
-        label: "Eliminates major tank flood risks",
-        description: "Contains no 50-gallon water storage tank that can rust out and flood garage floors."
+        label: "Long-term solution",
+        description: "With proper maintenance, tankless systems can provide years of service."
       },
       {
-        label: "Qualifies for gas utility rebates",
-        description: "High-efficiency condensing units qualify for local utility energy efficiency rebates."
+        label: "Reduced standby heat loss",
+        description: "Water isn’t sitting in a tank being reheated throughout the day."
       }
     ],
     ctaHeadline: "Upgrade to endless hot water today",
