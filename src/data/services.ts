@@ -571,7 +571,7 @@ export const SERVICES: ServiceData[] = [
     icon: "Hammer",
     shortDescription: "Targeted point repair solutions fixing isolated pipe breaks, offset joints, or root holes without replacing entire laterals.",
     h1: "Sewer Line Spot Repairs in Orange County, CA",
-    overviewH2: "Precision Subsurface Point Repair & Section Replacement",
+    overviewH2: "Main Sewer Spot Repair",
     badgeRow: [
       "Accurate diagnosis",
       "Preventative maintenance",
@@ -580,15 +580,10 @@ export const SERVICES: ServiceData[] = [
       "24/7 emergency service"
     ],
     paragraphs: [
-      "When main sewer lines suffer damage in an isolated 4-foot section while the remainder of the pipe remains structurally sound, spot repair provides a targeted, economical fix.",
-      "Using electronic camera sonde tracing, we mark the exact surface coordinates and depth of damaged pipe sections, limiting excavation to only the precise area requiring service.",
-      "We remove fractured clay sections, crushed cast iron, or root-severed joints and install heavy-duty schedule 40 ABS or PVC replacement pipe secured with heavy shear-band flexible couplings.",
-      "Sewer spot repair stops subterranean wastewater leaks, eliminates localized root entry points, and restores proper line grade without paying for total lateral replacement."
+      "When a section of your main sewer line is damaged, a complete sewer replacement may not always be necessary. Rooter-X Plumbing provides targeted main sewer spot repairs to address localized damage while minimizing unnecessary excavation.",
+      "A spot repair involves locating the damaged section of the sewer line, exposing the affected area, removing the damaged portion, and installing new sewer piping."
     ],
-    expanderParagraphs: [
-      "We install accessible cleanout risers during spot repairs, giving property owners permanent exterior access points for future maintenance camera inspections.",
-      "Each spot repair undergoes hydro testing and camera verification before backfilling and compacting soil."
-    ],
+    expanderParagraphs: [],
     signsHeading: "Signs your line needs a targeted sewer spot repair",
     signsIntro: "Targeted spot repairs are recommended when diagnostic camera sweeps confirm localized pipe failure.",
     signs: [
