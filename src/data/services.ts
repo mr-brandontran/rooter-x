@@ -1432,11 +1432,14 @@ export const SERVICES: ServiceData[] = [
       }
     ],
     ctaHeadline: "Pinpoint hidden leaks before damage spreads",
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80",
+    image: "/images/real-photos/leak-detection-technician-operation-310.jpg",
     galleryImages: [
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"
+      "/images/real-photos/leak-detection-technician-operation-310.jpg",
+      "/images/real-photos/leak-detection-equipment-kit-310.jpg"
+    ],
+    galleryImageClasses: [
+      "object-cover object-[center_35%]",
+      "object-cover object-[center_60%]"
     ],
     faqs: [
       {

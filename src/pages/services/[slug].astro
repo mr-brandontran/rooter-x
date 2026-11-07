@@ -142,12 +142,12 @@ const badges = [
             {service.overviewH2}
           </h2>
 
-          <!-- 3 Photos Row (Clickable to Lightbox) -->
-          <div class="grid grid-cols-3 gap-3 mb-8">
+          <!-- Photos Row (Clickable to Lightbox) -->
+          <div class={`grid ${service.galleryImages.length === 2 ? 'grid-cols-2' : 'grid-cols-3'} gap-3 mb-8`}>
             {service.galleryImages.map((imgUrl, i) => (
               <button
                 type="button"
-                class="group relative h-36 sm:h-48 overflow-hidden rounded-[8px] border border-hairline focus-visible:outline-rx-blue cursor-pointer text-left w-full"
+                class={`group relative ${service.galleryImages.length === 2 ? 'h-48 sm:h-64' : 'h-36 sm:h-48'} overflow-hidden rounded-[8px] border border-hairline focus-visible:outline-rx-blue cursor-pointer text-left w-full`}
                 data-lightbox-trigger={imgUrl}
                 aria-label={`View enlarged photo ${i + 1} for ${service.title}`}
               >
