@@ -1,4 +1,4 @@
-// Updated via Rooter-X Admin Portal on 2026-11-17T20:39:15.027Z
+// Updated via Rooter-X Admin Portal on 2026-11-17T21:01:18.961Z
 export interface BlogPost {
   title: string;
   slug: string;
@@ -11,18 +11,6 @@ export interface BlogPost {
 }
 
 export const BLOG_POSTS: BlogPost[] = [
-  {
-    "title": "test blog",
-    "slug": "test-blog",
-    "category": "testing blog function",
-    "author": "BTran",
-    "date": "2026-11-17",
-    "excerpt": "this is a test only",
-    "image": "/images/real-photos/1794947949711-img-2003.jpeg",
-    "content": [
-      "this is a test and the photo uploaded has nothing to do with rooter-x!"
-    ]
-  },
   {
     "title": "Understanding Vintage Sewer Pipe Materials in Orange County Homes",
     "slug": "understanding-orange-county-sewer-lines",
