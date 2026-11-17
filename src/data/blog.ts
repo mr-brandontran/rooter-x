@@ -1,3 +1,4 @@
+// Updated via Rooter-X Admin Portal on 2026-11-17T20:39:15.027Z
 export interface BlogPost {
   title: string;
   slug: string;
@@ -11,14 +12,26 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    title: "Understanding Vintage Sewer Pipe Materials in Orange County Homes",
-    slug: "understanding-orange-county-sewer-lines",
-    date: "2026-07-15",
-    author: "Rooter-X Plumbing Technical Team",
-    category: "Sewer Diagnostics",
-    excerpt: "A guide to vitrified clay, cast iron, and Orangeburg fiber pipe materials commonly found in 1920s–1980s Orange County residential neighborhoods.",
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80",
-    content: [
+    "title": "test blog",
+    "slug": "test-blog",
+    "category": "testing blog function",
+    "author": "BTran",
+    "date": "2026-11-17",
+    "excerpt": "this is a test only",
+    "image": "/images/real-photos/1794947949711-img-2003.jpeg",
+    "content": [
+      "this is a test and the photo uploaded has nothing to do with rooter-x!"
+    ]
+  },
+  {
+    "title": "Understanding Vintage Sewer Pipe Materials in Orange County Homes",
+    "slug": "understanding-orange-county-sewer-lines",
+    "date": "2026-07-15",
+    "author": "Rooter-X Plumbing Technical Team",
+    "category": "Sewer Diagnostics",
+    "excerpt": "A guide to vitrified clay, cast iron, and Orangeburg fiber pipe materials commonly found in 1920s–1980s Orange County residential neighborhoods.",
+    "image": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80",
+    "content": [
       "Orange County's residential architecture spans nearly a century of construction booms. Homes built in different decades feature distinct subterranean waste line pipe materials, each with unique failure modes.",
       "Vitrified Clay Pipe (VCP): Common in pre-1970s homes across Laguna Beach, Santa Ana, and Fullerton. Clay is completely immune to saltwater chemical corrosion but features rigid 4-foot bell-and-spigot joints where tree roots penetrate easily.",
       "Cast Iron Pipe: Widely installed beneath post-war 1950s–1970s tract housing in Costa Mesa, Anaheim, and Garden Grove. Cast iron deteriorates internally over 50 years through oxidation, creating rough rust scale ridges that catch solid waste.",
@@ -27,14 +40,14 @@ export const BLOG_POSTS: BlogPost[] = [
     ]
   },
   {
-    title: "How to Identify and Resolve Slab Leaks in Southern California",
-    slug: "slab-leaks-in-southern-california",
-    date: "2026-06-28",
-    author: "Rooter-X Plumbing Technical Team",
-    category: "Leak Detection",
-    excerpt: "Learn why copper supply lines buried beneath concrete foundations develop pinhole leaks and how non-invasive acoustic detection pinpoints the location.",
-    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80",
-    content: [
+    "title": "How to Identify and Resolve Slab Leaks in Southern California",
+    "slug": "slab-leaks-in-southern-california",
+    "date": "2026-06-28",
+    "author": "Rooter-X Plumbing Technical Team",
+    "category": "Leak Detection",
+    "excerpt": "Learn why copper supply lines buried beneath concrete foundations develop pinhole leaks and how non-invasive acoustic detection pinpoints the location.",
+    "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80",
+    "content": [
       "Many Southern California homes are constructed on concrete slab foundations, with pressurized copper hot and cold water supply lines routed underneath.",
       "Over time, high municipal water pressure, hard water mineral chemistry, and subtle ground vibration cause copper pipe walls to thin, forming tiny pinhole leaks beneath the slab.",
       "Key signs of a slab leak include unexplained spikes in monthly water utility bills, warm floor spots on tile or carpet, the sound of running water when all faucets are shut off, and spinning water meter dials.",
@@ -43,14 +56,14 @@ export const BLOG_POSTS: BlogPost[] = [
     ]
   },
   {
-    title: "Tank vs. Tankless Water Heaters for Hard Water in Orange County",
-    slug: "tank-vs-tankless-water-heaters-oc",
-    date: "2026-05-14",
-    author: "Rooter-X Plumbing Technical Team",
-    category: "Water Heaters",
-    excerpt: "Comparing standby storage efficiency, mineral scale buildup impact, operational lifespan, and utility rebates for local water heating upgrades.",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
-    content: [
+    "title": "Tank vs. Tankless Water Heaters for Hard Water in Orange County",
+    "slug": "tank-vs-tankless-water-heaters-oc",
+    "date": "2026-05-14",
+    "author": "Rooter-X Plumbing Technical Team",
+    "category": "Water Heaters",
+    "excerpt": "Comparing standby storage efficiency, mineral scale buildup impact, operational lifespan, and utility rebates for local water heating upgrades.",
+    "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+    "content": [
       "Water supply in Orange County contains elevated levels of dissolved calcium and magnesium minerals, commonly referred to as hard water.",
       "Standard tank water heaters trap mineral sediment at the bottom of the tank, creating insulating scale layers that reduce heating efficiency and cause popping rumbling noises.",
       "Tankless water heaters heat water on-demand as it flows through stainless steel heat exchangers, preventing bulk sediment accumulation while eliminating standby energy loss.",
