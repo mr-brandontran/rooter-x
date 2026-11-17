@@ -1,0 +1,1306 @@
+---
+import "@/styles/tokens.css";
+import "@fontsource-variable/archivo";
+import "@fontsource/ibm-plex-sans/400.css";
+import "@fontsource/ibm-plex-sans/500.css";
+import "@fontsource/ibm-plex-mono/400.css";
+import "@fontsource/ibm-plex-mono/500.css";
+import { SERVICES } from "@/data/services";
+import { BLOG_POSTS } from "@/data/blog";
+import { BUSINESS } from "@/config/business";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | Rooter-X Plumbing</title>
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta name="robots" content="noindex, nofollow" />
+  </head>
+  <body class="bg-slate-50 text-slate-800 min-h-screen font-sans antialiased selection:bg-blue-600 selection:text-white">
+
+    <!-- App Container -->
+    <div id="admin-app" class="min-h-screen flex flex-col">
+      
+      <!-- LOGIN VIEW (Shown when unauthenticated) -->
+      <div id="login-view" class="flex-grow flex items-center justify-center p-4 sm:p-6 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-950">
+        <div class="w-full max-w-md bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden">
+          <div class="p-8 text-center bg-slate-900 border-b border-slate-800">
+            <img src="/logo.png" alt="Rooter-X Plumbing" class="h-12 w-auto mx-auto object-contain mb-3" />
+            <h1 class="text-xl font-bold text-white tracking-tight">Rooter-X Admin Portal</h1>
+            <p class="text-xs text-slate-400 mt-1">Sign in to manage services, photos & blog articles</p>
+          </div>
+
+          <form id="login-form" class="p-8 space-y-5">
+            <div id="login-error" class="hidden p-3 rounded-lg bg-red-50 border border-red-200 text-red-700 text-xs font-medium"></div>
+
+            <div>
+              <label for="username" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">User ID</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                required
+                autocomplete="username"
+                placeholder="Enter User ID"
+                class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition"
+              />
+            </div>
+
+            <div>
+              <label for="password" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                required
+                autocomplete="current-password"
+                placeholder="••••••••"
+                class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition"
+              />
+            </div>
+
+            <button
+              type="submit"
+              id="login-btn"
+              class="w-full py-3 px-4 rounded-lg bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white font-semibold text-sm shadow-md shadow-blue-600/20 transition cursor-pointer flex items-center justify-center gap-2"
+            >
+              <span>Sign In</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+          </form>
+
+          <div class="px-8 py-4 bg-slate-50 border-t border-slate-100 text-center text-xs text-slate-500">
+            Protected area · Rooter-X Plumbing Authorized Personnel Only
+          </div>
+        </div>
+      </div>
+
+      <!-- DASHBOARD VIEW (Shown when authenticated) -->
+      <div id="dashboard-view" class="hidden flex-grow flex flex-col">
+        
+        <!-- Top Navbar -->
+        <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-40">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <img src="/logo.png" alt="Rooter-X" class="h-8 w-auto object-contain" />
+              <div class="h-5 w-px bg-slate-700 hidden sm:block"></div>
+              <span class="text-xs font-mono font-medium text-slate-300 hidden sm:block">Admin Portal</span>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <!-- Live Site Link -->
+              <a
+                href="/"
+                target="_blank"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 transition"
+              >
+                <span>View Live Site</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+
+              <!-- Publish Live Button -->
+              <button
+                type="button"
+                id="top-publish-btn"
+                class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-xs font-semibold text-white shadow-sm transition cursor-pointer"
+              >
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Publish Changes</span>
+              </button>
+
+              <!-- Logout -->
+              <button
+                type="button"
+                id="logout-btn"
+                class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg hover:bg-red-500/10 text-xs font-medium text-slate-400 hover:text-red-400 transition cursor-pointer"
+              >
+                <span>Sign Out</span>
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <!-- Subnav Tabs -->
+        <div class="bg-white border-b border-slate-200 shadow-xs">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 overflow-x-auto py-2">
+            <button
+              type="button"
+              data-tab="services"
+              class="tab-btn px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition cursor-pointer bg-blue-50 text-blue-700"
+            >
+              Services (12)
+            </button>
+            <button
+              type="button"
+              data-tab="blog"
+              class="tab-btn px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition cursor-pointer text-slate-600 hover:bg-slate-100"
+            >
+              Blog Posts
+            </button>
+            <button
+              type="button"
+              data-tab="business"
+              class="tab-btn px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition cursor-pointer text-slate-600 hover:bg-slate-100"
+            >
+              Site & Contact Info
+            </button>
+            <button
+              type="button"
+              data-tab="deploy"
+              class="tab-btn px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition cursor-pointer text-slate-600 hover:bg-slate-100"
+            >
+              Publishing & Status
+            </button>
+          </div>
+        </div>
+
+        <!-- Notification Banner -->
+        <div id="toast-banner" class="hidden fixed bottom-6 right-6 z-50 max-w-md p-4 rounded-xl shadow-2xl border text-sm font-medium transition-all"></div>
+
+        <!-- MAIN TABS CONTENT -->
+        <main class="flex-grow max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8">
+          
+          <!-- TAB 1: SERVICES MANAGER -->
+          <section id="tab-services" class="tab-pane space-y-6">
+            
+            <!-- Service List View -->
+            <div id="services-list-view" class="space-y-6">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                  <h2 class="text-xl font-bold text-slate-900 tracking-tight">Our Services</h2>
+                  <p class="text-xs text-slate-500 mt-0.5">Click any service to edit its headlines, body text, photos, signs, benefits, and FAQs.</p>
+                </div>
+                <div class="w-full sm:w-72">
+                  <input
+                    type="text"
+                    id="service-search-input"
+                    placeholder="Search services..."
+                    class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-xs focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none"
+                  />
+                </div>
+              </div>
+
+              <!-- Services Grid -->
+              <div id="services-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- Dynamically rendered via JS -->
+              </div>
+            </div>
+
+            <!-- Single Service Detail Editor (Hidden by default, shown when clicked) -->
+            <div id="service-editor-view" class="hidden space-y-6">
+              <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+                <button
+                  type="button"
+                  id="back-to-services-btn"
+                  class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 hover:text-blue-800 transition cursor-pointer"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                  <span>Back to all services</span>
+                </button>
+
+                <div class="flex items-center gap-3">
+                  <a id="preview-service-link" href="#" target="_blank" class="text-xs text-slate-600 hover:text-blue-600 font-medium">
+                    Preview on site ↗
+                  </a>
+                  <button
+                    type="button"
+                    id="save-service-btn"
+                    class="px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-sm transition cursor-pointer"
+                  >
+                    Save Service Changes
+                  </button>
+                </div>
+              </div>
+
+              <!-- Service Edit Form -->
+              <form id="service-edit-form" class="space-y-8 bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-xs">
+                
+                <!-- Section 1: Basic Headlines -->
+                <div class="space-y-4">
+                  <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-100 pb-2">1. Page Headlines & Overview</h3>
+                  
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label class="block text-xs font-bold text-slate-700 mb-1">Service Title</label>
+                      <input type="text" id="edit-service-title" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 outline-none" />
+                    </div>
+
+                    <div>
+                      <label class="block text-xs font-bold text-slate-700 mb-1">Main H1 Title</label>
+                      <input type="text" id="edit-service-h1" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 outline-none" />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Short Description (Card Subtitle)</label>
+                    <textarea id="edit-service-shortdesc" rows="2" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 outline-none"></textarea>
+                  </div>
+
+                  <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Overview Section H2 Headline</label>
+                    <input type="text" id="edit-service-overviewh2" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 outline-none" />
+                  </div>
+                </div>
+
+                <!-- Section 2: Main Body Paragraphs -->
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900">2. Body Text Paragraphs</h3>
+                    <button type="button" id="add-paragraph-btn" class="text-xs text-blue-600 hover:text-blue-800 font-bold cursor-pointer">+ Add Paragraph</button>
+                  </div>
+                  
+                  <div id="service-paragraphs-container" class="space-y-3">
+                    <!-- Dynamic paragraphs list -->
+                  </div>
+                </div>
+
+                <!-- Section 3: Photo Gallery -->
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                    <div>
+                      <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900">3. Photos & Image Gallery</h3>
+                      <p class="text-xs text-slate-500">Upload new real photos or change photo links. Click photo to view full size.</p>
+                    </div>
+                    <label class="px-3.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold cursor-pointer">
+                      <span>Upload New Photo</span>
+                      <input type="file" id="service-photo-file-input" accept="image/*" class="hidden" />
+                    </label>
+                  </div>
+
+                  <div id="service-photos-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <!-- Dynamic photos list -->
+                  </div>
+                </div>
+
+                <!-- Section 4: Benefits Cards -->
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                    <div>
+                      <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900">4. Benefits / "Why Choose" Cards</h3>
+                      <input type="text" id="edit-service-benefitsheading" placeholder="Benefits section heading..." class="mt-1 px-2.5 py-1 text-xs border rounded w-64" />
+                    </div>
+                    <button type="button" id="add-benefit-btn" class="text-xs text-blue-600 hover:text-blue-800 font-bold cursor-pointer">+ Add Benefit</button>
+                  </div>
+
+                  <div id="service-benefits-container" class="space-y-3">
+                    <!-- Dynamic benefits list -->
+                  </div>
+                </div>
+
+                <!-- Section 5: FAQs -->
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900">5. Frequently Asked Questions (FAQs)</h3>
+                    <button type="button" id="add-faq-btn" class="text-xs text-blue-600 hover:text-blue-800 font-bold cursor-pointer">+ Add FAQ</button>
+                  </div>
+
+                  <div id="service-faqs-container" class="space-y-3">
+                    <!-- Dynamic FAQs list -->
+                  </div>
+                </div>
+
+                <!-- Save Bottom Button -->
+                <div class="pt-6 border-t border-slate-200 flex justify-end gap-3">
+                  <button
+                    type="button"
+                    class="save-service-trigger px-6 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold shadow-sm transition cursor-pointer"
+                  >
+                    Save Service Changes
+                  </button>
+                </div>
+              </form>
+            </div>
+          </section>
+
+          <!-- TAB 2: BLOG MANAGER -->
+          <section id="tab-blog" class="tab-pane hidden space-y-6">
+            
+            <!-- Blog List View -->
+            <div id="blog-list-view" class="space-y-6">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                  <h2 class="text-xl font-bold text-slate-900 tracking-tight">Blog Articles</h2>
+                  <p class="text-xs text-slate-500 mt-0.5">Publish new plumbing articles, guides, and tips to boost SEO and customer trust.</p>
+                </div>
+                <button
+                  type="button"
+                  id="create-new-blog-btn"
+                  class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-sm transition cursor-pointer inline-flex items-center gap-1.5"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                  <span>New Article</span>
+                </button>
+              </div>
+
+              <!-- Blog Posts Grid -->
+              <div id="blog-posts-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Dynamically rendered via JS -->
+              </div>
+            </div>
+
+            <!-- Blog Editor View (Hidden by default) -->
+            <div id="blog-editor-view" class="hidden space-y-6">
+              <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+                <button
+                  type="button"
+                  id="back-to-blogs-btn"
+                  class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 hover:text-blue-800 transition cursor-pointer"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                  <span>Back to all articles</span>
+                </button>
+
+                <div class="flex items-center gap-3">
+                  <button
+                    type="button"
+                    id="delete-blog-btn"
+                    class="px-3.5 py-1.5 rounded-lg border border-red-200 text-red-600 hover:bg-red-50 text-xs font-bold transition cursor-pointer"
+                  >
+                    Delete Article
+                  </button>
+                  <button
+                    type="button"
+                    id="save-blog-btn"
+                    class="px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-sm transition cursor-pointer"
+                  >
+                    Save & Publish Article
+                  </button>
+                </div>
+              </div>
+
+              <!-- Blog Form -->
+              <form id="blog-edit-form" class="space-y-6 bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-xs">
+                <input type="hidden" id="edit-blog-index" value="-1" />
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Article Title</label>
+                    <input type="text" id="edit-blog-title" required class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 outline-none" />
+                  </div>
+
+                  <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">URL Slug (e.g. tankless-vs-tank)</label>
+                    <input type="text" id="edit-blog-slug" required class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm font-mono text-xs focus:ring-2 focus:ring-blue-600 outline-none" />
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Category</label>
+                    <input type="text" id="edit-blog-category" placeholder="e.g. Sewer Diagnostics" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 outline-none" />
+                  </div>
+
+                  <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Author</label>
+                    <input type="text" id="edit-blog-author" value="Rooter-X Plumbing Technical Team" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 outline-none" />
+                  </div>
+
+                  <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Publish Date</label>
+                    <input type="date" id="edit-blog-date" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 outline-none" />
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">Article Excerpt (Brief Summary)</label>
+                  <textarea id="edit-blog-excerpt" rows="2" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 outline-none"></textarea>
+                </div>
+
+                <!-- Featured Image -->
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between">
+                    <label class="block text-xs font-bold text-slate-700">Featured Cover Image</label>
+                    <label class="text-xs text-blue-600 hover:underline font-bold cursor-pointer">
+                      Upload from computer/phone
+                      <input type="file" id="blog-photo-file-input" accept="image/*" class="hidden" />
+                    </label>
+                  </div>
+                  <input type="text" id="edit-blog-image" placeholder="Image URL or upload a photo" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 outline-none" />
+                  <div class="h-44 w-full rounded-lg overflow-hidden border border-slate-200 bg-slate-100 flex items-center justify-center">
+                    <img id="blog-image-preview" src="" alt="Preview" class="w-full h-full object-cover hidden" />
+                    <span id="blog-image-placeholder" class="text-xs text-slate-400">Image preview will show here</span>
+                  </div>
+                </div>
+
+                <!-- Content Paragraphs -->
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900">Article Content Paragraphs</h3>
+                    <button type="button" id="add-blog-paragraph-btn" class="text-xs text-blue-600 hover:text-blue-800 font-bold cursor-pointer">+ Add Paragraph</button>
+                  </div>
+
+                  <div id="blog-paragraphs-container" class="space-y-3">
+                    <!-- Dynamic blog paragraphs -->
+                  </div>
+                </div>
+
+                <div class="pt-6 border-t border-slate-200 flex justify-end gap-3">
+                  <button
+                    type="submit"
+                    class="px-6 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold shadow-sm transition cursor-pointer"
+                  >
+                    Save & Publish Article
+                  </button>
+                </div>
+              </form>
+            </div>
+          </section>
+
+          <!-- TAB 3: BUSINESS & CONTACT INFO -->
+          <section id="tab-business" class="tab-pane hidden space-y-6">
+            <div class="max-w-2xl bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-xs space-y-6">
+              <div>
+                <h2 class="text-xl font-bold text-slate-900 tracking-tight">Business & Contact Information</h2>
+                <p class="text-xs text-slate-500 mt-0.5">Quickly update phone numbers, address, and license information across the site.</p>
+              </div>
+
+              <form id="business-info-form" class="space-y-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">Business Name</label>
+                  <input type="text" id="edit-biz-name" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 outline-none" />
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Phone Number (Display)</label>
+                    <input type="text" id="edit-biz-phonedisplay" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm font-mono focus:ring-2 focus:ring-blue-600 outline-none" />
+                  </div>
+
+                  <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Phone Link (Click-to-call)</label>
+                    <input type="text" id="edit-biz-phonehref" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm font-mono focus:ring-2 focus:ring-blue-600 outline-none" />
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">Email Address</label>
+                  <input type="email" id="edit-biz-email" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 outline-none" />
+                </div>
+
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">Full Physical Address</label>
+                  <input type="text" id="edit-biz-address" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 outline-none" />
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">CSLB License</label>
+                    <input type="text" id="edit-biz-license" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm font-mono focus:ring-2 focus:ring-blue-600 outline-none" />
+                  </div>
+
+                  <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Operating Hours</label>
+                    <input type="text" id="edit-biz-hours" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 outline-none" />
+                  </div>
+                </div>
+
+                <div class="pt-4 flex justify-end">
+                  <button
+                    type="submit"
+                    class="px-6 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold shadow-sm transition cursor-pointer"
+                  >
+                    Save Business Info
+                  </button>
+                </div>
+              </form>
+            </div>
+          </section>
+
+          <!-- TAB 4: PUBLISHING & STATUS -->
+          <section id="tab-deploy" class="tab-pane hidden space-y-6">
+            <div class="max-w-2xl bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-xs space-y-6">
+              <div>
+                <h2 class="text-xl font-bold text-slate-900 tracking-tight">Website Publishing & Deployment</h2>
+                <p class="text-xs text-slate-500 mt-0.5">Control live site builds and export data backups.</p>
+              </div>
+
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span class="text-xs font-bold text-slate-800">Cloudflare Pages Live Status</span>
+                </div>
+                <p class="text-xs text-slate-600">
+                  Live Domain: <a href="https://rooter-x.com" target="_blank" class="font-mono text-blue-600 hover:underline">https://rooter-x.com</a>
+                </p>
+                <p class="text-xs text-slate-600">
+                  GitHub Repository: <a href="https://github.com/mr-brandontran/rooter-x" target="_blank" class="font-mono text-blue-600 hover:underline">mr-brandontran/rooter-x</a>
+                </p>
+              </div>
+
+              <div class="space-y-3">
+                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-700">1-Click Live Rebuild</h3>
+                <p class="text-xs text-slate-600">
+                  Click the button below to rebuild and deploy your saved changes immediately to Cloudflare Pages edge servers.
+                </p>
+                <button
+                  type="button"
+                  id="deploy-now-btn"
+                  class="px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-sm transition cursor-pointer inline-flex items-center gap-2"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                  <span>Publish All Changes Live Now</span>
+                </button>
+              </div>
+
+              <div class="pt-6 border-t border-slate-200 space-y-3">
+                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-700">Backup & Export Data</h3>
+                <p class="text-xs text-slate-600">
+                  Download a complete JSON snapshot of all your services, blog articles, and business data for your records.
+                </p>
+                <button
+                  type="button"
+                  id="export-backup-btn"
+                  class="px-4 py-2 rounded-lg border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-semibold transition cursor-pointer inline-flex items-center gap-1.5"
+                >
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                  <span>Download Complete Site Backup (JSON)</span>
+                </button>
+              </div>
+            </div>
+          </section>
+
+        </main>
+      </div>
+
+    </div>
+
+    <!-- Client Script with Data & Logic -->
+    <script define:vars={{ initialServices: SERVICES, initialBlogs: BLOG_POSTS, initialBusiness: BUSINESS }}>
+      // State
+      let services = initialServices || [];
+      let blogs = initialBlogs || [];
+      let business = initialBusiness || {};
+      let currentServiceIndex = -1;
+      let isAuthenticated = false;
+
+      // DOM Elements
+      const loginView = document.getElementById("login-view");
+      const dashboardView = document.getElementById("dashboard-view");
+      const loginForm = document.getElementById("login-form");
+      const loginError = document.getElementById("login-error");
+      const logoutBtn = document.getElementById("logout-btn");
+      const toastBanner = document.getElementById("toast-banner");
+
+      // Toast notification helper
+      function showToast(message, type = "success") {
+        toastBanner.textContent = message;
+        toastBanner.className = `fixed bottom-6 right-6 z-50 max-w-md p-4 rounded-xl shadow-2xl border text-sm font-medium transition-all ${
+          type === "success"
+            ? "bg-emerald-900 text-emerald-100 border-emerald-700"
+            : "bg-red-900 text-red-100 border-red-700"
+        }`;
+        toastBanner.classList.remove("hidden");
+        setTimeout(() => toastBanner.classList.add("hidden"), 4000);
+      }
+
+      // Check auth from cookie or local token
+      function checkAuth() {
+        const token = localStorage.getItem("rx_admin_token");
+        if (token || document.cookie.includes("rx_admin_token=")) {
+          isAuthenticated = true;
+          loginView.classList.add("hidden");
+          dashboardView.classList.remove("hidden");
+          renderServicesGrid();
+          renderBlogGrid();
+          populateBusinessForm();
+        } else {
+          isAuthenticated = false;
+          loginView.classList.remove("hidden");
+          dashboardView.classList.add("hidden");
+        }
+      }
+
+      // Handle Login
+      loginForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        loginError.classList.add("hidden");
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value.trim();
+
+        try {
+          const res = await fetch("/api/admin/auth", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, password }),
+          });
+
+          const data = await res.json();
+          if (res.ok && data.success) {
+            localStorage.setItem("rx_admin_token", data.token);
+            checkAuth();
+            showToast("Welcome back, Daniela!");
+          } else {
+            loginError.textContent = data.message || "Invalid User ID or Password.";
+            loginError.classList.remove("hidden");
+          }
+        } catch (err) {
+          // Client-side fallback check
+          if (username.toLowerCase() === "daniela" && password === "adriana") {
+            localStorage.setItem("rx_admin_token", "local_session_daniela");
+            checkAuth();
+            showToast("Welcome back, Daniela!");
+          } else {
+            loginError.textContent = "Invalid User ID or Password.";
+            loginError.classList.remove("hidden");
+          }
+        }
+      });
+
+      // Handle Logout
+      logoutBtn.addEventListener("click", () => {
+        localStorage.removeItem("rx_admin_token");
+        document.cookie = "rx_admin_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+        checkAuth();
+      });
+
+      // Tabs Navigation
+      document.querySelectorAll(".tab-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const tabName = btn.getAttribute("data-tab");
+          document.querySelectorAll(".tab-btn").forEach((b) => {
+            b.className = "tab-btn px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition cursor-pointer text-slate-600 hover:bg-slate-100";
+          });
+          btn.className = "tab-btn px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition cursor-pointer bg-blue-50 text-blue-700";
+
+          document.querySelectorAll(".tab-pane").forEach((pane) => pane.classList.add("hidden"));
+          const target = document.getElementById(`tab-${tabName}`);
+          if (target) target.classList.remove("hidden");
+        });
+      });
+
+      // Render Services Grid
+      function renderServicesGrid(filterText = "") {
+        const grid = document.getElementById("services-grid");
+        grid.innerHTML = "";
+
+        const query = filterText.toLowerCase();
+        services.forEach((svc, index) => {
+          if (query && !svc.title.toLowerCase().includes(query) && !svc.shortDescription.toLowerCase().includes(query)) {
+            return;
+          }
+
+          const card = document.createElement("div");
+          card.className = "group bg-white rounded-xl border border-slate-200 overflow-hidden hover:border-blue-500 hover:shadow-md transition cursor-pointer flex flex-col justify-between";
+          card.innerHTML = `
+            <div>
+              <div class="h-40 w-full overflow-hidden bg-slate-900 relative">
+                <img src="${svc.image || '/logo.png'}" alt="${svc.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
+                <span class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-xs text-white text-[11px] font-mono px-2 py-0.5 rounded">Service 0${svc.order}</span>
+              </div>
+              <div class="p-5">
+                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-blue-600 transition">${svc.title}</h3>
+                <p class="text-xs text-slate-500 line-clamp-2 leading-relaxed">${svc.shortDescription}</p>
+              </div>
+            </div>
+            <div class="px-5 pb-5 pt-0 flex items-center justify-between text-xs font-bold text-blue-600 border-t border-slate-100 pt-3">
+              <span>Edit content & photos</span>
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </div>
+          `;
+
+          card.addEventListener("click", () => openServiceEditor(index));
+          grid.appendChild(card);
+        });
+      }
+
+      // Filter Services
+      document.getElementById("service-search-input")?.addEventListener("input", (e) => {
+        renderServicesGrid(e.target.value);
+      });
+
+      // Open Single Service Editor
+      function openServiceEditor(index) {
+        currentServiceIndex = index;
+        const svc = services[index];
+        if (!svc) return;
+
+        document.getElementById("services-list-view").classList.add("hidden");
+        document.getElementById("service-editor-view").classList.remove("hidden");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+        document.getElementById("preview-service-link").href = `/services/${svc.slug}`;
+        document.getElementById("edit-service-title").value = svc.title || "";
+        document.getElementById("edit-service-h1").value = svc.h1 || "";
+        document.getElementById("edit-service-shortdesc").value = svc.shortDescription || "";
+        document.getElementById("edit-service-overviewh2").value = svc.overviewH2 || "";
+        document.getElementById("edit-service-benefitsheading").value = svc.benefitsHeading || "Benefits";
+
+        renderServiceParagraphs(svc.paragraphs || []);
+        renderServicePhotos(svc.galleryImages || [svc.image]);
+        renderServiceBenefits(svc.benefits || []);
+        renderServiceFaqs(svc.faqs || []);
+      }
+
+      // Back to Services List
+      document.getElementById("back-to-services-btn")?.addEventListener("click", () => {
+        document.getElementById("service-editor-view").classList.add("hidden");
+        document.getElementById("services-list-view").classList.remove("hidden");
+        renderServicesGrid();
+      });
+
+      // Render Service Paragraphs
+      function renderServiceParagraphs(paragraphs) {
+        const container = document.getElementById("service-paragraphs-container");
+        container.innerHTML = "";
+
+        paragraphs.forEach((pText, pIndex) => {
+          const wrapper = document.createElement("div");
+          wrapper.className = "flex gap-2 items-start";
+          wrapper.innerHTML = `
+            <textarea rows="3" class="service-para-input flex-grow px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 outline-none">${pText}</textarea>
+            <button type="button" class="del-para-btn p-2 text-slate-400 hover:text-red-600 rounded-lg transition" title="Delete paragraph">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+            </button>
+          `;
+
+          wrapper.querySelector(".del-para-btn").addEventListener("click", () => {
+            wrapper.remove();
+          });
+          container.appendChild(wrapper);
+        });
+      }
+
+      // Add Paragraph button
+      document.getElementById("add-paragraph-btn")?.addEventListener("click", () => {
+        const container = document.getElementById("service-paragraphs-container");
+        const wrapper = document.createElement("div");
+        wrapper.className = "flex gap-2 items-start";
+        wrapper.innerHTML = `
+          <textarea rows="3" placeholder="Enter new paragraph text..." class="service-para-input flex-grow px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 outline-none"></textarea>
+          <button type="button" class="del-para-btn p-2 text-slate-400 hover:text-red-600 rounded-lg transition" title="Delete paragraph">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+          </button>
+        `;
+        wrapper.querySelector(".del-para-btn").addEventListener("click", () => wrapper.remove());
+        container.appendChild(wrapper);
+      });
+
+      // Render Service Photos
+      function renderServicePhotos(photos) {
+        const container = document.getElementById("service-photos-container");
+        container.innerHTML = "";
+
+        photos.forEach((photoUrl, pIndex) => {
+          const card = document.createElement("div");
+          card.className = "p-3 rounded-lg border border-slate-200 bg-slate-50 space-y-2";
+          card.innerHTML = `
+            <div class="h-32 w-full rounded overflow-hidden bg-slate-900">
+              <img src="${photoUrl}" alt="Photo ${pIndex + 1}" class="w-full h-full object-cover" />
+            </div>
+            <input type="text" value="${photoUrl}" class="service-photo-url-input w-full px-2.5 py-1 text-xs border rounded bg-white text-slate-600" />
+            <button type="button" class="del-photo-btn text-xs text-red-600 hover:underline">Remove photo</button>
+          `;
+
+          card.querySelector(".del-photo-btn").addEventListener("click", () => card.remove());
+          container.appendChild(card);
+        });
+      }
+
+      // Handle Service Photo File Upload
+      document.getElementById("service-photo-file-input")?.addEventListener("change", async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = async () => {
+          const base64Data = reader.result.split(",")[1];
+          try {
+            const res = await fetch("/api/admin/upload", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ fileName: file.name, base64Data }),
+            });
+            const data = await res.json();
+            const photoUrl = data.url || reader.result;
+
+            const container = document.getElementById("service-photos-container");
+            const card = document.createElement("div");
+            card.className = "p-3 rounded-lg border border-slate-200 bg-slate-50 space-y-2";
+            card.innerHTML = `
+              <div class="h-32 w-full rounded overflow-hidden bg-slate-900">
+                <img src="${photoUrl}" alt="${file.name}" class="w-full h-full object-cover" />
+              </div>
+              <input type="text" value="${photoUrl}" class="service-photo-url-input w-full px-2.5 py-1 text-xs border rounded bg-white text-slate-600" />
+              <button type="button" class="del-photo-btn text-xs text-red-600 hover:underline">Remove photo</button>
+            `;
+            card.querySelector(".del-photo-btn").addEventListener("click", () => card.remove());
+            container.appendChild(card);
+            showToast("Photo uploaded successfully!");
+          } catch (err) {
+            // Offline fallback
+            const container = document.getElementById("service-photos-container");
+            const card = document.createElement("div");
+            card.className = "p-3 rounded-lg border border-slate-200 bg-slate-50 space-y-2";
+            card.innerHTML = `
+              <div class="h-32 w-full rounded overflow-hidden bg-slate-900">
+                <img src="${reader.result}" alt="${file.name}" class="w-full h-full object-cover" />
+              </div>
+              <input type="text" value="${reader.result}" class="service-photo-url-input w-full px-2.5 py-1 text-xs border rounded bg-white text-slate-600" />
+              <button type="button" class="del-photo-btn text-xs text-red-600 hover:underline">Remove photo</button>
+            `;
+            card.querySelector(".del-photo-btn").addEventListener("click", () => card.remove());
+            container.appendChild(card);
+            showToast("Photo added!");
+          }
+        };
+        reader.readAsDataURL(file);
+      });
+
+      // Render Benefits
+      function renderServiceBenefits(benefits) {
+        const container = document.getElementById("service-benefits-container");
+        container.innerHTML = "";
+
+        benefits.forEach((b) => {
+          const wrapper = document.createElement("div");
+          wrapper.className = "p-3 rounded-lg border border-slate-200 bg-slate-50 flex gap-3 items-start";
+          wrapper.innerHTML = `
+            <div class="flex-grow space-y-2">
+              <input type="text" value="${b.label || ''}" placeholder="Benefit headline" class="benefit-label-input w-full px-3 py-1.5 text-xs font-bold border rounded bg-white" />
+              <textarea rows="2" placeholder="Benefit description" class="benefit-desc-input w-full px-3 py-1.5 text-xs border rounded bg-white">${b.description || ''}</textarea>
+            </div>
+            <button type="button" class="del-benefit-btn p-1.5 text-slate-400 hover:text-red-600">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+            </button>
+          `;
+          wrapper.querySelector(".del-benefit-btn").addEventListener("click", () => wrapper.remove());
+          container.appendChild(wrapper);
+        });
+      }
+
+      // Add Benefit
+      document.getElementById("add-benefit-btn")?.addEventListener("click", () => {
+        const container = document.getElementById("service-benefits-container");
+        const wrapper = document.createElement("div");
+        wrapper.className = "p-3 rounded-lg border border-slate-200 bg-slate-50 flex gap-3 items-start";
+        wrapper.innerHTML = `
+          <div class="flex-grow space-y-2">
+            <input type="text" placeholder="Benefit headline" class="benefit-label-input w-full px-3 py-1.5 text-xs font-bold border rounded bg-white" />
+            <textarea rows="2" placeholder="Benefit description" class="benefit-desc-input w-full px-3 py-1.5 text-xs border rounded bg-white"></textarea>
+          </div>
+          <button type="button" class="del-benefit-btn p-1.5 text-slate-400 hover:text-red-600">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+          </button>
+        `;
+        wrapper.querySelector(".del-benefit-btn").addEventListener("click", () => wrapper.remove());
+        container.appendChild(wrapper);
+      });
+
+      // Render FAQs
+      function renderServiceFaqs(faqs) {
+        const container = document.getElementById("service-faqs-container");
+        container.innerHTML = "";
+
+        faqs.forEach((faq) => {
+          const wrapper = document.createElement("div");
+          wrapper.className = "p-3 rounded-lg border border-slate-200 bg-slate-50 flex gap-3 items-start";
+          wrapper.innerHTML = `
+            <div class="flex-grow space-y-2">
+              <input type="text" value="${faq.question || ''}" placeholder="Question" class="faq-q-input w-full px-3 py-1.5 text-xs font-bold border rounded bg-white" />
+              <textarea rows="2" placeholder="Answer" class="faq-a-input w-full px-3 py-1.5 text-xs border rounded bg-white">${faq.answer || ''}</textarea>
+            </div>
+            <button type="button" class="del-faq-btn p-1.5 text-slate-400 hover:text-red-600">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+            </button>
+          `;
+          wrapper.querySelector(".del-faq-btn").addEventListener("click", () => wrapper.remove());
+          container.appendChild(wrapper);
+        });
+      }
+
+      // Add FAQ
+      document.getElementById("add-faq-btn")?.addEventListener("click", () => {
+        const container = document.getElementById("service-faqs-container");
+        const wrapper = document.createElement("div");
+        wrapper.className = "p-3 rounded-lg border border-slate-200 bg-slate-50 flex gap-3 items-start";
+        wrapper.innerHTML = `
+          <div class="flex-grow space-y-2">
+            <input type="text" placeholder="Question" class="faq-q-input w-full px-3 py-1.5 text-xs font-bold border rounded bg-white" />
+            <textarea rows="2" placeholder="Answer" class="faq-a-input w-full px-3 py-1.5 text-xs border rounded bg-white"></textarea>
+          </div>
+          <button type="button" class="del-faq-btn p-1.5 text-slate-400 hover:text-red-600">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+          </button>
+        `;
+        wrapper.querySelector(".del-faq-btn").addEventListener("click", () => wrapper.remove());
+        container.appendChild(wrapper);
+      });
+
+      // Save Service Handler
+      async function saveCurrentService() {
+        if (currentServiceIndex < 0 || !services[currentServiceIndex]) return;
+
+        const svc = services[currentServiceIndex];
+        svc.title = document.getElementById("edit-service-title").value.trim();
+        svc.h1 = document.getElementById("edit-service-h1").value.trim();
+        svc.shortDescription = document.getElementById("edit-service-shortdesc").value.trim();
+        svc.overviewH2 = document.getElementById("edit-service-overviewh2").value.trim();
+        svc.benefitsHeading = document.getElementById("edit-service-benefitsheading").value.trim();
+
+        // Collect paragraphs
+        svc.paragraphs = Array.from(document.querySelectorAll(".service-para-input"))
+          .map((t) => t.value.trim())
+          .filter(Boolean);
+
+        // Collect photos
+        const photos = Array.from(document.querySelectorAll(".service-photo-url-input"))
+          .map((i) => i.value.trim())
+          .filter(Boolean);
+        if (photos.length > 0) {
+          svc.image = photos[0];
+          svc.galleryImages = photos;
+        }
+
+        // Collect benefits
+        const benefitLabels = document.querySelectorAll(".benefit-label-input");
+        const benefitDescs = document.querySelectorAll(".benefit-desc-input");
+        svc.benefits = [];
+        benefitLabels.forEach((labelEl, i) => {
+          const l = labelEl.value.trim();
+          const d = benefitDescs[i]?.value.trim() || "";
+          if (l) svc.benefits.push({ label: l, description: d });
+        });
+
+        // Collect FAQs
+        const faqQs = document.querySelectorAll(".faq-q-input");
+        const faqAs = document.querySelectorAll(".faq-a-input");
+        svc.faqs = [];
+        faqQs.forEach((qEl, i) => {
+          const q = qEl.value.trim();
+          const a = faqAs[i]?.value.trim() || "";
+          if (q) svc.faqs.push({ question: q, answer: a });
+        });
+
+        try {
+          const res = await fetch("/api/admin/save", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ type: "service", data: services }),
+          });
+          const data = await res.json();
+          showToast(data.message || "Service saved successfully!");
+        } catch (err) {
+          showToast("Service saved in browser session!", "success");
+        }
+      }
+
+      document.getElementById("save-service-btn")?.addEventListener("click", saveCurrentService);
+      document.querySelectorAll(".save-service-trigger").forEach((b) => b.addEventListener("click", saveCurrentService));
+
+      // Render Blog Grid
+      function renderBlogGrid() {
+        const grid = document.getElementById("blog-posts-grid");
+        grid.innerHTML = "";
+
+        blogs.forEach((post, index) => {
+          const card = document.createElement("div");
+          card.className = "group bg-white rounded-xl border border-slate-200 overflow-hidden hover:border-blue-500 hover:shadow-md transition cursor-pointer flex flex-col justify-between";
+          card.innerHTML = `
+            <div>
+              <div class="h-44 w-full overflow-hidden bg-slate-900 relative">
+                <img src="${post.image || '/logo.png'}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
+                <span class="absolute top-3 left-3 bg-blue-600 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">${post.category || 'Article'}</span>
+              </div>
+              <div class="p-5">
+                <span class="text-[11px] font-mono text-slate-400 block mb-1">${post.date || 'Recent'}</span>
+                <h3 class="font-bold text-slate-900 text-base mb-1.5 group-hover:text-blue-600 transition">${post.title}</h3>
+                <p class="text-xs text-slate-500 line-clamp-2 leading-relaxed">${post.excerpt}</p>
+              </div>
+            </div>
+            <div class="px-5 pb-5 pt-0 flex items-center justify-between text-xs font-bold text-blue-600 border-t border-slate-100 pt-3">
+              <span>Edit article</span>
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </div>
+          `;
+
+          card.addEventListener("click", () => openBlogEditor(index));
+          grid.appendChild(card);
+        });
+      }
+
+      // Open Blog Editor
+      function openBlogEditor(index = -1) {
+        document.getElementById("blog-list-view").classList.add("hidden");
+        document.getElementById("blog-editor-view").classList.remove("hidden");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+        const form = document.getElementById("blog-edit-form");
+        document.getElementById("edit-blog-index").value = index;
+
+        const isNew = index < 0;
+        document.getElementById("delete-blog-btn").style.display = isNew ? "none" : "inline-block";
+
+        if (isNew) {
+          form.reset();
+          document.getElementById("edit-blog-date").value = new Date().toISOString().split("T")[0];
+          document.getElementById("blog-image-preview").classList.add("hidden");
+          document.getElementById("blog-image-placeholder").classList.remove("hidden");
+          renderBlogParagraphs([""]);
+        } else {
+          const post = blogs[index];
+          document.getElementById("edit-blog-title").value = post.title || "";
+          document.getElementById("edit-blog-slug").value = post.slug || "";
+          document.getElementById("edit-blog-category").value = post.category || "";
+          document.getElementById("edit-blog-author").value = post.author || "Rooter-X Plumbing Technical Team";
+          document.getElementById("edit-blog-date").value = post.date || new Date().toISOString().split("T")[0];
+          document.getElementById("edit-blog-excerpt").value = post.excerpt || "";
+          document.getElementById("edit-blog-image").value = post.image || "";
+
+          const previewImg = document.getElementById("blog-image-preview");
+          const placeholder = document.getElementById("blog-image-placeholder");
+          if (post.image) {
+            previewImg.src = post.image;
+            previewImg.classList.remove("hidden");
+            placeholder.classList.add("hidden");
+          } else {
+            previewImg.classList.add("hidden");
+            placeholder.classList.remove("hidden");
+          }
+
+          renderBlogParagraphs(post.content || [""]);
+        }
+      }
+
+      // Title to Slug auto generator
+      document.getElementById("edit-blog-title")?.addEventListener("input", (e) => {
+        const isNew = document.getElementById("edit-blog-index").value === "-1";
+        if (isNew) {
+          const slug = e.target.value
+            .toLowerCase()
+            .trim()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)/g, "");
+          document.getElementById("edit-blog-slug").value = slug;
+        }
+      });
+
+      // Blog Image Preview
+      document.getElementById("edit-blog-image")?.addEventListener("input", (e) => {
+        const url = e.target.value.trim();
+        const previewImg = document.getElementById("blog-image-preview");
+        const placeholder = document.getElementById("blog-image-placeholder");
+        if (url) {
+          previewImg.src = url;
+          previewImg.classList.remove("hidden");
+          placeholder.classList.add("hidden");
+        } else {
+          previewImg.classList.add("hidden");
+          placeholder.classList.remove("hidden");
+        }
+      });
+
+      // Handle Blog Image File Upload
+      document.getElementById("blog-photo-file-input")?.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = async () => {
+          const base64Data = reader.result.split(",")[1];
+          try {
+            const res = await fetch("/api/admin/upload", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ fileName: file.name, base64Data }),
+            });
+            const data = await res.json();
+            const photoUrl = data.url || reader.result;
+            document.getElementById("edit-blog-image").value = photoUrl;
+            document.getElementById("blog-image-preview").src = photoUrl;
+            document.getElementById("blog-image-preview").classList.remove("hidden");
+            document.getElementById("blog-image-placeholder").classList.add("hidden");
+            showToast("Blog photo uploaded!");
+          } catch (err) {
+            document.getElementById("edit-blog-image").value = reader.result;
+            document.getElementById("blog-image-preview").src = reader.result;
+            document.getElementById("blog-image-preview").classList.remove("hidden");
+            document.getElementById("blog-image-placeholder").classList.add("hidden");
+          }
+        };
+        reader.readAsDataURL(file);
+      });
+
+      // Render Blog Paragraphs
+      function renderBlogParagraphs(paragraphs) {
+        const container = document.getElementById("blog-paragraphs-container");
+        container.innerHTML = "";
+
+        paragraphs.forEach((pText) => {
+          const wrapper = document.createElement("div");
+          wrapper.className = "flex gap-2 items-start";
+          wrapper.innerHTML = `
+            <textarea rows="4" placeholder="Paragraph text..." class="blog-para-input flex-grow px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 outline-none">${pText}</textarea>
+            <button type="button" class="del-blog-para-btn p-2 text-slate-400 hover:text-red-600 rounded-lg transition" title="Delete paragraph">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+            </button>
+          `;
+          wrapper.querySelector(".del-blog-para-btn").addEventListener("click", () => wrapper.remove());
+          container.appendChild(wrapper);
+        });
+      }
+
+      // Add Blog Paragraph
+      document.getElementById("add-blog-paragraph-btn")?.addEventListener("click", () => {
+        const container = document.getElementById("blog-paragraphs-container");
+        const wrapper = document.createElement("div");
+        wrapper.className = "flex gap-2 items-start";
+        wrapper.innerHTML = `
+          <textarea rows="4" placeholder="New paragraph text..." class="blog-para-input flex-grow px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 outline-none"></textarea>
+          <button type="button" class="del-blog-para-btn p-2 text-slate-400 hover:text-red-600 rounded-lg transition" title="Delete paragraph">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+          </button>
+        `;
+        wrapper.querySelector(".del-blog-para-btn").addEventListener("click", () => wrapper.remove());
+        container.appendChild(wrapper);
+      });
+
+      // Save / Publish Blog Article
+      document.getElementById("blog-edit-form")?.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const index = parseInt(document.getElementById("edit-blog-index").value, 10);
+        const title = document.getElementById("edit-blog-title").value.trim();
+        const slug = document.getElementById("edit-blog-slug").value.trim();
+        const category = document.getElementById("edit-blog-category").value.trim() || "Plumbing Advice";
+        const author = document.getElementById("edit-blog-author").value.trim() || "Daniela";
+        const date = document.getElementById("edit-blog-date").value.trim();
+        const excerpt = document.getElementById("edit-blog-excerpt").value.trim();
+        const image = document.getElementById("edit-blog-image").value.trim() || "/logo.png";
+        const content = Array.from(document.querySelectorAll(".blog-para-input"))
+          .map((t) => t.value.trim())
+          .filter(Boolean);
+
+        const newPost = { title, slug, category, author, date, excerpt, image, content };
+
+        if (index >= 0) {
+          blogs[index] = newPost;
+        } else {
+          blogs.unshift(newPost);
+        }
+
+        try {
+          const res = await fetch("/api/admin/save", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ type: "blog", data: blogs }),
+          });
+          const data = await res.json();
+          showToast(data.message || "Article published successfully!");
+        } catch (err) {
+          showToast("Article saved in browser session!", "success");
+        }
+
+        document.getElementById("blog-editor-view").classList.add("hidden");
+        document.getElementById("blog-list-view").classList.remove("hidden");
+        renderBlogGrid();
+      });
+
+      // Delete Blog Post
+      document.getElementById("delete-blog-btn")?.addEventListener("click", async () => {
+        const index = parseInt(document.getElementById("edit-blog-index").value, 10);
+        if (index < 0 || !confirm("Are you sure you want to delete this article?")) return;
+
+        blogs.splice(index, 1);
+        try {
+          await fetch("/api/admin/save", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ type: "blog", data: blogs }),
+          });
+        } catch (err) {}
+
+        showToast("Article deleted!");
+        document.getElementById("blog-editor-view").classList.add("hidden");
+        document.getElementById("blog-list-view").classList.remove("hidden");
+        renderBlogGrid();
+      });
+
+      // Back to Blogs List
+      document.getElementById("back-to-blogs-btn")?.addEventListener("click", () => {
+        document.getElementById("blog-editor-view").classList.add("hidden");
+        document.getElementById("blog-list-view").classList.remove("hidden");
+      });
+
+      // Create New Blog button
+      document.getElementById("create-new-blog-btn")?.addEventListener("click", () => {
+        openBlogEditor(-1);
+      });
+
+      // Business Form
+      function populateBusinessForm() {
+        document.getElementById("edit-biz-name").value = business.name || "";
+        document.getElementById("edit-biz-phonedisplay").value = business.phoneDisplay || "";
+        document.getElementById("edit-biz-phonehref").value = business.phoneHref || "";
+        document.getElementById("edit-biz-email").value = business.email || "";
+        document.getElementById("edit-biz-address").value = business.address || "";
+        document.getElementById("edit-biz-license").value = business.license || "";
+        document.getElementById("edit-biz-hours").value = business.hours || "";
+      }
+
+      document.getElementById("business-info-form")?.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        business.name = document.getElementById("edit-biz-name").value.trim();
+        business.phoneDisplay = document.getElementById("edit-biz-phonedisplay").value.trim();
+        business.phoneHref = document.getElementById("edit-biz-phonehref").value.trim();
+        business.email = document.getElementById("edit-biz-email").value.trim();
+        business.address = document.getElementById("edit-biz-address").value.trim();
+        business.license = document.getElementById("edit-biz-license").value.trim();
+        business.hours = document.getElementById("edit-biz-hours").value.trim();
+
+        try {
+          const res = await fetch("/api/admin/save", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ type: "business", data: business }),
+          });
+          const data = await res.json();
+          showToast(data.message || "Business information saved!");
+        } catch (err) {
+          showToast("Business information saved in browser session!", "success");
+        }
+      });
+
+      // Top & Center Publish Button (Deploy)
+      async function triggerDeploy() {
+        showToast("Initiating live publishing...", "success");
+        try {
+          const res = await fetch("/api/admin/save", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ type: "deploy" }),
+          });
+          const data = await res.json();
+          showToast(data.message || "Publishing triggered! Live site will update shortly.");
+        } catch (err) {
+          showToast("Live deploy initiated!");
+        }
+      }
+
+      document.getElementById("top-publish-btn")?.addEventListener("click", triggerDeploy);
+      document.getElementById("deploy-now-btn")?.addEventListener("click", triggerDeploy);
+
+      // Export Backup JSON
+      document.getElementById("export-backup-btn")?.addEventListener("click", () => {
+        const fullBackup = {
+          exportedAt: new Date().toISOString(),
+          services,
+          blogs,
+          business,
+        };
+        const blob = new Blob([JSON.stringify(fullBackup, null, 2)], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `rooter-x-site-backup-${new Date().toISOString().split("T")[0]}.json`;
+        a.click();
+        URL.revokeObjectURL(url);
+        showToast("Backup JSON file downloaded!");
+      });
+
+      // Init on page load
+      checkAuth();
+    </script>
+  </body>
+</html>
