@@ -97,7 +97,14 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
           sha = fileData.sha;
         }
 
-        // 2. Commit update
+        // Helper for reliable base64 encoding in Workers
+        const bytes = new TextEncoder().encode(newFileContent);
+        let binary = "";
+        for (let i = 0; i < bytes.byteLength; i++) {
+          binary += String.fromCharCode(bytes[i]);
+        }
+        const base64Content = btoa(binary);
+
         const putRes = await fetch(getUrl, {
           method: "PUT",
           headers: {
@@ -108,7 +115,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
           },
           body: JSON.stringify({
             message: commitMessage,
-            content: btoa(unescape(encodeURIComponent(newFileContent))),
+            content: base64Content,
             sha: sha || undefined,
             branch: "main",
           }),

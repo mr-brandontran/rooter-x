@@ -975,13 +975,24 @@ import { BUSINESS } from "@/config/business";
         });
 
         try {
+          showToast("Saving changes to GitHub...", "success");
+          const token = localStorage.getItem("rx_admin_token") || "";
           const res = await fetch("/api/admin/save", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${token}`
+            },
             body: JSON.stringify({ type: "service", data: services }),
           });
           const data = await res.json();
-          showToast(data.message || "Service saved successfully!");
+          if (data.success && data.committed) {
+            showToast("🎉 Saved & committed to GitHub! Live site is building now (~60s).", "success");
+          } else if (data.success) {
+            showToast(data.message || "Service saved successfully!", "success");
+          } else {
+            showToast("Error saving: " + (data.error || "Unknown error"), "error");
+          }
         } catch (err) {
           showToast("Service saved in browser session!", "success");
         }
@@ -1181,13 +1192,24 @@ import { BUSINESS } from "@/config/business";
         }
 
         try {
+          showToast("Publishing article to GitHub & live site...", "success");
+          const token = localStorage.getItem("rx_admin_token") || "";
           const res = await fetch("/api/admin/save", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${token}`
+            },
             body: JSON.stringify({ type: "blog", data: blogs }),
           });
           const data = await res.json();
-          showToast(data.message || "Article published successfully!");
+          if (data.success && data.committed) {
+            showToast("🎉 Article published & committed to GitHub! Cloudflare is building the live site now (~60s).", "success");
+          } else if (data.success) {
+            showToast(data.message || "Article saved successfully!", "success");
+          } else {
+            showToast("Error publishing: " + (data.error || "Unknown error"), "error");
+          }
         } catch (err) {
           showToast("Article saved in browser session!", "success");
         }
