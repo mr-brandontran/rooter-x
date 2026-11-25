@@ -1,4 +1,4 @@
-// Updated via Rooter-X Admin Portal on 2026-11-25T01:58:59.801Z
+// Updated via Rooter-X Admin Portal on 2026-11-25T02:44:35.067Z
 export interface ServiceFAQ {
   question: string;
   answer: string;
@@ -360,12 +360,12 @@ export const SERVICES: ServiceData[] = [
   },
   {
     "order": 4,
-    "title": "Sewage pipe burst",
+    "title": "Pipe Bursting Sewer Line Replacement",
     "slug": "sewage-pipe-burst",
     "icon": "Activity",
-    "shortDescription": "Trenchless pipe replacement pulling seamless new HDPE pipe through collapsed old lines without excavating yards.",
-    "h1": "Sewage Pipe Bursting in Orange County, CA",
-    "overviewH2": "Trenchless Main Line Structural Pipe Replacement",
+    "shortDescription": "Replace damaged underground sewer pipes using trenchless pipe bursting technology with minimal surface disruption.",
+    "h1": "Trenchless Pipe Bursting Sewer Replacement in Orange County,CA",
+    "overviewH2": "Why choose Rooter-X for Trenchless pipe Bursting in Orange County?",
     "badgeRow": [
       "Accurate diagnosis",
       "Preventative maintenance",
@@ -374,10 +374,10 @@ export const SERVICES: ServiceData[] = [
       "24/7 emergency service"
     ],
     "paragraphs": [
-      "Pipe bursting is a trenchless replacement method that installs a continuous High-Density Polyethylene (HDPE) pipe directly through broken or collapsed existing sewer lines.",
-      "A hydraulic pulling unit draws a hardened steel conical bursting head through the host pipe, fracturing original clay, cast iron, or Orangeburg lines while expanding the surrounding soil cavity.",
-      "Behind the bursting head, a continuous fusion-welded HDPE sewer pipe is pulled into place instantly, matching or expanding original pipe capacity without trenching across lawns, driveways, or hardscapes.",
-      "Continuous HDPE pipe eliminates all pipe joints, providing a leak-proof root-proof sewer lateral engineered to last over 50 years."
+      "Rooter-X Plumbing provides professional trenchless pipe bursting services throughout Orange County, CA. Pipe bursting is an advanced underground sewer replacement method used to replace damaged, deteriorated, or failing sewer pipes without requiring a traditional open trench along the entire pipeline.",
+      "Our pipe bursting process uses specialized equipment to break apart the existing underground pipe while simultaneously pulling a new replacement pipe into position. This method can help restore the function of damaged sewer lines while reducing disruption to landscaping, driveways, sidewalks, and other surrounding surfaces when site conditions allow.",
+      "Trenchless sewer pipe replacement may be an effective solution for properties experiencing recurring sewer backups, cracked pipes, root intrusion, corrosion, or deteriorating underground plumbing. Before recommending pipe bursting, our team evaluates the existing sewer line, pipe depth, access points, surrounding utilities, and site conditions.",
+      "Rooter-X Plumbing provides underground sewer solutions for residential properties, commercial buildings, and HOA communities in Fullerton and throughout Orange County. Contact out team to discuss your sewer line replacement needs and determine whether trenchless pipe bursting is the right solution for your property."
     ],
     "expanderParagraphs": [
       "Pipe bursting requires only two small access pits — one entry pit near the foundation and one insertion pit at the property line connection — preserving expensive landscaping.",
@@ -412,31 +412,23 @@ export const SERVICES: ServiceData[] = [
         "relatedServiceSlug": "repipe"
       }
     ],
-    "benefitsHeading": "Benefits of trenchless pipe bursting",
+    "benefitsHeading": "Benefits of Trenchless Pipe Bursting Sewer Replacement",
     "benefits": [
       {
-        "label": "Zero trenching across hardscapes",
-        "description": "Preserves custom landscaping, concrete driveways, and outdoor living structures."
+        "label": "Minimal Surface Disruption",
+        "description": "Pipe Bursting can replace underground sewer lines with less excavation than traditional open-trench replacement, helping preserve landscaping, driveways, and surroundings surfaces when site conditions allow."
       },
       {
-        "label": "Continuous jointless HDPE pipe",
-        "description": "Eliminates pipe bell joints where tree root tips enter waste systems."
+        "label": "Complete Sewer Pipe Replacement",
+        "description": "Unlike pipe lining, pipe bursting replaces the existing damaged pipe with a new pipe, providing a replacement solution for deteriorated underground sewer systems."
       },
       {
-        "label": "50+ year operational lifespan",
-        "description": "Fused HDPE material is impervious to root intrusion, chemical corrosion, and soil shifts."
+        "label": "Residential & Commercial Solutions",
+        "description": "We provide trenchless sewer replacement solutions for homeowners, commercial buildings, property managers, and HOA communities throughout Orange County."
       },
       {
-        "label": "Capacity expansion capability",
-        "description": "Enables upsizing 4-inch sewer laterals to 6-inch lines during installation."
-      },
-      {
-        "label": "Faster completion time",
-        "description": "Most residential pipe bursting installations are completed in a single working day."
-      },
-      {
-        "label": "Saves total restoration costs",
-        "description": "Avoids costly concrete demo, repaving, and landscape re-planting expenses."
+        "label": "Advanced Trenchless Technology",
+        "description": "Our pipe bursting process uses specialized equipment to fracture the existing pipe while pulling a new replacement pipe into position, reducing the need for extensive excavation when conditions permit."
       }
     ],
     "image": "/images/real-photos/pipebursting-hdpe-layout-310.jpg",
@@ -452,44 +444,28 @@ export const SERVICES: ServiceData[] = [
     ],
     "faqs": [
       {
+        "question": "What is a pipe bursting sewer replacement?",
+        "answer": "Pipe bursting is a trenchless sewer replacement method that breaks apart an existing damaged underground pipe while simultaneously pulling a new replacement pipe into its place. It can replace failing sewer lines without excavating the entire length of the pipeline."
+      },
+      {
         "question": "How does trenchless pipe bursting work?",
-        "answer": "A hydraulic wire puller pulls a conical expansion head through old damaged pipe, breaking the original pipe outward while pulling a new continuous HDPE pipe into place."
+        "answer": "Specialized equipment pulls a bursting head through the existing sewer pipe. The bursting head fractures the old pipe outward while pulling a new pipe into position behind it. Access pits are typically required at designated locations."
       },
       {
-        "question": "How many holes need to be dug for pipe bursting?",
-        "answer": "Pipe bursting requires only two access pits: one launching pit near the house cleanout and one receiving pit near the property line or city tie-in."
+        "question": "What are the benefits or pipe bursting?",
+        "answer": "Pipe bursting can reduce excavation, minimize disruption to landscaping and hardscaping, and replace deteriorated underground sewer pipes with a new pipe. Suitability depends on site conditions and existing pipe configuration."
       },
       {
-        "question": "Is HDPE pipe durable for main sewer lines?",
-        "answer": "Yes, High-Density Polyethylene (HDPE) features seamless heat-fused joints and is rated for a service life exceeding 50 to 100 years."
+        "question": "Is pipe bursting better than traditional sewer replacement?",
+        "answer": "Pipe bursting can be a less disruptive alternative to traditional open-trench sewer replacement. However, conventional excavation may be necessary when access, pipe alignment, surrounding utilities, or site conditions make trenchless replacement unsuitable."
       },
       {
-        "question": "Can pipe bursting increase pipe diameter size?",
-        "answer": "Yes, pipe bursting can upsize sewer lines, such as replacing a 4-inch clay pipe with a 6-inch HDPE main line."
+        "question": "What is the difference between pipe bursting and pipe lining?",
+        "answer": "Pipe bursting replaces the existing pipe by fracturing it and pulling a new pipe into position. Pipe lining installs a new liner inside the existing pipe to create a renewed interior surface without replacing the entire pipe."
       },
       {
-        "question": "How long does a pipe bursting project take?",
-        "answer": "Residential pipe bursting is typically completed in 1 day, minimizing water service downtime for homeowners."
-      },
-      {
-        "question": "Will pipe bursting damage surrounding underground utilities?",
-        "answer": "Before bursting, we locate all gas, electrical, and water utilities using subsurface electronic locators to ensure safe clearance."
-      },
-      {
-        "question": "What happens to the old pipe pieces underground?",
-        "answer": "The old pipe fragments are pressed outward into the surrounding soil mass, forming a protective exterior envelope around the new HDPE pipe."
-      },
-      {
-        "question": "Is pipe bursting permitted in Orange County cities?",
-        "answer": "Yes, trenchless HDPE pipe bursting is fully approved under the California Plumbing Code and local municipal sanitation districts."
-      },
-      {
-        "question": "Can pipe bursting replace broken cast iron under driveways?",
-        "answer": "Yes, pipe bursting is ideal for replacing corroded cast iron under driveways without breaking up concrete slabs."
-      },
-      {
-        "question": "How do I get a quote for pipe bursting replacement?",
-        "answer": "Contact Rooter-X Plumbing at (310) 363-9881 for a camera inspection and upfront trenchless replacement proposal."
+        "question": "Does Rooter-X Plumbing offer pipe bursting in Orange County?",
+        "answer": "Yes! Rooter-X Plumbing provides underground sewer replacement and trenchless pipe bursting solutions in Fullerton and throughout Orange County. Contact our team to discuss your property's sewer line conditions and schedule an evaluation."
       }
     ]
   },
