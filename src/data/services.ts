@@ -1,4 +1,4 @@
-// Updated via Rooter-X Admin Portal on 2026-11-25T00:27:26.112Z
+// Updated via Rooter-X Admin Portal on 2026-11-25T01:18:25.237Z
 export interface ServiceFAQ {
   question: string;
   answer: string;
@@ -273,12 +273,12 @@ export const SERVICES: ServiceData[] = [
   },
   {
     "order": 3,
-    "title": "Hydro jetting",
+    "title": "Hydro Jetting Drain Cleaning",
     "slug": "hydro-jetting",
     "icon": "Waves",
-    "shortDescription": "High-pressure 4,000 PSI water blasting scouring grease, heavy scale, and root infestations back to bare pipe walls.",
-    "h1": "Hydro Jetting in Orange County, CA",
-    "overviewH2": "High-Pressure Hydraulic Sewer Wall Restoration",
+    "shortDescription": "Powerful high-pressure water jetting to remove, sludge, roots, and stubborn buildup from drain and sewer lines.",
+    "h1": "Professional Hydro Jetting Services in Orange County,CA",
+    "overviewH2": "Why Choose Rooter-X for Professional Hydro Jetting in Orange County?",
     "badgeRow": [
       "Accurate diagnosis",
       "Preventative maintenance",
@@ -287,10 +287,10 @@ export const SERVICES: ServiceData[] = [
       "24/7 emergency service"
     ],
     "paragraphs": [
-      "Hydro jetting utilizes high-pressure water streams operating up to 4,000 PSI at 12 gallons per minute to scour internal sewer line surfaces. While drain cables bore holes through clogs, hydro jetting restores full interior pipe diameter.",
-      "Specialized rotating nozzles project rearward high-velocity water jets that propel the hose down sewer lines, shearing off heavy grease coats, mineral scale, hardened sludge, and thick root curtains.",
-      "Hydro jetting is essential for commercial food service lines accumulating heavy fats and oils, as well as residential main sewer lines prone to heavy tree root intrusion.",
-      "We perform mandatory pre-jetting camera inspections to evaluate pipe structural stability before applying high-pressure water streams, ensuring safe and effective cleaning."
+      "Rooter-X Plumbing provides professional hydro jetting services throughout Orange County, CA. Hydro jetting uses high pressure water to clean the inside of drain and sewer pipes, helping remove stubborn buildup and restore proper water flow.",
+      "Our hydro jetting equipment helps remove grease, sludge, soap residue, mineral build up, and tree root intrusion from suitable drain and sewer lines. This powerful cleaning method can address recurring blockages that traditional drain snaking may not fully remove.",
+      "Whether you are dealing with recurring kitchen drain backups, clogged main sewer lines, or buildup in commercial plumbing systems, our team evaluates the condition of the piping before recommending hydro jetting. A camera inspection may be used to help assess the line.",
+      "Rooter-X Plumbing serves residential properties, commercial buildings, and HOA communities in Fullerton and throughout Orange County. Contact us for professional hydro jetting and drain cleaning services. We are available 24/7 for plumbing emergencies."
     ],
     "expanderParagraphs": [
       "For trenchless pipe relining projects, hydro jetting serves as the vital preparation step, removing all interior debris and scale so epoxy resin bonds cleanly to original pipe walls.",
@@ -328,28 +328,20 @@ export const SERVICES: ServiceData[] = [
     "benefitsHeading": "Benefits of hydro jetting service",
     "benefits": [
       {
-        "label": "Cleans pipe walls 360 degrees",
-        "description": "Removes 100% of grease, sludge, and scale rather than cutting a single passage hole."
+        "label": "Powerful High-Pressure Cleaning",
+        "description": "Hydro jetting uses specialized high pressure water equipment to remove stubborn grease, sludge, debris, and buildup from the interior walls of suitable drain and sewer pipes."
       },
       {
-        "label": "Long-lasting blockage prevention",
-        "description": "Scoured smooth pipe walls prevent fresh debris from catching and forming new clogs."
+        "label": "Removes Stubborn Drain Buildup",
+        "description": "Breaks down accumulated grease, soap residue, mineral deposits, and other debris that can restrict water flow and contribute to recurring drain blockages."
       },
       {
-        "label": "Pulverizes stubborn root systems",
-        "description": "High-pressure water jets cut root masses clean at the pipe joint entry points."
+        "label": "Residential & Commercial Solutions",
+        "description": "We provide professional hydro jetting services for homeowners, commercial properties, restaurants, property managers, and HOA communities throughout Orange County."
       },
       {
-        "label": "100% chemical-free operation",
-        "description": "Uses pure high-velocity water streams without environmental contaminants or harsh acids."
-      },
-      {
-        "label": "Essential prep for trenchless lining",
-        "description": "Ensures flawless epoxy adhesion for sewer lining restoration projects."
-      },
-      {
-        "label": "Cost-effective long-term maintenance",
-        "description": "Extends time between drain maintenance calls compared to mechanical cabling."
+        "label": "Through Sewer Line Cleaning",
+        "description": "Our hydro jetting equipment helps clean the inside of suitable sewer lines. We assess pipe conditions and recommend the appropriate cleaning method for your plumbing system."
       }
     ],
     "image": "/images/real-photos/hydrojetting-truck-driveway-310.jpg",
@@ -365,44 +357,28 @@ export const SERVICES: ServiceData[] = [
     ],
     "faqs": [
       {
-        "question": "Can hydro jetting damage older pipes?",
-        "answer": "Before hydro jetting, we perform a video camera inspection. If pipes are severely broken or structurally collapsed, pressure is adjusted or alternative repair methods are recommended."
+        "question": "What is hydro jetting?",
+        "answer": "Hydro jetting is a professional drain cleaning method that uses high-pressure water to remove grease, sludge, debris, mineral buildup, and other obstructions from suitable drain and sewer pipes."
       },
       {
-        "question": "What PSI pressure is used for hydro jetting?",
-        "answer": "We calibrate pressure from 1,500 PSI up to 4,000 PSI depending on pipe diameter, pipe material, and the severity of grease or root obstruction."
+        "question": "How does a hydro jetting work?",
+        "answer": "A specialized hose and nozzle are inserted into the drain or sewer line. High-pressure water is released through the nozzle to break down buildup and flush debris through the pipe."
       },
       {
-        "question": "How long do the results of hydro jetting last?",
-        "answer": "Because hydro jetting removes all internal pipe residue, lines typically remain clear for 2 to 5 years under normal usage conditions."
+        "question": "Is hydro jetting better than snaking?",
+        "answer": "Hydro jetting can provide a more thorough cleaning by removing buildup along the interior pipe walls. Snaking is useful for breaking through certain blockages, while hydro jetting cleans a wider area of the pipe. The best method depends on the condition of your plumbing system."
       },
       {
-        "question": "Is hydro jetting effective against commercial grease clogs?",
-        "answer": "Yes, hydro jetting is the single most effective method for melting and emulsifying heavy grease deposits in commercial kitchen drain lines."
+        "question": "Can hydro jetting remove tree roots?",
+        "answer": "Hydro jetting can remove certain roots intrusions from suitable sewer pipes. However, if roots have entered through damaged or separated pipe connections, additional sewer line repairs may be necessary."
       },
       {
-        "question": "How long does a hydro jetting service take?",
-        "answer": "A standard residential main line hydro jetting procedure takes approximately 1.5 to 2 hours including initial and final camera inspections."
+        "question": "Is hydro jetting safe for older pipes?",
+        "answer": "Not every pipe is suitable for hydro jetting. Older, cracked, deteriorated, or damaged pipes should be evaluated before cleaning. A sewer camera inspections can help determine whether hydro jetting is appropriate."
       },
       {
-        "question": "Does hydro jetting clean out sand and gravel?",
-        "answer": "Yes, rear-facing jet nozzles wash out heavy sand, gravel, construction debris, and sediment from low points in sewer lines."
-      },
-      {
-        "question": "Do you inspect the pipe after jetting?",
-        "answer": "Always. We conduct a post-jetting HD video inspection to confirm that internal pipe walls are clean and intact."
-      },
-      {
-        "question": "Can hydro jetting replace trenchless pipe repair?",
-        "answer": "Hydro jetting cleans pipes; it does not fix structural cracks or physical collapse. However, jetting is a necessary preliminary step before pipe lining."
-      },
-      {
-        "question": "What size sewer pipes can be hydro jetted?",
-        "answer": "We hydro jet drain lines ranging from 2-inch residential branch lines up to 12-inch commercial mainline laterals."
-      },
-      {
-        "question": "How do I schedule hydro jetting service in Orange County?",
-        "answer": "Call Rooter-X Plumbing at (310) 363-9881 for 24/7 immediate scheduling or emergency service."
+        "question": "Does Rooter-X Plumbing offer hydro jetting in Orange County?",
+        "answer": "Yes- Rooter-X Plumbing provides professional hydro jetting and drain cleaning services throughout Orange County, including Fullerton and surrounding communities. Contact us to schedule service."
       }
     ]
   },
