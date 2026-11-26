@@ -1,4 +1,4 @@
-// Updated via Rooter-X Admin Portal on 2026-11-26T04:13:36.089Z
+// Updated via Rooter-X Admin Portal on 2026-11-26T04:38:38.429Z
 export interface ServiceFAQ {
   question: string;
   answer: string;
@@ -584,9 +584,9 @@ export const SERVICES: ServiceData[] = [
     "title": "Epoxy pipe liner (CIPP)",
     "slug": "epoxy-pipe-lining",
     "icon": "ShieldCheck",
-    "shortDescription": "Cured-in-place trenchless pipe restoration creating a jointless structural epoxy pipe inside your existing damaged sewer.",
-    "h1": "Epoxy Pipe Lining (CIPP) in Orange County, CA",
-    "overviewH2": "Trenchless Cured-in-Place Structural Sewer Restoration",
+    "shortDescription": "Restore damaged sewer pipes with trenchless epoxy pipe lining. A long-lasting solution for cracked, deteriorating, or leaking pipes without traditional excavation.",
+    "h1": "Trenchless Epoxy Pipe Lining (CIPP) in Orange County, CA",
+    "overviewH2": "Professional CIPP Sewer Pipe Lining & Trenchless Pipe Rehabilitation",
     "badgeRow": [
       "Accurate diagnosis",
       "Preventative maintenance",
@@ -595,10 +595,8 @@ export const SERVICES: ServiceData[] = [
       "24/7 emergency service"
     ],
     "paragraphs": [
-      "Cured-In-Place Pipe (CIPP) epoxy lining creates a structural brand-new pipe inside your existing damaged sewer line without excavating trenches across your property.",
-      "We saturate a flexible felt liner sleeve with high-grade structural epoxy resin, invert it into the sewer line using compressed air, and inflate an internal bladder to press the epoxy firmly against internal host pipe walls.",
-      "Once cured via ambient temperature or steam, the epoxy hardens into a smooth, jointless structural pipe wall that seals cracks, bridges missing pipe sections, and blocks tree root entry permanently.",
-      "Epoxy pipe lining restores damaged vitrified clay, cast iron, and plastic waste pipes, providing a 50-year structural lifespan with minimal flow diameter reduction."
+      "Rooter-X provides professional epoxy pipe lining services designed to restore damaged, aging, or deteriorating pipes from the inside. Epoxy pipe lining is a trenchless pipe rehabilitation method that uses a specialized epoxy coating to create a protective new lining inside existing pipes. This process can help seal small cracks, improve pipe integrity, and extend the life of suitable plumbing pipes without the need for extensive pipe removal or excavation.",
+      "If you're experiencing recurring leaks, corrosion, or plumbing problems, epoxy pipe lining may be an effective solution for your property. At Rooter-X, we focus on identifying pipe conditions and determining whether epoxy pipe restoration is the right option. Our goal is to provide reliable pipe lining solutions that minimize disruption, protect your plumbing system, and help homeowners avoid unnecessary traditional pipe replacement when possible."
     ],
     "expanderParagraphs": [
       "CIPP lining is ideal for sewer lines running beneath concrete slabs, home foundations, interior tile flooring, mature palm trees, or stone hardscapes.",
@@ -633,31 +631,31 @@ export const SERVICES: ServiceData[] = [
         "relatedServiceSlug": "repipe"
       }
     ],
-    "benefitsHeading": "Benefits of CIPP epoxy pipe relining",
+    "benefitsHeading": "Epoxy pipe lining offers a modern, trenchless solution for restoring damaged or aging pipes from the inside.",
     "benefits": [
       {
-        "label": "100% trenchless structural restoration",
-        "description": "No trenching through lawns, driveways, flowerbeds, or interior slab floors."
+        "label": "No Major Excavation",
+        "description": "Restore suitable pipes without extensive digging or removing entire pipe sections."
       },
       {
-        "label": "50-year structural design life",
-        "description": "Epoxy resin sleeve resists chemical corrosion, root penetration, and ground stress."
+        "label": "Long-Lasting Protection",
+        "description": "Epoxy lining creates a protective interior barrier that helps prevent corrosion and leaks."
       },
       {
-        "label": "Jointless continuous inner shell",
-        "description": "Eliminates all bell-and-spigot seams where root systems penetrate sewer laterals."
+        "label": "Cost-Effective Pipe Repair",
+        "description": "Avoid unnecessary pipe replacement when epoxy lining is a suitable option."
       },
       {
-        "label": "Improves flow hydraulic velocity",
-        "description": "Ultra-smooth interior epoxy finish reduces friction loss and prevents waste buildup."
+        "label": "Improved Pipe Performance",
+        "description": "Help restore the interior surface of aging pipes and improve plumbing system reliability."
       },
       {
-        "label": "Protects interior home flooring",
-        "description": "Avoids tearing up indoor hardwood, marble, or tile floors above slab sewer lines."
+        "label": "Less Property Disruption",
+        "description": "Minimize damage to landscaping, flooring, walls, and surrounding areas."
       },
       {
-        "label": "Single-day installation process",
-        "description": "Relining installation and curing are completed in a single day with minimal disruption."
+        "label": "Reliable Pipe Restoration",
+        "description": "Extend the service life of suitable existing pipes with professional epoxy pipe lining."
       }
     ],
     "ctaHeadline": "Restore pipes with trenchless CIPP epoxy lining",
@@ -674,44 +672,36 @@ export const SERVICES: ServiceData[] = [
     ],
     "faqs": [
       {
-        "question": "What is CIPP epoxy pipe lining?",
-        "answer": "CIPP (Cured-In-Place Pipe) is a trenchless restoration method where an epoxy-saturated felt tube is inverted into an existing sewer line and cured to form a new structural pipe inside the old one."
+        "question": "What is epoxy pipe lining?",
+        "answer": "Epoxy pipe lining is a trenchless pipe repair method that applies a specialized epoxy coating inside an existing pipe to create a protective new lining. It can help restore pipes without removing the entire pipe."
       },
       {
-        "question": "How long does CIPP epoxy lining last?",
-        "answer": "Structural epoxy liners are engineered to meet ASTM structural standards with an operational lifespan exceeding 50 years."
+        "question": "How does epoxy pipe lining work?",
+        "answer": "The process typically involves inspecting and cleaning the existing pipe, preparing its interior surface, and applying an epoxy resin lining. The epoxy is then allowed to cure and form a protective interior layer."
       },
       {
-        "question": "Does epoxy lining reduce interior pipe diameter?",
-        "answer": "The liner thickness is only 3mm to 4mm, which reduces diameter minutely while significantly increasing flow velocity due to its smooth surface."
+        "question": "What are the benefits of epoxy pipe lining?",
+        "answer": "Epoxy pipe lining can help seal small cracks, protect against corrosion, reduce the need for extensive excavation, and extend the service life of suitable existing pipes."
       },
       {
-        "question": "Can epoxy lining be installed if a pipe is completely collapsed?",
-        "answer": "If a pipe has completely collapsed or lost its host pipe shape, pipe bursting or point repair is required first. Lining requires an open path to invert."
+        "question": "Is epoxy pipe lining better than replacing pipes?",
+        "answer": "Epoxy pipe lining can be a great alternative when existing pipes are structurally suitable for rehabilitation. However, severely damaged, collapsed, or deteriorated pipes may require replacement."
       },
       {
-        "question": "How long does the epoxy curing process take?",
-        "answer": "Ambient curing takes 3 to 4 hours, while hot-water or steam-assisted curing cures the epoxy in under 2 hours."
+        "question": "How long does epoxy pipe lining last?",
+        "answer": "The lifespan depends on the epoxy product, installation quality, pipe condition, and operating conditions. A professional inspection can help determine whether lining is a suitable long-term solution."
       },
       {
-        "question": "Will tree roots ever penetrate an epoxy lined sewer pipe?",
-        "answer": "No, CIPP lining creates a continuous, jointless epoxy cylinder that tree roots cannot penetrate."
+        "question": "Does epoxy pipe lining require digging?",
+        "answer": "Epoxy pipe lining is generally a trenchless repair method, meaning it can often be completed through existing access points without major excavation."
       },
       {
-        "question": "Can branch lines be reopened after lining a main pipe?",
-        "answer": "Yes, we use robotic reinstatement cutters to precisely reopen branch connections from inside the newly lined main pipe."
+        "question": "Can epoxy pipe lining fix leaking pipes?",
+        "answer": "Epoxy lining can help seal certain small cracks and leaks inside suitable pipes. However, major breaks, collapsed sections, and severe structural damage may require a different repair method."
       },
       {
-        "question": "Is CIPP lining safe for residential wastewater lines?",
-        "answer": "Yes, structural epoxy resins are fully cured, non-toxic, and resistant to domestic wastewater chemicals."
-      },
-      {
-        "question": "How do you prep a pipe for epoxy lining?",
-        "answer": "We perform mechanical descaling and hydro jetting to clean original pipe walls down to clean, bare substrate."
-      },
-      {
-        "question": "How do I determine if my sewer line can be lined?",
-        "answer": "Contact Rooter-X Plumbing at (310) 363-9881 for an HD camera inspection sweep to verify lining eligibility."
+        "question": "Why choose Rooter-X for epoxy pipe lining?",
+        "answer": "Rooter-X focuses on providing professional pipe repair and rehabilitation solutions. We evaluate existing pipe conditions and help determine whether epoxy pipe lining is the right solution for your plumbing system."
       }
     ]
   },
