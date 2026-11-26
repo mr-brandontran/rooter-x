@@ -1,4 +1,4 @@
-// Updated via Rooter-X Admin Portal on 2026-11-26T05:38:30.624Z
+// Updated via Rooter-X Admin Portal on 2026-11-26T06:00:12.285Z
 export interface ServiceFAQ {
   question: string;
   answer: string;
@@ -828,12 +828,12 @@ export const SERVICES: ServiceData[] = [
   },
   {
     "order": 8,
-    "title": "Repipe",
+    "title": "RE Pipe Service.",
     "slug": "repipe",
     "icon": "RefreshCw",
-    "shortDescription": "Complete whole-house copper or PEX water supply repiping and DWV sewer re-piping solutions.",
-    "h1": "Repiping in Orange County, CA",
-    "overviewH2": "Whole-House Water Supply & DWV Sewer Repiping Specialists",
+    "shortDescription": "Professional RE pipe services to address damaged, deteriorating, or aging pipes with reliable repair and replacement solutions.",
+    "h1": "RE Pipe Service",
+    "overviewH2": "Professional RE Pipe Repair and Replacement Solutions",
     "badgeRow": [
       "Accurate diagnosis",
       "Preventative maintenance",
@@ -842,10 +842,8 @@ export const SERVICES: ServiceData[] = [
       "24/7 emergency service"
     ],
     "paragraphs": [
-      "Aging galvanized iron water lines installed in mid-century Orange County homes suffer internal mineral scaling, pipe wall thinning, pinhole slab leaks, and rusty water flow.",
-      "We specialize in complete whole-home repiping using USA-manufactured Type L copper or Uponor PEX-a expansion piping systems, restoring clean water pressure throughout your home.",
-      "Our repiping teams carefully plan wall penetrations, install high-flow manifold systems, and replace old shut-off valves, supply stops, and flex lines with top-quality brass fittings.",
-      "We also perform complete Drain-Waste-Vent (DWV) repiping, replacing flaking cast iron stack lines with heavy-duty schedule 40 ABS or PVC waste systems."
+      "Rooter-X provides professional RE pipe services to help homeowners and businesses address damaged, aging, leaking, or deteriorating pipes. Whether your plumbing system needs pipe repairs or replacement, our goal is to identify the problem and recommend a reliable solution. Proper pipe repair and replacement can help restore water flow, prevent ongoing plumbing issues, and protect your property's plumbing system from further damage.",
+      "Damaged or aging pipes can lead to recurring leaks, reduced water pressure, water damage, and costly plumbing problems. Rooter-X focuses on providing practical pipe repair and replacement solutions based on the condition of your existing plumbing system. We work to help restore your pipes' functionality while minimizing unnecessary disruption to your property whenever possible."
     ],
     "expanderParagraphs": [
       "Every repipe includes full hydrostatic pressure testing, municipal permit inspections, and professional drywall patching.",
@@ -883,28 +881,28 @@ export const SERVICES: ServiceData[] = [
     "benefitsHeading": "Benefits of whole-house repiping",
     "benefits": [
       {
-        "label": "Restores strong consistent water pressure",
-        "description": "Delivers full volume flow to showers, tubs, sinks, and washing machines simultaneously."
+        "label": "Reliable Pipe Solutions:",
+        "description": "Address damaged, aging, or deteriorating pipes with professional repair and replacement options."
       },
       {
-        "label": "Clean odor-free drinking water",
-        "description": "Eliminates internal pipe rust flakes, metallic taste, and yellow tap water discoloration."
+        "label": "Prevent Further Damage",
+        "description": "Repairing problematic pipes can help prevent ongoing leaks and additional plumbing damage."
       },
       {
-        "label": "Eliminates risk of catastrophic slab leaks",
-        "description": "Replaces corroded under-slab pipes with durable, modern PEX or copper supply lines."
+        "label": "Improved Water Flow",
+        "description": "Proper pipe repairs can help restore plumbing performance and improve water flow when pipe damage is the cause."
       },
       {
-        "label": "Increases property resale value",
-        "description": "Documented modern repiping provides buyers confidence and simplifies real estate escrows."
+        "label": "Cost-Effective Options",
+        "description": "Evaluate repair and replacement solutions to find the most practical option for your plumbing system."
       },
       {
-        "label": "Lifespan exceeding 50 years",
-        "description": "Type L copper and Uponor PEX-a systems carry decades-long material warranties."
+        "label": "Protect Your Property",
+        "description": "Address leaking or damaged pipes before they cause more extensive water damage."
       },
       {
-        "label": "Lower home insurance premiums",
-        "description": "Eliminates high-risk vintage galvanized plumbing that insurers penalize."
+        "label": "Professional Service",
+        "description": "Rooter-X focuses on dependable pipe repair and replacement solutions tailored to your property's needs."
       }
     ],
     "ctaHeadline": "Upgrade home water pipes with a professional repipe",
@@ -921,44 +919,36 @@ export const SERVICES: ServiceData[] = [
     ],
     "faqs": [
       {
-        "question": "What is better for an Orange County repipe: Copper or PEX?",
-        "answer": "Both are excellent choices. Type L copper is traditional, rigid, and highly durable. Uponor PEX-a is flexible, freeze-resistant, resists hard water scale, and requires fewer wall penetrations."
+        "question": "What is RE pipe service?",
+        "answer": "RE pipe service involves addressing plumbing pipe problems through professional repair or replacement solutions, depending on the condition of the existing pipes."
       },
       {
-        "question": "How long does a whole-house repipe take?",
-        "answer": "A standard single-family home repipe takes 2 to 3 days for pipe installation, plus 1 to 2 days for drywall patching and city permit sign-off."
+        "question": "When should pipes be repaired or replaced?",
+        "answer": "Pipes may need repair or replacement when they develop recurring leaks, cracks, corrosion, blockages, or other damage that affects plumbing performance."
       },
       {
-        "question": "Will my water be turned off during the entire repipe?",
-        "answer": "No, water service is typically shut off only during working day hours (8 AM to 4 PM) and restored at the end of each workday."
+        "question": "What are the signs of damaged pipes?",
+        "answer": "Common warning signs include water leaks, reduced water pressure, discolored water, unusual plumbing noises, recurring clogs, and unexplained increases in water bills."
       },
       {
-        "question": "Do you repair the drywall after cutting access holes?",
-        "answer": "Yes, our repipe service includes complete professional drywall patching, texturing, and preparing surfaces for paint."
+        "question": "Is pipe repair better than pipe replacement?",
+        "answer": "Pipe repair may be appropriate when damage is limited to a specific section. Replacement may be necessary when pipes are severely damaged, deteriorated, or experiencing repeated problems."
       },
       {
-        "question": "What is a slab leak and why does it require repiping?",
-        "answer": "A slab leak is a leak in copper or galvanized pipe running beneath concrete slab foundations. Repiping overhead through attic spaces bypasses broken slab lines permanently."
+        "question": "How long does pipe repair or replacement take?",
+        "answer": "The timeline depends on the pipe condition, location, accessibility, and extent of the work required. A professional inspection can help determine the expected project duration."
       },
       {
-        "question": "Do repipes require city permits and inspections?",
-        "answer": "Yes, all whole-house repiping projects require municipal plumbing permits and city building inspector sign-offs."
+        "question": "Can damaged pipes cause water damage?",
+        "answer": "Yes. Leaking or broken pipes can cause moisture buildup, structural damage, mold growth, and damage to floors, walls, and surrounding areas."
       },
       {
-        "question": "How much does a whole-home repipe increase water pressure?",
-        "answer": "Repiping restores full original municipal water main pressure by removing interior rust scale constrictions."
+        "question": "How can I prevent future pipe problems?",
+        "answer": "Regular plumbing inspections, addressing leaks early, and maintaining your plumbing system can help identify potential problems before they become more serious."
       },
       {
-        "question": "Can you repipe waste and drain lines (DWV) at the same time?",
-        "answer": "Yes, we frequently perform dual supply and DWV waste line repipes during major remodel projects."
-      },
-      {
-        "question": "Are new shut-off valves included with a repipe?",
-        "answer": "Yes, every repipe includes brand-new quarter-turn ball valves under all sinks, toilets, washing machines, and main water entries."
-      },
-      {
-        "question": "How do I request an in-home repipe estimate?",
-        "answer": "Call Rooter-X Plumbing at (310) 363-9881 for an expert on-site evaluation and detailed proposal."
+        "question": "Why choose Rooter-X for pipe services?",
+        "answer": "Rooter-X focuses on identifying plumbing pipe problems and recommending practical repair or replacement solutions. Our goal is to help restore your plumbing system's performance with dependable service."
       }
     ]
   },
