@@ -1,4 +1,4 @@
-// Updated via Rooter-X Admin Portal on 2026-11-17T21:01:18.961Z
+// Updated via Rooter-X Admin Portal on 2026-11-26T23:36:00.714Z
 export interface BlogPost {
   title: string;
   slug: string;
@@ -11,22 +11,6 @@ export interface BlogPost {
 }
 
 export const BLOG_POSTS: BlogPost[] = [
-  {
-    "title": "Understanding Vintage Sewer Pipe Materials in Orange County Homes",
-    "slug": "understanding-orange-county-sewer-lines",
-    "date": "2026-07-15",
-    "author": "Rooter-X Plumbing Technical Team",
-    "category": "Sewer Diagnostics",
-    "excerpt": "A guide to vitrified clay, cast iron, and Orangeburg fiber pipe materials commonly found in 1920s–1980s Orange County residential neighborhoods.",
-    "image": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80",
-    "content": [
-      "Orange County's residential architecture spans nearly a century of construction booms. Homes built in different decades feature distinct subterranean waste line pipe materials, each with unique failure modes.",
-      "Vitrified Clay Pipe (VCP): Common in pre-1970s homes across Laguna Beach, Santa Ana, and Fullerton. Clay is completely immune to saltwater chemical corrosion but features rigid 4-foot bell-and-spigot joints where tree roots penetrate easily.",
-      "Cast Iron Pipe: Widely installed beneath post-war 1950s–1970s tract housing in Costa Mesa, Anaheim, and Garden Grove. Cast iron deteriorates internally over 50 years through oxidation, creating rough rust scale ridges that catch solid waste.",
-      "Orangeburg Fiber Pipe: Installed during mid-century material shortages. Orangeburg is made of wood pulp saturated with coal tar. After 50 years underground, ground moisture causes Orangeburg lines to ovalize and collapse under soil weight.",
-      "High-definition camera inspections determine your exact pipe material, depth, and internal condition, guiding decisions between spot repairs, CIPP lining, and trenchless pipe bursting."
-    ]
-  },
   {
     "title": "How to Identify and Resolve Slab Leaks in Southern California",
     "slug": "slab-leaks-in-southern-california",
