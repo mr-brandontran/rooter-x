@@ -1,4 +1,4 @@
-// Updated via Rooter-X Admin Portal on 2026-11-26T22:30:07.021Z
+// Updated via Rooter-X Admin Portal on 2026-11-26T23:17:36.911Z
 export interface ServiceFAQ {
   question: string;
   answer: string;
@@ -1181,12 +1181,12 @@ export const SERVICES: ServiceData[] = [
   },
   {
     "order": 11,
-    "title": "Leak detection",
+    "title": "Leak detection Service",
     "slug": "leak-detection",
     "icon": "Locate",
-    "shortDescription": "Non-invasive acoustic, thermal imaging, and electronic slab leak location for pressurized supply and waste lines.",
-    "h1": "Leak Detection in Orange County, CA",
-    "overviewH2": "Non-Invasive Acoustic & Thermal Electronic Subsurface Leak Location",
+    "shortDescription": "Professional water leak detection services to locate hidden plumbing leaks, prevent water damage, and protect your property.",
+    "h1": "Professional Leak Detection Services",
+    "overviewH2": "Accurate Water Leak Detection and Plumbing Leak Solutions",
     "badgeRow": [
       "Accurate diagnosis",
       "Preventative maintenance",
@@ -1195,10 +1195,8 @@ export const SERVICES: ServiceData[] = [
       "24/7 emergency service"
     ],
     "paragraphs": [
-      "Hidden water leaks behind drywall or beneath concrete slab foundations cause severe structural water damage, wood rot, mold growth, and inflated water bills.",
-      "We utilize non-invasive electronic leak detection technology — including ground microphones, acoustic listening discs, infrared thermal imaging cameras, and helium tracer gas detectors.",
-      "Instead of tearing open walls or jackhammering concrete randomly, our technicians pinpoint subterranean leak locations within inches before making minimal surgical access cuts.",
-      "Whether diagnosing copper pinhole slab leaks, subterranean main supply breaks, or hidden waste stack leaks, we locate the origin quickly to protect your structural property."
+      "Rooter-X provides professional leak detection services to help homeowners and businesses identify hidden water leaks before they cause extensive property damage. Water leaks can occur behind walls, beneath floors, under concrete slabs, or in underground water lines, making them difficult to locate without specialized equipment. Our leak detection solutions focus on identifying the source of plumbing leaks accurately while helping minimize unnecessary damage to your property.",
+      "Unexplained increases in water bills, damp spots, reduced water pressure, moldy odors, and the sound of running water when fixtures are turned off can all indicate a hidden plumbing leak. Rooter-X helps locate water leaks and identify the appropriate repair solutions based on your plumbing system's condition. Our goal is to help prevent further water damage, reduce water waste, and restore your plumbing system's proper operation."
     ],
     "expanderParagraphs": [
       "Once located, we offer targeted repairs, overhead pipe bypasses, or complete PEX repiping solutions tailored to your foundation and property.",
@@ -1233,31 +1231,31 @@ export const SERVICES: ServiceData[] = [
         "relatedServiceSlug": "sewer-line-spot-repairs"
       }
     ],
-    "benefitsHeading": "Benefits of professional electronic leak detection",
+    "benefitsHeading": "Benefits of Professional Leak Detection Services",
     "benefits": [
       {
-        "label": "Non-invasive electronic pinpointing",
-        "description": "Locates subterranean leaks without destructive wall or concrete slab demolition."
+        "label": "Accurate Leak Location",
+        "description": "Identify hidden water leaks behind walls, beneath floors, under concrete slabs, and in underground pipes."
       },
       {
-        "label": "Prevents catastrophic water & mold damage",
-        "description": "Stops hidden moisture before toxic mold spore colonies infect indoor air quality."
+        "label": "Prevent Costly Water Damage",
+        "description": "Finding leaks early can help prevent structural damage, mold growth, and expensive repairs."
       },
       {
-        "label": "Lowers monthly water bills",
-        "description": "Eliminates continuous water loss from pressurized underground pinhole leaks."
+        "label": "Minimize Property Disruption",
+        "description": "Professional leak detection methods can help locate problems while reducing unnecessary drilling, cutting, and excavation."
       },
       {
-        "label": "Infrared thermal image verification",
-        "description": "Visualizes hot water migration paths and damp subfloor zones instantly."
+        "label": "Save Water and Money",
+        "description": "Detect hidden plumbing leaks to help reduce water waste and unexpected increases in utility bills."
       },
       {
-        "label": "Verifiable insurance claim reports",
-        "description": "Provides detailed technical diagnostic documentation for insurance policy claims."
+        "label": "Protect Your Plumbing System",
+        "description": "Identify leaking pipes and plumbing problems before they become more serious."
       },
       {
-        "label": "Saves thousands in trial excavation",
-        "description": "Eliminates random jackhammering of concrete foundation slabs."
+        "label": "Professional Leak Detection",
+        "description": "Rooter-X focuses on locating water leaks and helping homeowners find reliable solutions for their plumbing systems."
       }
     ],
     "ctaHeadline": "Pinpoint hidden leaks before damage spreads",
@@ -1272,44 +1270,36 @@ export const SERVICES: ServiceData[] = [
     ],
     "faqs": [
       {
-        "question": "How does electronic leak detection work without digging?",
-        "answer": "We use ground sensors and acoustic amplifiers to hear water escaping pressurized pipes under concrete, combined with thermal cameras that map temperature anomalies."
+        "question": "What is professional leak detection?",
+        "answer": "Professional leak detection is the process of locating hidden water leaks in plumbing systems using specialized equipment and inspection techniques without unnecessary damage to walls, floors, or property."
       },
       {
-        "question": "What is a slab leak?",
-        "answer": "A slab leak is a water leak occurring in copper or galvanized pressure pipes embedded within or beneath a building's concrete slab foundation."
+        "question": "How do I know if I have a hidden water leak?",
+        "answer": "Common signs include unusually high water bills, damp spots, water stains, musty odors, reduced water pressure, mold growth, and the sound of running water when fixtures are turned off."
       },
       {
-        "question": "How accurate is acoustic leak detection?",
-        "answer": "Our specialized acoustic equipment pinpoints subsurface leaks within a 6-inch radius, eliminating exploratory demolition."
+        "question": "Can you detect leaks under concrete slabs?",
+        "answer": "Yes. Specialized leak detection methods can help locate water leaks beneath concrete foundations and floors, often without breaking the concrete to find the source."
       },
       {
-        "question": "What should I do if I suspect a slab leak?",
-        "answer": "Shut off your main water valve immediately to stop water flow and call Rooter-X Plumbing for 24/7 emergency leak detection."
+        "question": "What causes hidden plumbing leaks?",
+        "answer": "Hidden leaks can result from aging pipes, corrosion, high water pressure, damaged pipe connections, shifting foundations, and normal wear and tear."
       },
       {
-        "question": "Does homeowners insurance cover slab leak detection and repair?",
-        "answer": "Most policies cover leak detection and water damage restoration, though pipe repair specifics depend on individual insurance policies."
+        "question": "Can leak detection be done without damaging my property?",
+        "answer": "Many leaks can be located using non-invasive detection methods. The exact approach depends on the pipe material, leak location, and accessibility."
       },
       {
-        "question": "How do you repair a slab leak once detected?",
-        "answer": "We offer direct spot repair under the slab, or an overhead PEX pipe reroute through wall and attic spaces to bypass slab lines completely."
+        "question": "Why is early water leak detection important?",
+        "answer": "Finding leaks early can help prevent extensive water damage, mold growth, structural problems, wasted water, and expensive plumbing repairs."
       },
       {
-        "question": "Can you detect leaks in irrigation or main water supply lines?",
-        "answer": "Yes, we detect leaks in main water service lines between municipal meters and home foundation entries."
+        "question": "How long does professional leak detection take?",
+        "answer": "The time depends on the size of the plumbing system, accessibility, and location of the leak. Many inspections can be completed within a few hours."
       },
       {
-        "question": "What is helium tracer gas leak detection?",
-        "answer": "For complex micro-leaks, we inject harmless helium gas into pipes and trace escaping gas molecules through concrete slabs using sensitive detector probes."
-      },
-      {
-        "question": "How long does a leak detection service call take?",
-        "answer": "Most residential leak detection procedures take 1 to 2 hours to pinpoint the precise location of hidden leaks."
-      },
-      {
-        "question": "How do I book emergency leak detection in Orange County?",
-        "answer": "Call Rooter-X Plumbing 24/7 at (310) 363-9881 for immediate technician dispatch."
+        "question": "Why choose Rooter-X for leak detection services?",
+        "answer": "Rooter-X focuses on helping homeowners identify hidden plumbing leaks and determine appropriate repair solutions. Our goal is to protect your property, reduce water waste, and restore your plumbing system's performance."
       }
     ]
   },
