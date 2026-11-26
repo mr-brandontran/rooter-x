@@ -1,4 +1,4 @@
-// Updated via Rooter-X Admin Portal on 2026-11-26T04:38:38.429Z
+// Updated via Rooter-X Admin Portal on 2026-11-26T05:38:30.624Z
 export interface ServiceFAQ {
   question: string;
   answer: string;
@@ -707,12 +707,12 @@ export const SERVICES: ServiceData[] = [
   },
   {
     "order": 7,
-    "title": "Boring",
+    "title": "Boring Services",
     "slug": "boring",
     "icon": "Compass",
-    "shortDescription": "Directional underground horizontal boring installing utilities and sewer pipes under roadways and hardscapes.",
-    "h1": "Horizontal Directional Boring in Orange County, CA",
-    "overviewH2": "Subsurface Horizontal Directional Drilling & Utility Trenchless Boring",
+    "shortDescription": "Professional underground boring services for installing underground pipes and utilities with minimal surface disruption and excavation.",
+    "h1": "Professional Underground Boring Services",
+    "overviewH2": "Reliable Trenchless Underground Boring Solutions",
     "badgeRow": [
       "Accurate diagnosis",
       "Preventative maintenance",
@@ -721,10 +721,8 @@ export const SERVICES: ServiceData[] = [
       "24/7 emergency service"
     ],
     "paragraphs": [
-      "Horizontal Directional Boring (HDD) enables the installation of new underground sewer pipes, water mains, and conduits without digging surface trenches across streets, sidewalks, or landscaped grounds.",
-      "Using steerable drill heads guided by surface radio transmitters, we bore precise subterranean pathways beneath driveways, commercial parking lots, mature trees, and public right-of-ways.",
-      "Once the pilot bore is complete, back-reamers enlarge the pathway and pull seamless HDPE or schedule 80 PVC pipes back through the borehole.",
-      "Directional boring is ideal for installing new sewer laterals, commercial water services, or running utility lines beneath established Orange County properties."
+      "Rooter-X provides professional underground boring services for installing pipes and utility lines beneath driveways, sidewalks, landscaping, and other surfaces. Underground boring is a trenchless installation method that helps create an underground pathway while minimizing the need for traditional open-trench excavation. This approach helps reduce surface disruption and protects surrounding property during underground pipe installation.",
+      "Whether you need underground boring for sewer lines, water lines, or other compatible underground utilities, Rooter-X focuses on providing reliable installation solutions based on your property's needs. Our goal is to complete underground boring projects efficiently while minimizing disruption to driveways, landscaping, and existing surfaces. We help customers find practical solutions for underground pipe installation without unnecessary excavation whenever site conditions allow."
     ],
     "expanderParagraphs": [
       "Boring eliminates public right-of-way street closure permits, heavy asphalt patching fees, and traffic disruption.",
@@ -762,28 +760,28 @@ export const SERVICES: ServiceData[] = [
     "benefitsHeading": "Benefits of horizontal directional boring",
     "benefits": [
       {
-        "label": "Zero surface hardscape destruction",
-        "description": "Leaves driveways, sidewalks, manicured lawns, and street asphalt undisturbed."
+        "label": "Minimal Surface Disruption",
+        "description": "Install underground pipes beneath driveways, sidewalks, and landscaping while reducing the need for extensive digging."
       },
       {
-        "label": "Sub-inch steering precision",
-        "description": "Transmitter sonde telemetry guides drill head pitch and depth to maintain precise pipe slope."
+        "label": "Protect Your Property",
+        "description": "Help preserve existing concrete, asphalt, landscaping, and surrounding surfaces."
       },
       {
-        "label": "Avoids costly repaving and street restoration",
-        "description": "Eliminates expensive city asphalt grinding, trench backfill compaction, and repaving fees."
+        "label": "Efficient Installation",
+        "description": "Underground boring can provide an efficient way to install sewer lines, water lines, and compatible underground utilities."
       },
       {
-        "label": "Reduces project timeline",
-        "description": "Drilling and pipe pulling are completed rapidly compared to long open-trench digging."
+        "label": "Cost-Effective Solutions",
+        "description": "Reduce restoration work and unnecessary excavation when site conditions allow."
       },
       {
-        "label": "Protects underground root ecosystems",
-        "description": "Bores beneath tree root zones without severing major structural tree roots."
+        "label": "Reliable Underground Installation",
+        "description": "Create underground pathways for pipe and utility installations using professional boring techniques."
       },
       {
-        "label": "Ideal for long-distance utility runs",
-        "description": "Bores continuous distances up to 300+ feet in a single automated drilling pull."
+        "label": "Versatile Applications",
+        "description": "Underground boring can be used for various residential and commercial underground installation projects."
       }
     ],
     "ctaHeadline": "Schedule directional boring service",
@@ -795,44 +793,36 @@ export const SERVICES: ServiceData[] = [
     ],
     "faqs": [
       {
-        "question": "What is horizontal directional boring (HDD)?",
-        "answer": "Horizontal directional boring is a trenchless drilling method that uses a steerable surface rig to bore an underground path and pull continuous pipe through without disturbing the ground above."
+        "question": "What is underground boring?",
+        "answer": "Underground boring is a trenchless construction method used to create a pathway beneath the ground for installing pipes, conduits, and utility lines without digging a continuous open trench."
       },
       {
-        "question": "How do you steer an underground drill head?",
-        "answer": "The drill head contains a radio transmitter (sonde) that sends depth, pitch, and rotational alignment data to a surface locator operator tracking the drill bit path."
+        "question": "What are the benefits of underground boring?",
+        "answer": "Underground boring helps minimize surface disruption, protect landscaping and existing concrete, reduce excavation, and provide an efficient way to install underground pipes and utilities."
       },
       {
-        "question": "Can directional boring maintain proper pitch for gravity sewer lines?",
-        "answer": "Yes, using high-precision pitch sensors, we maintain strict 1/4-inch per foot downward slope required for gravity sewer lines."
+        "question": "Can underground boring be used for sewer line installation?",
+        "answer": "Yes. Underground boring can be used for certain sewer line installation projects, depending on soil conditions, pipe requirements, slope, and site accessibility."
       },
       {
-        "question": "What ground conditions can be bored through?",
-        "answer": "We bore through clay, sand, dirt, compacted soil, and soft shale using specialized bentonite drilling fluid to stabilize bore paths."
+        "question": "Can underground boring be done beneath driveways and sidewalks?",
+        "answer": "Yes. Boring can allow pipes and utilities to be installed beneath driveways, sidewalks, and other paved surfaces while minimizing the need to remove existing concrete or asphalt."
       },
       {
-        "question": "What size pipes can be installed with directional boring?",
-        "answer": "We bore pathways for 2-inch to 8-inch pipes, pulling HDPE, PVC, copper, and flexible conduit lines."
+        "question": "Is underground boring better than traditional trenching?",
+        "answer": "Underground boring can be a good alternative when minimizing surface disruption is important. The best method depends on soil conditions, installation depth, project size, and accessibility."
       },
       {
-        "question": "Does boring require permits in Orange County cities?",
-        "answer": "Yes, underground utility boring requires municipal permits and Underground Service Alert (USA 811) utility clearance before drilling."
+        "question": "How long does an underground boring project take?",
+        "answer": "Project timelines depend on the distance, soil conditions, installation requirements, and accessibility. A professional evaluation can help determine the expected completion time."
       },
       {
-        "question": "How deep does directional boring go?",
-        "answer": "Boring depth typically ranges from 3 feet to 12 feet deep, depending on utility clearance requirements and existing pipe connections."
+        "question": "What types of pipes can be installed using underground boring?",
+        "answer": "Depending on the boring method and project requirements, underground boring can be used to install sewer pipes, water lines, conduits, and other compatible underground utilities."
       },
       {
-        "question": "How far can a single directional bore reach?",
-        "answer": "Residential and commercial boring rigs easily complete continuous bores from 30 feet up to 300 feet in length."
-      },
-      {
-        "question": "Is directional boring more expensive than trenching?",
-        "answer": "While equipment setup costs are higher, boring saves money overall by eliminating concrete removal, asphalt repaving, and land restoration."
-      },
-      {
-        "question": "How do I request a site evaluation for boring?",
-        "answer": "Call Rooter-X Plumbing at (310) 363-9881 to speak with our directional boring specialists."
+        "question": "Why choose Rooter-X for underground boring services?",
+        "answer": "Rooter-X focuses on providing practical underground installation solutions while helping minimize unnecessary excavation and surface disruption. We work to identify the right approach for each property's underground boring needs."
       }
     ]
   },
