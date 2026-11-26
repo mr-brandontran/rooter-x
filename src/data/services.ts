@@ -1,4 +1,4 @@
-// Updated via Rooter-X Admin Portal on 2026-11-26T06:10:45.871Z
+// Updated via Rooter-X Admin Portal on 2026-11-26T22:30:07.021Z
 export interface ServiceFAQ {
   question: string;
   answer: string;
@@ -1071,12 +1071,12 @@ export const SERVICES: ServiceData[] = [
   },
   {
     "order": 10,
-    "title": "Tankless installation",
+    "title": "Tankless Water Heater Installation.",
     "slug": "tankless-installation",
     "icon": "Zap",
-    "shortDescription": "Endless on-demand hot water solutions, gas line sizing, condensate drains, and high-efficiency tankless units.",
-    "h1": "Tankless Water Heater Installation in Orange County, CA",
-    "overviewH2": "Tankless Water Heater Installation & Replacement",
+    "shortDescription": "Professional tankless water heater installation and replacement for energy-efficient, on-demand hot water in your home.",
+    "h1": "Tankless Water Heater Installation Services",
+    "overviewH2": "Professional Tankless Water Heater Installation and Replacement",
     "badgeRow": [
       "Accurate diagnosis",
       "Preventative maintenance",
@@ -1085,8 +1085,8 @@ export const SERVICES: ServiceData[] = [
       "24/7 emergency service"
     ],
     "paragraphs": [
-      "Enjoy reliable hot water, improved energy efficiency, and a space-saving design with a professionally installed tankless water heater from Rooter-X Plumbing.",
-      "Unlike traditional tank-style water heaters that continuously store and heat a limited amount of water, tankless systems heat water on demand. This can provide a continuous supply of hot water while eliminating the need for a large storage tank."
+      "Rooter-X provides professional tankless water heater installation services for homeowners looking to enjoy reliable, on-demand hot water. Unlike traditional water heaters that store hot water in a tank, tankless water heaters heat water as it flows through the system. This modern technology can provide greater energy efficiency, save space, and deliver a continuous supply of hot water within the system's capacity. Our tankless water heater installation solutions are designed to meet your household's hot water needs.",
+      "If you're considering upgrading from a traditional water heater, a tankless water heater may be an excellent option for your home. Rooter-X helps homeowners explore tankless water heater replacement and installation solutions based on their plumbing system, household size, and hot water demands. From choosing the right unit to professional installation, our goal is to provide dependable hot water performance, improved energy efficiency, and long-term comfort."
     ],
     "expanderParagraphs": [],
     "signsHeading": "Why homeowners upgrade to tankless hot water",
@@ -1118,31 +1118,31 @@ export const SERVICES: ServiceData[] = [
         "relatedServiceSlug": "camera-inspection"
       }
     ],
-    "benefitsHeading": "Why Choose a Tankless Water Heater?",
+    "benefitsHeading": "Why Choose Us Cards for Rooter-X's Tankless Water Heater Installation service.",
     "benefits": [
       {
-        "label": "On-demand hot water",
-        "description": "Hot water is produced when you need it."
+        "label": "On-Demand Hot Water",
+        "description": "Enjoy hot water whenever you need it without waiting for a storage tank to refill."
       },
       {
-        "label": "Energy efficiency",
-        "description": "The system doesn’t continuously heat a stored tank of water."
+        "label": "Energy Efficiency",
+        "description": "Tankless water heaters heat water as needed, which can help reduce energy waste compared to conventional storage tank systems."
       },
       {
-        "label": "Space-saving design",
-        "description": "Compact units can free up valuable garage or utility-room space."
+        "label": "Space-Saving Design",
+        "description": "Enjoy a compact water heating system that takes up less space than traditional tank water heaters."
       },
       {
-        "label": "Continuous hot water",
-        "description": "Properly sized systems can supply hot water for extended periods."
+        "label": "Long-Term Performance",
+        "description": "With proper installation and maintenance, tankless water heaters can provide years of dependable service."
       },
       {
-        "label": "Long-term solution",
-        "description": "With proper maintenance, tankless systems can provide years of service."
+        "label": "Reduced Standby Energy Loss",
+        "description": "Heat water on demand instead of continuously keeping a large tank of water hot."
       },
       {
-        "label": "Reduced standby heat loss",
-        "description": "Water isn’t sitting in a tank being reheated throughout the day."
+        "label": "Professional Installation",
+        "description": "Rooter-X helps you choose and install a tankless water heater that matches your household's hot water demands."
       }
     ],
     "ctaHeadline": "Upgrade to endless hot water today",
@@ -1154,44 +1154,28 @@ export const SERVICES: ServiceData[] = [
     ],
     "faqs": [
       {
-        "question": "How does a tankless water heater work?",
-        "answer": "When a hot water faucet opens, cold water flows into the unit. Gas burners ignite instantly, heating the water as it passes through heat exchanger coils to deliver continuous hot water."
+        "question": "What is a tankless water heater?",
+        "answer": "A tankless water heater is a system that heats water on demand instead of storing hot water in a traditional tank. It provides hot water as it flows through the unit."
       },
       {
-        "question": "Does a tankless water heater require gas line upgrading?",
-        "answer": "Tankless units require high BTU gas input (up to 199,000 BTU). We evaluate existing gas supply lines and upgrade to 3/4-inch gas lines when necessary."
+        "question": "What are the benefits of installing a tankless water heater?",
+        "answer": "Tankless water heaters offer several benefits, including energy efficiency, a compact design, reduced standby energy loss, and hot water on demand within the unit's capacity."
       },
       {
-        "question": "How often do tankless water heaters need maintenance?",
-        "answer": "In hard water areas like Orange County, tankless water heaters should be flushed with white vinegar once every 12 months using installed isolation valves."
+        "question": "How long does a tankless water heater last?",
+        "answer": "With proper installation and regular maintenance, many tankless water heaters can last approximately 15–20 years, depending on the model, water quality, and usage."
       },
       {
-        "question": "Can a tankless unit handle multiple showers running at once?",
-        "answer": "Yes, high-output 1 font-mono to 11 GPM tankless units easily supply hot water to 3 to 4 bathroom fixtures simultaneously."
+        "question": "Is a tankless water heater more energy-efficient than a traditional water heater?",
+        "answer": "Tankless water heaters can be more energy-efficient because they heat water only when needed rather than continuously maintaining a tank of hot water."
       },
       {
-        "question": "What is a condensing tankless water heater?",
-        "answer": "Condensing tankless units utilize a secondary stainless steel heat exchanger to extract extra heat from exhaust gases, achieving up to 96% thermal efficiency."
+        "question": "Can a tankless water heater provide enough hot water for my entire home?",
+        "answer": "Yes, when properly sized. The correct system depends on your household's simultaneous hot water demand, incoming water temperature, and required flow rate."
       },
       {
-        "question": "Can a tankless water heater be mounted on an outdoor wall?",
-        "answer": "Yes, outdoor tankless models feature built-in freeze protection heating elements and eliminate indoor venting requirements."
-      },
-      {
-        "question": "How long does tankless water heater installation take?",
-        "answer": "Converting from a tank to a tankless water heater typically takes 4 to 8 hours depending on gas line routing and vent paths."
-      },
-      {
-        "question": "Do tankless water heaters qualify for Southern California Gas rebates?",
-        "answer": "Yes, ENERGY STAR certified condensing tankless models qualify for generous local gas utility rebates."
-      },
-      {
-        "question": "What is an isolation valve flush kit?",
-        "answer": "Isolation valves allow technicians to isolate the tankless unit and circulate descaling fluid through the heat exchanger without disconnecting household plumbing."
-      },
-      {
-        "question": "How do I get an estimate for tankless installation?",
-        "answer": "Call Rooter-X Plumbing at (310) 363-9881 for an expert on-site sizing evaluation and upfront quote."
+        "question": "How much does tankless water heater installation cost?",
+        "answer": "The cost depends on the unit, installation requirements, gas or electrical capacity, venting, plumbing modifications, and labor. A professional estimate can help determine the total cost."
       }
     ]
   },
