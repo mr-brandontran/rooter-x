@@ -1,4 +1,4 @@
-// Updated via Rooter-X Admin Portal on 2026-11-26T23:36:00.714Z
+// Updated via Rooter-X Admin Portal on 2026-11-26T23:36:07.117Z
 export interface BlogPost {
   title: string;
   slug: string;
@@ -11,22 +11,6 @@ export interface BlogPost {
 }
 
 export const BLOG_POSTS: BlogPost[] = [
-  {
-    "title": "How to Identify and Resolve Slab Leaks in Southern California",
-    "slug": "slab-leaks-in-southern-california",
-    "date": "2026-06-28",
-    "author": "Rooter-X Plumbing Technical Team",
-    "category": "Leak Detection",
-    "excerpt": "Learn why copper supply lines buried beneath concrete foundations develop pinhole leaks and how non-invasive acoustic detection pinpoints the location.",
-    "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80",
-    "content": [
-      "Many Southern California homes are constructed on concrete slab foundations, with pressurized copper hot and cold water supply lines routed underneath.",
-      "Over time, high municipal water pressure, hard water mineral chemistry, and subtle ground vibration cause copper pipe walls to thin, forming tiny pinhole leaks beneath the slab.",
-      "Key signs of a slab leak include unexplained spikes in monthly water utility bills, warm floor spots on tile or carpet, the sound of running water when all faucets are shut off, and spinning water meter dials.",
-      "Non-invasive electronic leak detection uses acoustic ground microphones and thermal imaging to locate subterranean pinhole leaks within inches without jackhammering floors.",
-      "Once located, property owners can choose between direct under-slab spot repairs or an overhead PEX pipe reroute through wall framing and attic spaces."
-    ]
-  },
   {
     "title": "Tank vs. Tankless Water Heaters for Hard Water in Orange County",
     "slug": "tank-vs-tankless-water-heaters-oc",
