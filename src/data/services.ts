@@ -1,4 +1,4 @@
-// Updated via Rooter-X Admin Portal on 2026-11-26T23:17:36.911Z
+// Updated via Rooter-X Admin Portal on 2026-11-26T23:30:43.900Z
 export interface ServiceFAQ {
   question: string;
   answer: string;
@@ -1305,12 +1305,12 @@ export const SERVICES: ServiceData[] = [
   },
   {
     "order": 12,
-    "title": "New construction",
+    "title": "New Construction Plumbing",
     "slug": "new-construction",
     "icon": "Building2",
-    "shortDescription": "Underground, rough-in, and finish plumbing contracts tailored for general contractors, commercial builds, and home builders.",
-    "h1": "New Construction Plumbing in Orange County, CA",
-    "overviewH2": "Underground, Rough-In & Finish Plumbing Subcontracting",
+    "shortDescription": "Reliable new construction plumbing services for residential and commercial projects, from plumbing installation to complete system setup.",
+    "h1": "Professional New Construction Plumbing Services",
+    "overviewH2": "Complete Plumbing Solutions for New Construction Projects",
     "badgeRow": [
       "Accurate diagnosis",
       "Preventative maintenance",
@@ -1319,10 +1319,8 @@ export const SERVICES: ServiceData[] = [
       "24/7 emergency service"
     ],
     "paragraphs": [
-      "Rooter-X Plumbing provides complete commercial and residential new construction plumbing contracts for general contractors, custom home builders, and commercial developers.",
-      "We execute all three major build phases — underground groundworks, structural frame rough-in plumbing, and high-end fixture finish installations — strictly adhering to engineering blueprints and California Plumbing Code specifications.",
-      "Phase 1 Underground Groundworks covers main sewer ties, building drains, water service entries, grease interceptors, and under-slab waste line installations with strict grade verification.",
-      "Phase 2 Rough-In includes framing DWV stack routing, gas branch piping, supply manifolds, and fire blocking, while Phase 3 Finish covers trim-out, custom architectural fixtures, commercial flushometer valves, and final gas/water pressure sign-offs."
+      "Rooter-X provides professional new construction plumbing services for residential and commercial building projects. From installing water supply lines and drainage systems to setting up complete plumbing infrastructure, we help ensure new properties have reliable plumbing systems designed to meet their needs. Our new construction plumbing solutions focus on proper installation, quality workmanship, and dependable performance from the beginning of your project.",
+      "Whether you're building a new home, commercial property, or other development, having a properly installed plumbing system is essential for long-term functionality and reliability. Rooter-X provides plumbing installation solutions for new construction projects, including water lines, sewer connections, drainage pipes, and plumbing fixtures. Our goal is to help property owners, builders, and contractors establish dependable plumbing systems while coordinating installation with the construction process."
     ],
     "expanderParagraphs": [
       "We maintain full CSLB licensing (#1008868), comprehensive commercial general liability insurance, worker's compensation, and performance bonding capabilities.",
@@ -1357,31 +1355,31 @@ export const SERVICES: ServiceData[] = [
         "relatedServiceSlug": "hydro-jetting"
       }
     ],
-    "benefitsHeading": "Why general contractors partner with Rooter-X",
+    "benefitsHeading": "New Construction Plumbing service.",
     "benefits": [
       {
-        "label": "CSLB Licensed #1008868, Bonded & Insured",
-        "description": "Meets all commercial insurance requirements and performance bonding thresholds."
+        "label": "Complete Plumbing Installation",
+        "description": "Get properly planned water supply lines, drainage systems, sewer connections, and plumbing fixtures for your new property."
       },
       {
-        "label": "Strict milestone schedule compliance",
-        "description": "Keeps build timelines on track with dedicated site crews and aggressive task execution."
+        "label": "Built for Long-Term Performance",
+        "description": "A professionally installed plumbing system helps support reliable water flow and drainage for years to come."
       },
       {
-        "label": "Expert blueprint reading & CAD estimation",
-        "description": "Accurate plan takeoffs, material submittals, and transparent fixed-bid proposals."
+        "label": "Customized Plumbing Solutions",
+        "description": "Plumbing installations can be planned around your property's layout, building design, and specific water requirements."
       },
       {
-        "label": "Flawless city inspection pass rate",
-        "description": "Thorough pre-testing of DWV water stacks and gas headers ensures first-time inspection sign-offs."
+        "label": "Quality Workmanship",
+        "description": "Proper installation helps reduce the risk of leaks, drainage problems, and future plumbing issues."
       },
       {
-        "label": "Dedicated commercial project manager",
-        "description": "Single point-of-contact communication for RFI responses, change orders, and job site logs."
+        "label": "Residential and Commercial Projects",
+        "description": "Plumbing solutions for new homes, commercial buildings, and other construction developments."
       },
       {
-        "label": "Comprehensive warranty on workmanship",
-        "description": "Stands behind all installed groundworks, rough-in framing, and trim fixtures in writing."
+        "label": "Professional Service You Can Trust",
+        "description": "Rooter-X focuses on dependable plumbing installation solutions to support your construction project from the ground up."
       }
     ],
     "image": "/images/real-photos/newconstruction-framing-joists-310.jpg",
@@ -1397,44 +1395,36 @@ export const SERVICES: ServiceData[] = [
     ],
     "faqs": [
       {
-        "question": "What types of new construction projects do you handle?",
-        "answer": "We handle custom residential single-family homes, multi-unit residential builds, ADUs, restaurant tenant improvements, retail spaces, and light commercial construction."
+        "question": "What is new construction plumbing?",
+        "answer": "New construction plumbing involves installing complete plumbing systems in newly built homes, commercial buildings, and other properties. This includes water supply lines, drainage pipes, sewer connections, and plumbing fixtures."
       },
       {
-        "question": "Do you handle all three phases: underground, rough-in, and finish?",
-        "answer": "Yes, we provide full turnkey plumbing subcontracts covering underground groundworks, framing rough-in, and final fixture trim-out."
+        "question": "What plumbing services are included in new construction?",
+        "answer": "New construction plumbing can include underground plumbing installation, water line installation, sewer line connections, drain and vent systems, fixture installation, and plumbing system testing."
       },
       {
-        "question": "Is Rooter-X Plumbing licensed, bonded, and insured for commercial jobs?",
-        "answer": "Yes, we hold CSLB License #1008868, comprehensive commercial general liability insurance, and worker's compensation."
+        "question": "When should plumbing installation begin during construction?",
+        "answer": "Plumbing installation typically begins during the early construction stages, after the building plans and necessary permits are approved. Underground and in-wall plumbing are installed before floors and walls are completed."
       },
       {
-        "question": "How fast can you submit a bid for architectural plan takeoffs?",
-        "answer": "We turn around detailed plan takeoff estimates within 3 to 5 business days of receiving PDF construction blueprints."
+        "question": "Does new construction plumbing require permits?",
+        "answer": "Yes. Plumbing permits and inspections are generally required depending on local building codes and the scope of the project. Requirements vary by location."
       },
       {
-        "question": "Do you install commercial grease traps and interceptors?",
-        "answer": "Yes, we design and install outdoor gravity grease interceptors and indoor hydromechanical grease traps compliant with Orange County health codes."
+        "question": "How much does new construction plumbing cost?",
+        "answer": "The cost depends on the building size, number of bathrooms, plumbing layout, materials, fixtures, and project complexity. A customized estimate can help determine the overall cost."
       },
       {
-        "question": "What pipe materials do you install for new construction?",
-        "answer": "We install schedule 40 ABS/PVC DWV systems, Type L copper, Uponor PEX-a expansion systems, cast iron, and HDPE utility piping."
+        "question": "Can Rooter-X provide plumbing for commercial and residential construction?",
+        "answer": "Rooter-X can discuss plumbing installation needs for residential and commercial construction projects. The scope of available services depends on the project requirements."
       },
       {
-        "question": "How do you handle city building inspections?",
-        "answer": "Our project managers schedule and attend all municipal inspections, ensuring DWV stack water tests and gas pressure tests are ready prior to inspector arrival."
+        "question": "Why is professional plumbing installation important for new construction?",
+        "answer": "Professional plumbing installation helps ensure water supply, drainage, and sewer systems are properly installed and tested. Proper installation can help prevent leaks, drainage problems, and costly repairs in the future."
       },
       {
-        "question": "Can you provide plumbing subcontracts for ADUs (Accessory Dwelling Units)?",
-        "answer": "Yes, ADU plumbing is one of our specialties, including sewer lateral tie-ins, sub-metering, and independent water heater installations."
-      },
-      {
-        "question": "Do you provide written warranties for new construction contracts?",
-        "answer": "Yes, all new construction plumbing subcontracts include a comprehensive written warranty on labor and installation workmanship."
-      },
-      {
-        "question": "How do general contractors submit plans for bidding?",
-        "answer": "Email your construction PDF plans directly to Rooterxplumbing@gmail.com or call (310) 363-9881."
+        "question": "Why choose Rooter-X for new construction plumbing?",
+        "answer": "Rooter-X focuses on providing dependable plumbing installation solutions for new construction projects. Our goal is to help property owners and contractors establish reliable plumbing systems designed for long-term performance."
       }
     ]
   }
