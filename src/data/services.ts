@@ -1,4 +1,4 @@
-// Updated via Rooter-X Admin Portal on 2026-11-26T06:00:12.285Z
+// Updated via Rooter-X Admin Portal on 2026-11-26T06:10:45.871Z
 export interface ServiceFAQ {
   question: string;
   answer: string;
@@ -957,9 +957,9 @@ export const SERVICES: ServiceData[] = [
     "title": "Water heaters installation",
     "slug": "water-heater-installation",
     "icon": "Flame",
-    "shortDescription": "High-efficiency tank water heater replacement, seismic strapping, expansion tanks, and code-compliant installations.",
-    "h1": "Water Heater Installation in Orange County, CA",
-    "overviewH2": "Standard & Commercial Tank Water Heater Replacement",
+    "shortDescription": "Expert water heater installation services to provide your home with reliable, energy-efficient hot water solutions.",
+    "h1": "Professional Water Heater Installation Services",
+    "overviewH2": "Reliable Water Heater Installation and Replacement Solutions",
     "badgeRow": [
       "Accurate diagnosis",
       "Preventative maintenance",
@@ -968,10 +968,8 @@ export const SERVICES: ServiceData[] = [
       "24/7 emergency service"
     ],
     "paragraphs": [
-      "Whether your current tank water heater is leaking from the base, producing rusty hot water, or failing to supply sufficient hot water, Rooter-X installs top-tier natural gas and electric tank water heaters.",
-      "We install professional-grade Bradford White and Rheem water heaters equipped with heavy-duty glass-lined tanks, brass drain valves, and advanced low-NOx burner assemblies.",
-      "Every replacement installation strictly complies with California Plumbing Code requirements, including double seismic strapping, thermal expansion tanks, copper flex connectors, full-port gas shut-offs, and temperature-pressure relief (TPR) discharge piping.",
-      "We dispose of old water heaters responsibly, perform gas leak safety sweeps, and handle local city permit sign-offs."
+      "Rooter-X provides professional water heater installation services to help homeowners enjoy reliable and consistent hot water throughout their homes. Whether you're installing a new water heater or replacing an outdated unit, choosing the right system is important for comfort, efficiency, and long-term performance. Our water heater installation solutions are designed to meet your household's hot water needs while helping ensure your new system operates safely and reliably.",
+      "An aging or malfunctioning water heater can lead to inconsistent hot water, rising energy costs, leaks, and unexpected breakdowns. Rooter-X helps homeowners find practical water heater installation and replacement solutions based on their property's needs. From selecting the appropriate water heater to professional installation, our goal is to provide dependable hot water solutions that support your home's comfort and everyday needs."
     ],
     "expanderParagraphs": [
       "Installing an expansion tank protects your household plumbing valves and fixtures from thermal pressure spikes caused by closed-loop water systems.",
@@ -1009,28 +1007,28 @@ export const SERVICES: ServiceData[] = [
     "benefitsHeading": "Benefits of professional water heater installation",
     "benefits": [
       {
-        "label": "100% California code compliance",
-        "description": "Includes seismic strapping, expansion tanks, TPR valves, and low-NOx gas venting."
+        "label": "Reliable Hot Water",
+        "description": "Enjoy consistent hot water for showers, cleaning, cooking, and everyday household needs."
       },
       {
-        "label": "Lower monthly energy bills",
-        "description": "High-EF insulation jackets minimize standby heat loss compared to older water heaters."
+        "label": "Energy Efficiency",
+        "description": "Upgrade to a modern water heater that may help reduce energy consumption and utility costs."
       },
       {
-        "label": "Reliable hot water recovery rate",
-        "description": "Delivers fast hot water recovery for continuous household bathing and laundry demands."
+        "label": "Professional Installation",
+        "description": "Proper installation helps your water heater operate safely and efficiently."
       },
       {
-        "label": "Full manufacturer warranty coverage",
-        "description": "Professional installation preserves 6-year to 10-year factory tank and parts warranties."
+        "label": "Improved Performance",
+        "description": "Replace an aging or outdated unit with a new system designed for dependable hot water."
       },
       {
-        "label": "Protection from catastrophic tank bursts",
-        "description": "Replaces dangerous corroded tanks before bottom seam rupture floods home floors."
+        "label": "Long-Term Reliability",
+        "description": "A properly selected and installed water heater can provide years of reliable service with appropriate maintenance."
       },
       {
-        "label": "Same-day emergency installation",
-        "description": "Restores hot water service within hours of dispatch anywhere in Orange County."
+        "label": "Solutions for Your Home",
+        "description": "Find a water heater that matches your household size, hot water demand, and budget."
       }
     ],
     "ctaHeadline": "Get fast water heater installation today",
@@ -1042,44 +1040,32 @@ export const SERVICES: ServiceData[] = [
     ],
     "faqs": [
       {
-        "question": "How long does a standard tank water heater last?",
-        "answer": "In Orange County, standard tank water heaters last between 8 and 12 years due to regional hard water mineral content."
-      },
-      {
-        "question": "What size water heater tank does my home need?",
-        "answer": "Homes with 1 to 2 occupants require a 40-gallon tank; homes with 3 to 5 occupants require a 50-gallon tank; larger homes require 75-gallon or tankless systems."
-      },
-      {
-        "question": "Why is an expansion tank required by California code?",
-        "answer": "Thermal expansion tanks absorb water volume expansion created when water heats up in a closed plumbing system, preventing excessive pressure on pipe valves."
-      },
-      {
-        "question": "What is seismic strapping and why is it mandatory?",
-        "answer": "California law requires two heavy steel straps anchored to wall studs to prevent water heaters from tipping and breaking gas lines during earthquakes."
-      },
-      {
-        "question": "Do you replace electric and natural gas water heaters?",
-        "answer": "Yes, we install high-efficiency natural gas, propane, and electric storage tank water heaters."
-      },
-      {
-        "question": "What causes rumbling noises in a water heater?",
-        "answer": "Rumbling is caused by mineral sediment accumulation at the bottom of the tank. As water traps beneath sediment and boils, it creates popping rumbling sounds."
+        "question": "How do I know when I need a new water heater?",
+        "answer": "Common signs include inconsistent hot water, unusual noises, leaking around the tank, rusty water, and frequent repairs. An older water heater may also become less efficient over time."
       },
       {
         "question": "How long does water heater installation take?",
-        "answer": "A standard tank water heater replacement takes approximately 2 to 4 hours from initial drain-down to final testing."
+        "answer": "Installation time depends on the type of water heater, existing plumbing, electrical or gas connections, and any modifications required. A straightforward replacement may take several hours."
       },
       {
-        "question": "Do you haul away the old water heater?",
-        "answer": "Yes, our installation service includes complete removal, haul-away, and eco-friendly recycling of your old water heater unit."
+        "question": "What types of water heaters can be installed?",
+        "answer": "Common options include traditional tank water heaters, tankless water heaters, gas water heaters, and electric water heaters. The right choice depends on your home's setup and hot water needs."
       },
       {
-        "question": "What is a TPR valve?",
-        "answer": "The Temperature and Pressure Relief (TPR) valve is a safety device that automatically opens to release excessive pressure or temperature, preventing tank explosions."
+        "question": "Is a tankless water heater better than a traditional water heater?",
+        "answer": "Tankless water heaters heat water on demand and can provide continuous hot water within their capacity. Traditional tank systems store heated water for household use. Each option has different installation costs and energy considerations."
       },
       {
-        "question": "How do I schedule water heater replacement?",
-        "answer": "Call Rooter-X Plumbing at (310) 363-9881 for emergency replacement or upfront installation quotes."
+        "question": "How much does water heater installation cost?",
+        "answer": "The cost depends on the type and size of the unit, installation requirements, plumbing modifications, and labor. A professional estimate can help determine the total cost."
+      },
+      {
+        "question": "How long does a water heater last?",
+        "answer": "Minor issues may be repairable, but an older unit with recurring problems, leaks, or significant corrosion may be better replaced. A professional inspection can help determine the best option."
+      },
+      {
+        "question": "Why choose Rooter-X for water heater installation?",
+        "answer": "Rooter-X focuses on providing dependable water heater installation and replacement solutions. We help homeowners find systems that match their household's hot water needs and provide reliable everyday performance."
       }
     ]
   },
