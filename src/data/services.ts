@@ -1,4 +1,4 @@
-// Updated via Rooter-X Admin Portal on 2026-11-27T23:26:37.416Z
+// Updated via Rooter-X Admin Portal on 2026-11-27T23:35:44.783Z
 export interface ServiceFAQ {
   question: string;
   answer: string;
