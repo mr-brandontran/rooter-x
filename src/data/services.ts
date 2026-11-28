@@ -1,4 +1,4 @@
-// Updated via Rooter-X Admin Portal on 2026-11-28T18:50:55.978Z
+// Updated via Rooter-X Admin Portal on 2026-11-28T19:12:05.927Z
 export interface ServiceFAQ {
   question: string;
   answer: string;
@@ -538,11 +538,11 @@ export const SERVICES: ServiceData[] = [
       }
     ],
     "ctaHeadline": "Fix localized sewer pipe damage",
-    "image": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80",
+    "image": "/images/real-photos/1795892957529-img-2598.jpeg",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"
+      "/images/real-photos/1795892957529-img-2598.jpeg",
+      "/images/real-photos/1795893086476-img-9051.jpeg",
+      "/images/real-photos/1795893111611-img-5341.jpeg"
     ],
     "faqs": [
       {
