@@ -104,11 +104,14 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       try {
         const w3FormData = new FormData();
         w3FormData.append("access_key", web3formsKey);
-        w3FormData.append("subject", `🚨 New Rooter-X Lead: ${service} - ${name}`);
+        w3FormData.append("subject", `New Service Request: ${service} - ${name}`);
         w3FormData.append("from_name", "Rooter-X Plumbing Website");
         w3FormData.append("name", name);
         w3FormData.append("phone", phone);
-        w3FormData.append("email", email);
+        if (email) {
+          w3FormData.append("email", email);
+          w3FormData.append("replyto", email);
+        }
         w3FormData.append("service", service);
         w3FormData.append("address", address);
         w3FormData.append("preferred_time", preferredTime);
