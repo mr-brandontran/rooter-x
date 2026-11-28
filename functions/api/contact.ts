@@ -5,6 +5,7 @@ interface Env {
   TWILIO_FROM_PHONE?: string;
   OWNER_PHONE?: string;
   RESEND_API_KEY?: string;
+  WEB3FORMS_ACCESS_KEY?: string;
   LEADS_KV?: any;
 }
 
@@ -97,7 +98,37 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       }
     }
 
-    // 3. Resend Email Notification
+    // 3. Web3Forms Email Notification (Direct delivery to owner's inbox)
+    const web3formsKey = env.WEB3FORMS_ACCESS_KEY || "22bb3f1f-04c6-4257-9af1-b90d927b654b";
+    if (web3formsKey) {
+      try {
+        const w3FormData = new FormData();
+        w3FormData.append("access_key", web3formsKey);
+        w3FormData.append("subject", `🚨 New Rooter-X Lead: ${service} - ${name}`);
+        w3FormData.append("from_name", "Rooter-X Plumbing Website");
+        w3FormData.append("name", name);
+        w3FormData.append("phone", phone);
+        w3FormData.append("email", email);
+        w3FormData.append("service", service);
+        w3FormData.append("address", address);
+        w3FormData.append("preferred_time", preferredTime);
+        w3FormData.append("message", message);
+
+        await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Origin": "https://rooter-x.com",
+            "Referer": "https://rooter-x.com/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) RooterX/1.0",
+          },
+          body: w3FormData,
+        });
+      } catch (w3Err) {
+        console.error("Web3Forms error:", w3Err);
+      }
+    }
+
+    // 4. Resend Email Notification (fallback if configured)
     if (env.RESEND_API_KEY) {
       try {
         const emailHtml = `
@@ -120,7 +151,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            from: "Rooter-X Plumbing Leads <leads@rooterxplumbing.com>",
+            from: "Rooter-X Plumbing Leads <onboarding@resend.dev>",
             to: ["Rooterxplumbing@gmail.com"],
             subject: `🚨 Lead: ${service} - ${name} (${phone})`,
             html: emailHtml,
