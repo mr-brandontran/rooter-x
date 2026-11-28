@@ -63,9 +63,15 @@ const subClass = isBlue
     )}
   </div>
 
-  <form action="/api/contact" method="POST" class="space-y-4" data-contact-form>
-    <!-- Hidden Honeypot for Bot Prevention -->
-    <input type="text" name="website_url_check" class="hidden" tabindex="-1" autocomplete="off" />
+  <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4" data-contact-form>
+    <!-- Web3Forms Access & Routing Config -->
+    <input type="hidden" name="access_key" value="22bb3f1f-04c6-4257-9af1-b90d927b654b" />
+    <input type="hidden" name="subject" value="New Service Request from Rooter-X Website" />
+    <input type="hidden" name="from_name" value="Rooter-X Plumbing Website" />
+    <input type="hidden" name="redirect" value="https://rooter-x.com/thank-you/" />
+    
+    <!-- Anti-bot Honeypot for Web3Forms -->
+    <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
 
     <!-- Name* -->
     <div>
